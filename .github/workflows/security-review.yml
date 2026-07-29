@@ -19,7 +19,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '22'
 
       - name: Install dependencies
         run: npm ci --ignore-scripts
@@ -77,5 +77,5 @@ jobs:
 
       - name: Fail on critical findings
         run: |
-          node .github/scripts/fail-on-critical.js detection.json semgrep-results.json npm-audit.json gitleaks.json trivy-fs.json || exit 1
+          node .github/scripts/fail-on-critical.cjs detection.json semgrep-results.json npm-audit.json gitleaks.json trivy-fs.json || exit 1
         shell: bash
