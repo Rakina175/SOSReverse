@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { GoogleMap, useJsApiLoader, Marker, Polyline } from '@react-google-maps/api';
-import { MapPin, Navigation, Compass, AlertCircle } from 'lucide-react';
+import { Navigation, Compass, AlertCircle } from 'lucide-react';
 
 interface MapProps {
   victimLat: number;
   victimLon: number;
   responderLat?: number | null;
   responderLon?: number | null;
-  status?: string;
+  // status prop removed (unused)
   zoom?: number;
 }
 
@@ -21,7 +21,6 @@ export const GoogleMapWrapper: React.FC<MapProps> = ({
   victimLon,
   responderLat,
   responderLon,
-  status,
   zoom = 14
 }) => {
   const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
@@ -117,7 +116,7 @@ export const GoogleMapWrapper: React.FC<MapProps> = ({
   }
 
   // Fallback Vector SVG Map Mockup (Beautiful Glassmorphic Simulation)
-  return <MockVectorMap {...{ victimLat, victimLon, responderLat, responderLon, status }} />;
+  return <MockVectorMap {...{ victimLat, victimLon, responderLat, responderLon }} />;
 };
 
 // ----------------------------------------------------
@@ -128,7 +127,6 @@ const MockVectorMap: React.FC<MapProps> = ({
   victimLon,
   responderLat,
   responderLon,
-  status
 }) => {
   // Convert lat/lon coordinate differences to SVG coordinate offsets
   // Center is victim coordinates (200, 200) on a 400x400 grid canvas

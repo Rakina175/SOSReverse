@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSOS } from '../context/SOSContext';
 import { GoogleMapWrapper } from '../components/GoogleMapWrapper';
-import { Radio, ShieldAlert, HeartHandshake, Map, MessageSquare, AlertCircle, Compass, CheckCircle2, User } from 'lucide-react';
+import { Radio, Map, MessageSquare, User } from 'lucide-react';
 
 export const LiveTracking: React.FC = () => {
-  const { activeEmergency, cancelSOS, getDistanceKm, emergencies } = useSOS();
+  const { activeEmergency, cancelSOS, getDistanceKm } = useSOS();
   const navigate = useNavigate();
 
   // If responderaccepted we look for it in global emergencies too
@@ -81,7 +81,6 @@ export const LiveTracking: React.FC = () => {
           victimLon={currentSOS.longitude}
           responderLat={currentSOS.responderLatitude}
           responderLon={currentSOS.responderLongitude}
-          status={currentSOS.status}
         />
       </div>
 

@@ -1,14 +1,14 @@
+
 import React, { useState, useEffect } from 'react';
 import { useAuth, type UserProfile } from '../context/AuthContext';
-import { useSOS, type Emergency } from '../context/SOSContext';
-import { Shield, Users, Radio, CheckSquare, XSquare, Activity, Check, Heart, ShieldAlert, Sparkles, MessageSquare, AlertCircle } from 'lucide-react';
+import { useSOS } from '../context/SOSContext';
+import { Users, Radio, Check, ShieldAlert } from 'lucide-react';
 
 export const AdminDashboard: React.FC = () => {
-  const { user } = useAuth();
+  useAuth();
   const { emergencies } = useSOS();
-  
+
   const [volunteers, setVolunteers] = useState<UserProfile[]>([]);
-  const [loading, setLoading] = useState(false);
 
   // Load volunteers list in local storage simulation or firebase queries
   useEffect(() => {

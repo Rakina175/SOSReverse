@@ -1,4 +1,4 @@
-import React from 'react';
+// React import not required in modern JSX runtimes
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { SOSProvider } from './context/SOSContext';

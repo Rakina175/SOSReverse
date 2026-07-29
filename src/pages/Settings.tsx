@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
-import { ShieldAlert, Bell, Volume2, Shield, Trash2, Database, AlertCircle, RefreshCw } from 'lucide-react';
+import { Bell, Trash2, Database, RefreshCw } from 'lucide-react';
 
 export const Settings: React.FC = () => {
   const { user, isFirebase } = useAuth();

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useSOS } from '../context/SOSContext';
-import { Send, MessageSquare, ShieldAlert, ArrowLeft, Radio } from 'lucide-react';
+import { Send, MessageSquare, ArrowLeft, Radio } from 'lucide-react';
 
 export const EmergencyChat: React.FC = () => {
   const { user } = useAuth();

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ShieldAlert, HeartHandshake, Zap, ShieldCheck, MapPin, MessageSquare, ArrowRight, Radio } from 'lucide-react';
+import { ShieldAlert, HeartHandshake, Zap, ShieldCheck, MapPin, ArrowRight, Radio } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 
 export const LandingPage: React.FC = () => {

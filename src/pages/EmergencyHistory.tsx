@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
-import { useSOS, type Emergency } from '../context/SOSContext';
-import { History, ShieldCheck, HeartPulse, User, Calendar, MapPin, Star, ShieldAlert } from 'lucide-react';
+import { useSOS } from '../context/SOSContext';
+import { History, User, Calendar, MapPin, Star } from 'lucide-react';
 
 export const EmergencyHistory: React.FC = () => {
   const { user } = useAuth();

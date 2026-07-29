@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSOS, type EmergencyContact } from '../context/SOSContext';
-import { Shield, Plus, Edit2, Trash2, Phone, User, Users, X, Check, Save } from 'lucide-react';
+import { Shield, Plus, Edit2, Trash2, Phone, User, Users, X, Save } from 'lucide-react';
 
 export const EmergencyContacts: React.FC = () => {
   const { contacts, addContact, editContact, deleteContact, setPrimaryContact } = useSOS();

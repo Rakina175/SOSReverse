@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { useSOS, type Emergency, type EmergencyStatus } from '../context/SOSContext';
+import { useSOS, type EmergencyStatus } from '../context/SOSContext';
 import { GoogleMapWrapper } from '../components/GoogleMapWrapper';
-import { Activity, ShieldCheck, HeartPulse, MapPin, Compass, Radio, MessageSquare, Shield, Play, CheckCircle, Navigation, Info, AlertTriangle } from 'lucide-react';
+import { ShieldCheck, Play, CheckCircle, Navigation, MessageSquare, AlertTriangle, Radio } from 'lucide-react';
 
 export const VolunteerDashboard: React.FC = () => {
   const { user, updateProfile } = useAuth();
@@ -251,7 +251,6 @@ export const VolunteerDashboard: React.FC = () => {
               victimLon={activeMission.longitude}
               responderLat={activeMission.responderLatitude}
               responderLon={activeMission.responderLongitude}
-              status={activeMission.status}
             />
           </div>
 

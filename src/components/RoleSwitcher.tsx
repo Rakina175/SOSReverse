@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useSOS } from '../context/SOSContext';
-import { Shield, User, HeartHandshake, EyeOff, Eye, Cpu, HelpCircle } from 'lucide-react';
+import { Shield, User, HeartHandshake, EyeOff, Cpu, HelpCircle } from 'lucide-react';
 
 export const RoleSwitcher: React.FC = () => {
-  const { user, updateProfile, registerUser, loginUser, logoutUser, isFirebase } = useAuth();
-  const { emergencies, activeEmergency, acceptEmergency, startTrackingSimulation, stopTrackingSimulation } = useSOS();
+  const { user, registerUser, loginUser, logoutUser, isFirebase } = useAuth();
+  const { emergencies, activeEmergency, startTrackingSimulation, stopTrackingSimulation } = useSOS();
   const [isOpen, setIsOpen] = useState(false);
   const [loading, setLoading] = useState(false);
 

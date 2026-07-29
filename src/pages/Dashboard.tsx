@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useSOS } from '../context/SOSContext';
-import { Radio, ShieldAlert, Heart, Users, Map, MessageSquare, AlertTriangle, ArrowRight, ShieldCheck, HeartPulse, Flame } from 'lucide-react';
+import { Radio, ShieldAlert, Heart, Users, Map, MessageSquare, ShieldCheck, HeartPulse, Flame } from 'lucide-react';
 
 export const Dashboard: React.FC = () => {
   const { user } = useAuth();
