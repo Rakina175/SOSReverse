@@ -1,8 +1,19 @@
 {
-  "generatedAt": "2026-07-29T13:05:24.644Z",
-  "status": "PASS",
-  "targetUrl": "http://127.0.0.1:5173/",
-  "statusCode": 200,
-  "durationMs": 43,
-  "remarks": "Baseline request succeeded"
+  "generatedAt": "2026-07-29T14:10:02.104Z",
+  "target": "http://127.0.0.1:5173/",
+  "users": 100,
+  "durationSec": 60,
+  "totalRequests": 42454,
+  "totalErrors": 0,
+  "rps": 707.57,
+  "throughput": 707.57,
+  "responseStats": {
+    "count": 42454,
+    "avg": 141.3,
+    "min": 31,
+    "max": 531,
+    "p50": 50,
+    "p95": 380,
+    "p99": 431
+  }
 }

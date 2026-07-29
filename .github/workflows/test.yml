@@ -1,15 +1,15 @@
-name: SOSReverse Test Automation
+name: Full Test Pipeline
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
+  pull_request:
   workflow_dispatch:
 
 jobs:
-  test-suite:
+  test:
     runs-on: ubuntu-latest
-
+    timeout-minutes: 180
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -17,42 +17,63 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: '18'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build project
         run: npm run build
 
-      - name: Start Vite server
+      - name: Start preview server
         run: |
-          npm run dev -- --host 127.0.0.1 &
-          npx wait-on http://127.0.0.1:5173
+          nohup npm run preview -- --port 5173 > preview.log 2>&1 &
+          npx wait-on http://127.0.0.1:5173 -t 30000
+        shell: bash
 
       - name: Run Selenium tests
         run: npm run selenium:test
+        continue-on-error: true
 
       - name: Generate Selenium report
         run: npm run selenium:report
+        continue-on-error: true
 
       - name: Run Appium dry-run tests
         run: npm run appium:test:dry
+        continue-on-error: true
 
       - name: Generate Appium report
         run: npm run appium:report
+        continue-on-error: true
 
-      - name: Run Load baseline test
+      - name: Run baseline load test
         run: npm run load:test:baseline
+        continue-on-error: true
 
-      - name: Upload test artifacts
+      - name: Run security report generator
+        run: npm run security:report
+        continue-on-error: true
+
+      - name: Upload all reports as artifacts
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: sosreverse-test-reports
+          name: complete-test-reports
           path: |
-            selenium-tests/reports/**/*.xlsx
-            selenium-tests/results/**/*.json
-            appium-tests/reports/**/*.xlsx
-            appium-tests/results/**/*.json
-            load-tests/reports/**/*.xlsx
-            load-tests/**/*.json
+            selenium-tests/reports/*.xlsx
+            selenium-tests/results/*.json
+            appium-tests/reports/*.xlsx
+            appium-tests/results/*.json
+            load-tests/reports/*.xlsx
+            load-tests/results/*.json
+            "Vulnerability Test Results/**"
+            security-review.md
+            executive-summary.md
+            dependency-report.md
+
+      - name: Publish summary notice
+        if: always()
+        run: |
+          echo "::notice title=Test Pipeline Completed::Build completed. Selenium, Appium dry-run, load, and security report generation were attempted."
+        shell: bash

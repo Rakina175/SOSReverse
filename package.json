@@ -14,7 +14,9 @@
     "selenium:report": "node selenium-tests/generate-report.cjs",
     "appium:test": "node appium-tests/appium-login-tests.cjs android",
     "appium:test:dry": "node appium-tests/appium-login-tests.cjs android --dry-run",
-    "appium:report": "node appium-tests/generate-report.cjs"
+    "appium:report": "node appium-tests/generate-report.cjs",
+    "security:report": "node .github/scripts/generate-security-report.js",
+    "test:all": "npm run selenium:test && npm run selenium:report && npm run appium:test:dry && npm run appium:report && npm run load:test:baseline && npm run security:report"
   },
   "dependencies": {
     "@react-google-maps/api": "^2.20.8",

@@ -1,69 +1,69 @@
 {
-  "generatedAt": "2026-07-29T13:04:47.733Z",
+  "generatedAt": "2026-07-29T14:08:59.353Z",
   "status": "passed",
   "tests": [
     {
       "id": "TC001",
       "name": "Citizen login and dashboard access",
       "status": "PASS",
-      "executionTime": "3.19 sec",
-      "timestamp": "2026-07-29T13:04:35.218Z",
+      "executionTime": "2.22 sec",
+      "timestamp": "2026-07-29T14:08:47.125Z",
       "remarks": "Success"
     },
     {
       "id": "TC002",
       "name": "Volunteer login and volunteer dashboard access",
       "status": "PASS",
-      "executionTime": "2.45 sec",
-      "timestamp": "2026-07-29T13:04:37.675Z",
+      "executionTime": "2.04 sec",
+      "timestamp": "2026-07-29T14:08:49.163Z",
       "remarks": "Success"
     },
     {
       "id": "TC003",
       "name": "Admin login and admin dashboard access",
       "status": "PASS",
-      "executionTime": "2.28 sec",
-      "timestamp": "2026-07-29T13:04:39.958Z",
+      "executionTime": "2.13 sec",
+      "timestamp": "2026-07-29T14:08:51.291Z",
       "remarks": "Success"
     },
     {
       "id": "TC004",
       "name": "Failed login shows inline error",
       "status": "PASS",
-      "executionTime": "2.25 sec",
-      "timestamp": "2026-07-29T13:04:42.203Z",
+      "executionTime": "2.31 sec",
+      "timestamp": "2026-07-29T14:08:53.597Z",
       "remarks": "Success"
     },
     {
       "id": "TC005",
       "name": "Forgot password validation message",
       "status": "PASS",
-      "executionTime": "1.42 sec",
-      "timestamp": "2026-07-29T13:04:43.620Z",
+      "executionTime": "1.36 sec",
+      "timestamp": "2026-07-29T14:08:54.953Z",
       "remarks": "Success"
     },
     {
       "id": "TC006",
       "name": "Registration page can be reached",
       "status": "PASS",
-      "executionTime": "1.36 sec",
-      "timestamp": "2026-07-29T13:04:44.976Z",
+      "executionTime": "1.33 sec",
+      "timestamp": "2026-07-29T14:08:56.280Z",
       "remarks": "Success"
     },
     {
       "id": "TC007",
       "name": "Landing page loads",
       "status": "PASS",
-      "executionTime": "1.35 sec",
-      "timestamp": "2026-07-29T13:04:46.326Z",
+      "executionTime": "1.64 sec",
+      "timestamp": "2026-07-29T14:08:57.916Z",
       "remarks": "Success"
     },
     {
       "id": "TC008",
       "name": "Protected route redirects unauthenticated users",
       "status": "PASS",
-      "executionTime": "1.41 sec",
-      "timestamp": "2026-07-29T13:04:47.733Z",
+      "executionTime": "1.44 sec",
+      "timestamp": "2026-07-29T14:08:59.353Z",
       "remarks": "Success"
     }
   ]

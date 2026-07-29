@@ -1,6 +1,6 @@
 {
   "platform": "android",
-  "generatedAt": "2026-07-29T13:05:01.230Z",
+  "generatedAt": "2026-07-29T14:09:00.801Z",
   "status": "passed",
   "tests": [
     {
@@ -8,7 +8,7 @@
       "name": "Citizen login and dashboard access",
       "platform": "android",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-07-29T13:05:01.229Z",
+      "timestamp": "2026-07-29T14:09:00.799Z",
       "status": "PASS",
       "details": "Dry run enabled; Appium session was not started."
     },
@@ -17,7 +17,7 @@
       "name": "Volunteer login and volunteer dashboard access",
       "platform": "android",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-07-29T13:05:01.230Z",
+      "timestamp": "2026-07-29T14:09:00.800Z",
       "status": "PASS",
       "details": "Dry run enabled; Appium session was not started."
     },
@@ -26,7 +26,7 @@
       "name": "Admin login and admin dashboard access",
       "platform": "android",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-07-29T13:05:01.230Z",
+      "timestamp": "2026-07-29T14:09:00.800Z",
       "status": "PASS",
       "details": "Dry run enabled; Appium session was not started."
     },
@@ -35,7 +35,7 @@
       "name": "Failed login shows inline error",
       "platform": "android",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-07-29T13:05:01.230Z",
+      "timestamp": "2026-07-29T14:09:00.801Z",
       "status": "PASS",
       "details": "Dry run enabled; Appium session was not started."
     },
@@ -44,7 +44,7 @@
       "name": "Forgot password validation message",
       "platform": "android",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-07-29T13:05:01.230Z",
+      "timestamp": "2026-07-29T14:09:00.801Z",
       "status": "PASS",
       "details": "Dry run enabled; Appium session was not started."
     },
@@ -53,7 +53,7 @@
       "name": "Registration page can be reached",
       "platform": "android",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-07-29T13:05:01.230Z",
+      "timestamp": "2026-07-29T14:09:00.801Z",
       "status": "PASS",
       "details": "Dry run enabled; Appium session was not started."
     },
@@ -62,7 +62,7 @@
       "name": "Landing page loads",
       "platform": "android",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-07-29T13:05:01.230Z",
+      "timestamp": "2026-07-29T14:09:00.801Z",
       "status": "PASS",
       "details": "Dry run enabled; Appium session was not started."
     }
