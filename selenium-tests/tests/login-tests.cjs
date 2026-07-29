@@ -98,7 +98,25 @@ const tests = [
     name: 'Registration page can be reached',
     fn: async (driver) => {
       await driver.get(`${BASE_URL}/register`);
-      await driver.wait(until.elementLocated(By.xpath("//button[contains(text(), 'Create Account')]")), TIMEOUT);
+
+      // Wait until the registration form is visible
+      await driver.wait(
+        until.elementLocated(By.css("form")),
+        TIMEOUT
+      );
+
+      // Verify the submit button exists
+      const submitButton = await driver.wait(
+        until.elementLocated(By.css("button[type='submit']")),
+        TIMEOUT
+      );
+
+      const text = await submitButton.getText();
+
+      assert.ok(
+        text.includes("Register Account Profile"),
+        `Unexpected button text: ${text}`
+      );
     },
   },
   {
