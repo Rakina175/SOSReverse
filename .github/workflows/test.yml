@@ -25,11 +25,19 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Start preview server
+      - name: Start Vite Dev Server
         run: |
-          nohup npm run preview -- --port 5173 > preview.log 2>&1 &
-          npx wait-on http://127.0.0.1:5173 -t 30000
+         nohup npm run dev -- --host 0.0.0.0 --port 5173 > vite.log 2>&1 &
         shell: bash
+
+      - name: Wait for Vite
+        run: |
+         npx wait-on http://127.0.0.1:5173 --timeout 60000
+        shell: bash
+
+      - name: Show Vite Log
+        if: always()
+        run: cat vite.log
 
       - name: Run Selenium tests
         run: npm run selenium:test
