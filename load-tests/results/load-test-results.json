@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-07-29T14:10:02.104Z",
+  "generatedAt": "2026-07-29T14:22:28.353Z",
   "target": "http://127.0.0.1:5173/",
   "users": 100,
   "durationSec": 60,
-  "totalRequests": 42454,
+  "totalRequests": 86310,
   "totalErrors": 0,
-  "rps": 707.57,
-  "throughput": 707.57,
+  "rps": 1438.5,
+  "throughput": 1438.5,
   "responseStats": {
-    "count": 42454,
-    "avg": 141.3,
-    "min": 31,
-    "max": 531,
-    "p50": 50,
-    "p95": 380,
-    "p99": 431
+    "count": 86310,
+    "avg": 69.49,
+    "min": 26,
+    "max": 264,
+    "p50": 63,
+    "p95": 127,
+    "p99": 172
   }
 }
