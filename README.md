@@ -1,73 +1,65 @@
-# React + TypeScript + Vite
+﻿# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository is a React + TypeScript + Vite application with a built-in test automation pipeline for Selenium, Appium, and load validation.
 
-Currently, two official plugins are available:
+## Testing Instructions
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### GitHub Actions
 
-## React Compiler
+The workflow is located at `.github/workflows/test.yml`. It runs on Ubuntu and performs:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- checkout
+- install dependencies
+- build the project
+- start the Vite server and wait until `http://127.0.0.1:5173` is available
+- run Selenium tests and generate an Excel report
+- run Appium dry-run tests and generate an Excel report
+- run a baseline load test and generate an Excel report
+- upload JSON and Excel artifacts
 
-## Expanding the ESLint configuration
+### Running Selenium
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run build
+npm run selenium:test
+npm run selenium:report
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Results:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- `selenium-tests/results/selenium-test-results.json`
+- `selenium-tests/reports/selenium-test-report.xlsx`
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Running Appium
+
+```bash
+npm install
+npm run appium:test:dry
+npm run appium:report
 ```
+
+Results:
+
+- `appium-tests/results/appium-test-results.json`
+- `appium-tests/reports/appium-mobile-test-report.xlsx`
+
+### Running Load Tests
+
+```bash
+npm install
+npm run load:test:baseline
+```
+
+Results:
+
+- `load-tests/results/load-test-results.json`
+- `load-tests/reports/load-test-report.xlsx`
+
+### Downloading Excel Reports
+
+After workflow execution, artifacts will include:
+
+- `selenium-tests/reports/selenium-test-report.xlsx`
+- `appium-tests/reports/appium-mobile-test-report.xlsx`
+- `load-tests/reports/load-test-report.xlsx`

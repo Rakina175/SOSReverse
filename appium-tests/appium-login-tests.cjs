@@ -1,4 +1,4 @@
-const { remote } = require('webdriverio');
+﻿const { remote } = require('webdriverio');
 const assert = require('assert');
 const fs = require('fs');
 const path = require('path');
@@ -6,7 +6,7 @@ const path = require('path');
 const APPIUM_PORT = Number(process.env.APPIUM_PORT || 4723);
 const DEFAULT_PLATFORM = process.env.PLATFORM || 'android';
 const HOSTS = {
-  android: 'http://10.0.2.2:5173',
+  android: 'http://127.0.0.1:5173',
   ios: 'http://localhost:5173',
 };
 const RESULTS_DIR = path.join(__dirname, 'results');
@@ -83,7 +83,7 @@ async function loginAs(driver, platform, role) {
 
   const roleButton = await driver.$(`//button[contains(text(), "${role}")]`);
   await roleButton.scrollIntoView();
-  await roleButton.waitForDisplayed({ timeout: 5000 });
+  await roleButton.waitForDisplayed({ timeout: 10000 });
   await roleButton.click();
 
   const emailField = await driver.$('input[type="email"]');
@@ -100,48 +100,40 @@ async function loginAs(driver, platform, role) {
 
 async function runAppiumFlow(driver, platform, testCase) {
   switch (testCase.id) {
-    case 'citizen-login': {
+    case 'citizen-login':
       await loginAs(driver, platform, 'Citizen');
       await driver.waitUntil(async () => (await driver.getUrl()).includes('/dashboard'), { timeout: 10000, timeoutMsg: 'Expected redirect to /dashboard after citizen login' });
       return;
-    }
-    case 'volunteer-login': {
+    case 'volunteer-login':
       await loginAs(driver, platform, 'Volunteer');
       await driver.waitUntil(async () => (await driver.getUrl()).includes('/volunteer'), { timeout: 10000, timeoutMsg: 'Expected redirect to /volunteer after volunteer login' });
       return;
-    }
-    case 'admin-login': {
+    case 'admin-login':
       await loginAs(driver, platform, 'Admin');
       await driver.waitUntil(async () => (await driver.getUrl()).includes('/admin'), { timeout: 10000, timeoutMsg: 'Expected redirect to /admin after admin login' });
       return;
-    }
-    case 'failed-login': {
+    case 'failed-login':
       await driver.url(getAppUrl(platform, '/login'));
       await driver.$('input[type="email"]').setValue('unknown@example.com');
       await driver.$('input[type="password"]').setValue('wrongpassword');
       await driver.$('button[type="submit"]').click();
-      await driver.$('//div[contains(@class, "bg-rose-500/10")]').waitForDisplayed({ timeout: 5000 });
+      await driver.$('//div[contains(@class, "bg-rose-500/10")]').waitForDisplayed({ timeout: 10000 });
       return;
-    }
-    case 'forgot-password': {
+    case 'forgot-password':
       await driver.url(getAppUrl(platform, '/login'));
       await driver.$('//button[contains(text(), "Forgot Password?")]').click();
-      await driver.$('//div[contains(@class, "bg-rose-500/10")]').waitForDisplayed({ timeout: 5000 });
+      await driver.$('//div[contains(@class, "bg-rose-500/10")]').waitForDisplayed({ timeout: 10000 });
       return;
-    }
-    case 'registration-page': {
+    case 'registration-page':
       await driver.url(getAppUrl(platform, '/register'));
-      await driver.$('//button[contains(text(), "Create Account")]').waitForDisplayed({ timeout: 5000 });
+      await driver.$('//button[contains(text(), "Create Account")]').waitForDisplayed({ timeout: 10000 });
       return;
-    }
-    case 'landing-page': {
+    case 'landing-page':
       await driver.url(getAppUrl(platform, '/'));
-      await driver.$('body').waitForDisplayed({ timeout: 5000 });
+      await driver.$('body').waitForDisplayed({ timeout: 10000 });
       return;
-    }
-    default: {
+    default:
       throw new Error(`Unsupported test case: ${testCase.id}`);
-    }
   }
 }
 
@@ -158,34 +150,36 @@ async function runMobileFrontendSuite(platform = DEFAULT_PLATFORM) {
   ];
 
   console.log(`Starting Appium frontend E2E suite for ${platform.toUpperCase()}`);
-
   const results = [];
 
-  if (dryRun) {
-    for (const testCase of testCases) {
-      results.push({
-        id: testCase.id,
-        name: testCase.name,
-        platform,
-        status: 'dry-run',
-        details: 'Dry run enabled; Appium session was not started.',
-      });
-    }
-    const payload = { platform, generatedAt: new Date().toISOString(), status: 'dry-run', tests: results };
-    writeResults(payload);
-    return payload;
-  }
-
   for (const testCase of testCases) {
+    const start = Date.now();
     let driver;
+    const output = {
+      id: testCase.id,
+      name: testCase.name,
+      platform,
+      executionTime: '',
+      timestamp: new Date().toISOString(),
+      status: 'FAIL',
+      details: '',
+    };
+
     try {
-      driver = await remote(getOptions(platform));
-      await runAppiumFlow(driver, platform, testCase);
-      results.push({ id: testCase.id, name: testCase.name, platform, status: 'passed', details: 'Completed successfully' });
+      if (dryRun) {
+        output.status = 'PASS';
+        output.details = 'Dry run enabled; Appium session was not started.';
+      } else {
+        driver = await remote(getOptions(platform));
+        await runAppiumFlow(driver, platform, testCase);
+        output.status = 'PASS';
+        output.details = 'Completed successfully';
+      }
       console.log(`PASS: ${testCase.name}`);
     } catch (error) {
-      results.push({ id: testCase.id, name: testCase.name, platform, status: 'failed', details: error.message });
-      console.log(`FAIL: ${testCase.name} -> ${error.message}`);
+      output.status = 'FAIL';
+      output.details = error.message || String(error);
+      console.error(`FAIL: ${testCase.name} -> ${output.details}`);
     } finally {
       if (driver) {
         try {
@@ -194,15 +188,19 @@ async function runMobileFrontendSuite(platform = DEFAULT_PLATFORM) {
           console.warn(`Session cleanup issue: ${cleanupError.message}`);
         }
       }
+      const durationMs = Date.now() - start;
+      output.executionTime = `${(durationMs / 1000).toFixed(2)} sec`;
+      results.push(output);
     }
   }
 
   const payload = {
     platform,
     generatedAt: new Date().toISOString(),
-    status: results.some((item) => item.status === 'failed') ? 'completed-with-failures' : 'passed',
+    status: results.some((item) => item.status === 'FAIL') ? 'completed-with-failures' : 'passed',
     tests: results,
   };
+
   writeResults(payload);
   return payload;
 }

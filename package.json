@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "load:test:baseline": "node load-tests/baseline-load-test.mjs",
+    "load:test": "npm run load:test:baseline",
     "selenium:test": "node selenium-tests/tests/login-tests.cjs",
     "selenium:report": "node selenium-tests/generate-report.cjs",
     "appium:test": "node appium-tests/appium-login-tests.cjs android",
@@ -40,6 +41,7 @@
     "typescript-eslint": "^8.59.2",
     "vite": "^8.0.12",
     "webdriverio": "^9.30.0",
+    "wait-on": "^9.0.1",
     "xlsx": "^0.18.5"
   }
 }

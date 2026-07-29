@@ -4,41 +4,55 @@ on:
   push:
     branches:
       - main
-
   workflow_dispatch:
 
 jobs:
-  selenium:
+  test-suite:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: '22'
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: npm install
 
-      - name: Build Project
+      - name: Build project
         run: npm run build
 
-      - name: Start Vite Server
+      - name: Start Vite server
         run: |
-          npm run dev &
-          sleep 20
+          npm run dev -- --host 127.0.0.1 &
+          npx wait-on http://127.0.0.1:5173
 
-      - name: Run Selenium Tests
+      - name: Run Selenium tests
         run: npm run selenium:test
 
-      - name: Generate Excel Report
+      - name: Generate Selenium report
         run: npm run selenium:report
 
-      - name: Upload Report
+      - name: Run Appium dry-run tests
+        run: npm run appium:test:dry
+
+      - name: Generate Appium report
+        run: npm run appium:report
+
+      - name: Run Load baseline test
+        run: npm run load:test:baseline
+
+      - name: Upload test artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: Selenium-Report
-          path: selenium-tests/**/*.xlsx
+          name: sosreverse-test-reports
+          path: |
+            selenium-tests/reports/**/*.xlsx
+            selenium-tests/results/**/*.json
+            appium-tests/reports/**/*.xlsx
+            appium-tests/results/**/*.json
+            load-tests/reports/**/*.xlsx
+            load-tests/**/*.json
