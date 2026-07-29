@@ -1,0 +1,70 @@
+{
+  "generatedAt": "2026-07-29T12:43:23.259Z",
+  "status": "completed-with-failures",
+  "tests": [
+    {
+      "id": "TC001",
+      "name": "Citizen login and dashboard access",
+      "status": "PASS",
+      "executionTime": "4.36 sec",
+      "timestamp": "2026-07-29T12:43:00.621Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC002",
+      "name": "Volunteer login and volunteer dashboard access",
+      "status": "PASS",
+      "executionTime": "2.18 sec",
+      "timestamp": "2026-07-29T12:43:02.807Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC003",
+      "name": "Admin login and admin dashboard access",
+      "status": "PASS",
+      "executionTime": "2.51 sec",
+      "timestamp": "2026-07-29T12:43:05.313Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC004",
+      "name": "Failed login shows inline error",
+      "status": "PASS",
+      "executionTime": "2.22 sec",
+      "timestamp": "2026-07-29T12:43:07.529Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC005",
+      "name": "Forgot password validation message",
+      "status": "PASS",
+      "executionTime": "1.39 sec",
+      "timestamp": "2026-07-29T12:43:08.918Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC006",
+      "name": "Registration page can be reached",
+      "status": "FAIL",
+      "executionTime": "11.39 sec",
+      "timestamp": "2026-07-29T12:43:20.309Z",
+      "remarks": "Waiting for element to be located By(xpath, //button[contains(text(), 'Create Account')])\nWait timed out after 10080ms"
+    },
+    {
+      "id": "TC007",
+      "name": "Landing page loads",
+      "status": "PASS",
+      "executionTime": "1.53 sec",
+      "timestamp": "2026-07-29T12:43:21.844Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC008",
+      "name": "Protected route redirects unauthenticated users",
+      "status": "PASS",
+      "executionTime": "1.42 sec",
+      "timestamp": "2026-07-29T12:43:23.259Z",
+      "remarks": "Success"
+    }
+  ]
+}

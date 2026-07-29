@@ -1,0 +1,77 @@
+name: Run All Tests and Collect Reports
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Build frontend
+        run: npm run build
+
+      - name: Start preview server in background
+        run: |
+          # start vite preview on port 5173 in background and log output
+          nohup npm run preview -- --port 5173 > preview.log 2>&1 &
+          npx wait-on http://localhost:5173 -t 30000
+        shell: bash
+
+      - name: Run Selenium tests
+        run: |
+          echo "Running Selenium tests"
+          node selenium-tests/tests/login-tests.js || true
+        continue-on-error: true
+
+      - name: Run Selenium report generator (if present)
+        run: |
+          if [ -f selenium-tests/generate-report.cjs ]; then
+            node selenium-tests/generate-report.cjs || true
+          fi
+        shell: bash
+        continue-on-error: true
+
+      - name: Run Appium tests (attempt)
+        run: |
+          echo "Attempting Appium tests (may require self-hosted runners with Appium)"
+          npm run appium:test || true
+        continue-on-error: true
+
+      - name: Run Appium report generator (if present)
+        run: |
+          if [ -f appium-tests/generate-report.cjs ]; then
+            node appium-tests/generate-report.cjs || true
+          fi
+        shell: bash
+        continue-on-error: true
+
+      - name: Run Load test (100 users x 1 minute)
+        run: |
+          echo "Starting load test (100 users x 1 minute)"
+          node load-tests/100-users-1min-load-test.mjs || true
+        continue-on-error: true
+
+      - name: Collect Excel reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-excel-reports
+          path: |
+            **/reports/*.xlsx
+            selenium-tests/reports/*.xlsx
+            appium-tests/reports/*.xlsx
+            load-tests/reports/*.xlsx

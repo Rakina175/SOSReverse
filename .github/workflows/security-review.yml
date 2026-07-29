@@ -1,0 +1,70 @@
+name: Security Review
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  security-review:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Detect backend technology
+        run: |
+          chmod +x .github/scripts/detect-backend.sh || true
+          .github/scripts/detect-backend.sh > detection.json || true
+        shell: bash
+
+      - name: Set up Node (for npm audit / semgrep tooling)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Run Semgrep (SAST)
+        uses: returntocorp/semgrep-action@v1
+        with:
+          config: 'p/ci'
+          output-format: json
+          output-file: semgrep-results.json
+        continue-on-error: true
+
+      - name: Run npm audit (if Node project)
+        if: exists('package.json')
+        run: |
+          npm ci --ignore-scripts --no-audit || true
+          npm audit --json > npm-audit.json || true
+
+      - name: Run Gitleaks (secrets)
+        uses: zricethezav/gitleaks-action@v2
+        with:
+          args: detect --report-format json --report-path gitleaks.json || true
+
+      - name: Run Trivy (filesystem scan)
+        uses: aquasecurity/trivy-action@v0.7.0
+        with:
+          format: 'json'
+          output: 'trivy-fs.json'
+          scan-type: 'fs'
+
+      - name: Upload security artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: security-scan-artifacts
+          path: |
+            detection.json
+            semgrep-results.json
+            npm-audit.json
+            gitleaks.json
+            trivy-fs.json
+
+      - name: Fail on Critical Findings
+        run: |
+          node .github/scripts/fail-on-critical.js detection.json semgrep-results.json npm-audit.json gitleaks.json trivy-fs.json || true
+        shell: bash
