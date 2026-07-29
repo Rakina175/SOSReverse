@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-07-29T12:43:57.340Z",
+  "generatedAt": "2026-07-29T13:05:24.644Z",
   "status": "PASS",
   "targetUrl": "http://127.0.0.1:5173/",
   "statusCode": 200,
-  "durationMs": 47,
+  "durationMs": 43,
   "remarks": "Baseline request succeeded"
 }
