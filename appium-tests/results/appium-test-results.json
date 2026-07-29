@@ -1,0 +1,56 @@
+{
+  "platform": "android",
+  "generatedAt": "2026-07-29T04:59:23.090Z",
+  "status": "dry-run",
+  "tests": [
+    {
+      "id": "citizen-login",
+      "name": "Citizen login and dashboard access",
+      "platform": "android",
+      "status": "dry-run",
+      "details": "Dry run enabled; Appium session was not started."
+    },
+    {
+      "id": "volunteer-login",
+      "name": "Volunteer login and volunteer dashboard access",
+      "platform": "android",
+      "status": "dry-run",
+      "details": "Dry run enabled; Appium session was not started."
+    },
+    {
+      "id": "admin-login",
+      "name": "Admin login and admin dashboard access",
+      "platform": "android",
+      "status": "dry-run",
+      "details": "Dry run enabled; Appium session was not started."
+    },
+    {
+      "id": "failed-login",
+      "name": "Failed login shows inline error",
+      "platform": "android",
+      "status": "dry-run",
+      "details": "Dry run enabled; Appium session was not started."
+    },
+    {
+      "id": "forgot-password",
+      "name": "Forgot password validation message",
+      "platform": "android",
+      "status": "dry-run",
+      "details": "Dry run enabled; Appium session was not started."
+    },
+    {
+      "id": "registration-page",
+      "name": "Registration page can be reached",
+      "platform": "android",
+      "status": "dry-run",
+      "details": "Dry run enabled; Appium session was not started."
+    },
+    {
+      "id": "landing-page",
+      "name": "Landing page loads",
+      "platform": "android",
+      "status": "dry-run",
+      "details": "Dry run enabled; Appium session was not started."
+    }
+  ]
+}
