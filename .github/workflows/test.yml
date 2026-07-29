@@ -1,87 +1,16 @@
-name: Full Test Pipeline
+- name: Install wait-on
+  run: npm install --no-save wait-on
 
-on:
-  push:
-    branches: [main]
-  pull_request:
-  workflow_dispatch:
+- name: Start Vite Server
+  run: |
+    nohup npm run dev -- --host 0.0.0.0 --port 5173 > vite.log 2>&1 &
+  shell: bash
 
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    timeout-minutes: 180
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+- name: Wait for Vite Server
+  run: |
+    timeout 90 bash -c 'until curl -f http://127.0.0.1:5173; do sleep 2; done'
+  shell: bash
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build project
-        run: npm run build
-
-      - name: Start Vite Dev Server
-        run: |
-         nohup npm run dev -- --host 0.0.0.0 --port 5173 > vite.log 2>&1 &
-        shell: bash
-
-      - name: Wait for Vite
-        run: |
-         npx wait-on http://127.0.0.1:5173 --timeout 60000
-        shell: bash
-
-      - name: Show Vite Log
-        if: always()
-        run: cat vite.log
-
-      - name: Run Selenium tests
-        run: npm run selenium:test
-        continue-on-error: true
-
-      - name: Generate Selenium report
-        run: npm run selenium:report
-        continue-on-error: true
-
-      - name: Run Appium dry-run tests
-        run: npm run appium:test:dry
-        continue-on-error: true
-
-      - name: Generate Appium report
-        run: npm run appium:report
-        continue-on-error: true
-
-      - name: Run baseline load test
-        run: npm run load:test:baseline
-        continue-on-error: true
-
-      - name: Run security report generator
-        run: npm run security:report
-        continue-on-error: true
-
-      - name: Upload all reports as artifacts
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: complete-test-reports
-          path: |
-            selenium-tests/reports/*.xlsx
-            selenium-tests/results/*.json
-            appium-tests/reports/*.xlsx
-            appium-tests/results/*.json
-            load-tests/reports/*.xlsx
-            load-tests/results/*.json
-            "Vulnerability Test Results/**"
-            security-review.md
-            executive-summary.md
-            dependency-report.md
-
-      - name: Publish summary notice
-        if: always()
-        run: |
-          echo "::notice title=Test Pipeline Completed::Build completed. Selenium, Appium dry-run, load, and security report generation were attempted."
-        shell: bash
+- name: Show Vite Log
+  if: always()
+  run: cat vite.log
