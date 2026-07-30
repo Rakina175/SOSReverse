@@ -111,7 +111,7 @@ export const Navigation: React.FC = () => {
               : user.role === 'volunteer' ? volunteerItems 
               : citizenItems;
 
-  const NavContent = () => (
+  const renderNavContent = () => (
     <div className="flex flex-col h-full p-4 justify-between">
       {/* Brand logo header */}
       <div>
@@ -214,7 +214,7 @@ export const Navigation: React.FC = () => {
     <>
       {/* Desktop view navigation (sidebar) */}
       <aside className="hidden lg:flex flex-col w-64 h-screen fixed top-0 left-0 glass-panel border-r border-slate-800/80 z-20">
-        <NavContent />
+        {renderNavContent()}
       </aside>
 
       {/* Mobile viewport header bar */}
@@ -239,7 +239,7 @@ export const Navigation: React.FC = () => {
         <div className="lg:hidden fixed inset-0 z-40 flex">
           <div className="fixed inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setIsOpen(false)}></div>
           <aside className="relative flex flex-col w-64 h-full bg-brand-dark/95 border-r border-slate-800 z-50 animate-slide-in">
-            <NavContent />
+            {renderNavContent()}
           </aside>
         </div>
       )}

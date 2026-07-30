@@ -458,21 +458,12 @@ export const SOSProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       // Distance checking
       const dist = calculateDistance(respLat, respLon, victimLat, victimLon);
       
-      let nextStatus: EmergencyStatus = emergency.status;
-      let nextLat = respLat;
-      let nextLon = respLon;
+      const nextStatus: EmergencyStatus = dist <= 0.05 ? 'Arrived' : 'En Route';
+      const nextLat = dist <= 0.05 ? victimLat : respLat + (victimLat - respLat) * 0.22;
+      const nextLon = dist <= 0.05 ? victimLon : respLon + (victimLon - respLon) * 0.22;
 
       if (dist <= 0.05) {
-        // Less than 50 meters, we have arrived
-        nextStatus = 'Arrived';
-        nextLat = victimLat;
-        nextLon = victimLon;
         stopTrackingSimulation();
-      } else {
-        // Interpolate: step 25% closer to victim coordinates each loop iteration
-        nextStatus = 'En Route';
-        nextLat = respLat + (victimLat - respLat) * 0.22;
-        nextLon = respLon + (victimLon - respLon) * 0.22;
       }
 
       // Update in db

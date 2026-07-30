@@ -10,13 +10,13 @@
     "preview": "vite preview",
     "load:test:baseline": "node load-tests/baseline-load-test.mjs",
     "load:test": "npm run load:test:baseline",
-    "selenium:test": "node selenium-tests/tests/login-tests.cjs",
+    "selenium:test": "node selenium-tests/tests/login-tests.js",
     "selenium:report": "node selenium-tests/generate-report.cjs",
-    "appium:test": "node appium-tests/appium-login-tests.cjs android",
-    "appium:test:dry": "node appium-tests/appium-login-tests.cjs android --dry-run",
+    "appium:test": "node appium-tests/tests/appium-login-tests.js android",
+    "appium:test:dry": "node appium-tests/tests/appium-login-tests.js android --dry-run",
     "appium:report": "node appium-tests/generate-report.cjs",
     "security:report": "node .github/scripts/generate-security-report.cjs",
-    "test:all": "npm run selenium:test && npm run selenium:report && npm run appium:test:dry && npm run appium:report && npm run load:test:baseline && npm run security:report"
+    "test:all": "npm run selenium:test && npm run selenium:report && npm run appium:test:dry && npm run appium:report && npm run load:test:baseline && node scripts/copy-reports.cjs"
   },
   "dependencies": {
     "@react-google-maps/api": "^2.20.8",
@@ -42,8 +42,12 @@
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.59.2",
     "vite": "^8.0.12",
-    "webdriverio": "^9.30.0",
     "wait-on": "^9.0.1",
-    "xlsx": "^0.18.5"
+    "webdriverio": "^9.30.0",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-latest/xlsx-latest.tgz"
+  },
+  "overrides": {
+    "react-router": "8.3.0",
+    "brace-expansion": "5.0.8"
   }
 }

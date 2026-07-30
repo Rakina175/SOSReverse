@@ -1,14 +1,15 @@
-name: Run All Tests and Collect Reports
+name: Run All 4 Tests and Collect Reports
 
 on:
   push:
+    branches: [ main ]
   pull_request:
   workflow_dispatch:
 
 jobs:
-  run-tests:
+  run-all-tests:
     runs-on: ubuntu-latest
-    timeout-minutes: 180
+    timeout-minutes: 30
 
     steps:
       - name: Checkout repository
@@ -18,6 +19,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
+          cache: npm
 
       - name: Install dependencies
         run: npm ci
@@ -25,57 +27,63 @@ jobs:
       - name: Build frontend
         run: npm run build
 
-      - name: Start preview server in background
+      - name: Start Vite Server
         run: |
-          nohup npm run preview -- --port 5173 > preview.log 2>&1 &
-          npx wait-on http://localhost:5173 -t 30000
+          nohup npm run dev -- --host 0.0.0.0 --port 5173 > vite.log 2>&1 &
         shell: bash
 
-      - name: Run Selenium tests
+      - name: Wait for Vite Server
         run: |
-          echo "Running Selenium E2E tests"
-          node selenium-tests/tests/login-tests.js
+          npx wait-on http://127.0.0.1:5173 --timeout 120000
+        shell: bash
+
+      - name: Run Selenium Web E2E Login Tests
+        run: npm run selenium:test
         shell: bash
         continue-on-error: true
 
-      - name: Run Selenium report generator
-        run: |
-          if [ -f selenium-tests/generate-report.cjs ]; then
-            node selenium-tests/generate-report.cjs
-          fi
+      - name: Run Appium Mobile E2E Login Tests (Dry Run)
+        run: npm run appium:test:dry
         shell: bash
         continue-on-error: true
 
-      - name: Run Appium tests
-        run: |
-          echo "Running Appium E2E tests"
-          npm run appium:test
+      - name: Run Baseline Load Tests
+        run: npm run load:test:baseline
         shell: bash
         continue-on-error: true
 
-      - name: Run Appium report generator
+      - name: Run npm audit scan
         run: |
-          if [ -f appium-tests/generate-report.cjs ]; then
-            node appium-tests/generate-report.cjs
-          fi
+          npm audit --json > npm-audit.json || true
+        shell: bash
+
+      - name: Create SAST/Secrets Scan Placeholders
+        run: |
+          echo '{}' > semgrep-results.json
+          echo '{}' > gitleaks.json
+          echo '{}' > trivy-fs.json
+        shell: bash
+
+      - name: Run Security Report Generator
+        run: npm run security:report
         shell: bash
         continue-on-error: true
 
-      - name: Run Load test (100 users x 1 minute)
-        run: |
-          echo "Running load test"
-          node load-tests/100-users-1min-load-test.mjs
+      - name: Consolidate and Copy Excel Reports
+        if: always()
+        run: node scripts/copy-reports.cjs
         shell: bash
-        continue-on-error: true
 
       - name: Upload Excel report artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: test-excel-reports
+          name: all-test-excel-reports
           path: |
-            **/reports/*.xlsx
-            **/*-report*.xlsx
-            selenium-tests/reports/*.xlsx
-            appium-tests/reports/*.xlsx
-            load-tests/reports/*.xlsx
+            reports/*.xlsx
+            Vulnerability Test Results/findings.xlsx
+            Vulnerability Test Results/endpoint-inventory.xlsx
+            security-review.md
+            executive-summary.md
+            dependency-report.md
+

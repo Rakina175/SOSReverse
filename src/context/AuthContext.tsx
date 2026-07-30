@@ -139,7 +139,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         { email: 'mock_volunteer@sos.com', password: 'password123', name: 'Officer John (Volunteer)', phone: '555-9111', role: 'volunteer' },
         { email: 'mock_admin@sos.com', password: 'password123', name: 'Super Admin', phone: '555-0000', role: 'admin' }
       ];
-      let updatedUsers = [...mockUsers];
+      const updatedUsers = [...mockUsers];
       let didUpdate = false;
       for (const du of defaultUsers) {
         if (!mockUsers.some((u: any) => u.email === du.email)) {

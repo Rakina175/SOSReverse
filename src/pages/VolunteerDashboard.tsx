@@ -19,30 +19,10 @@ export const VolunteerDashboard: React.FC = () => {
   const [declinedIds, setDeclinedIds] = useState<string[]>([]);
   const [activeTab, setActiveTab] = useState<'radar' | 'mission'>('radar');
 
-  if (!user) return null;
-
-  // Toggle availability
-  const handleToggleAvailable = async () => {
-    try {
-      await updateProfile({ isAvailable: !user.isAvailable });
-    } catch (err) {
-      alert('Failed to update availability.');
-    }
-  };
-
-  // Change search range radius
-  const handleRangeChange = async (radius: 1 | 3 | 5 | 10) => {
-    try {
-      await updateProfile({ rangeRadius: radius });
-    } catch (err) {
-      alert('Failed to update search range.');
-    }
-  };
-
   // Identify active mission for current volunteer
-  const activeMission = emergencies.find(
+  const activeMission = user ? emergencies.find(
     (e) => e.responderId === user.uid && e.status !== 'Resolved'
-  );
+  ) : undefined;
 
   // Auto-switch tabs to active mission if one exists
   useEffect(() => {
@@ -52,6 +32,26 @@ export const VolunteerDashboard: React.FC = () => {
       setActiveTab('radar');
     }
   }, [activeMission]);
+
+  // Toggle availability
+  const handleToggleAvailable = async () => {
+    if (!user) return;
+    try {
+      await updateProfile({ isAvailable: !user.isAvailable });
+    } catch (err) {
+      alert('Failed to update availability.');
+    }
+  };
+
+  // Change search range radius
+  const handleRangeChange = async (radius: 1 | 3 | 5 | 10) => {
+    if (!user) return;
+    try {
+      await updateProfile({ rangeRadius: radius });
+    } catch (err) {
+      alert('Failed to update search range.');
+    }
+  };
 
   // Decline incident locally
   const handleDecline = (id: string) => {
@@ -87,14 +87,16 @@ export const VolunteerDashboard: React.FC = () => {
   };
 
   // Compute pending emergencies within range
-  const pendingInRange = emergencies.filter((e) => {
+  const pendingInRange = user ? emergencies.filter((e) => {
     if (e.status !== 'Pending') return false;
     if (declinedIds.includes(e.id)) return false;
 
     // Calculate distance
     const dist = getDistanceKm(user.latitude, user.longitude, e.latitude, e.longitude);
     return dist <= user.rangeRadius;
-  });
+  }) : [];
+
+  if (!user) return null;
 
   return (
     <div className="flex flex-col gap-6">

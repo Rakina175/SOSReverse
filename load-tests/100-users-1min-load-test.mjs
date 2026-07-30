@@ -85,6 +85,7 @@ async function runLoad({users=100, durationSec=60, target=process.env.LOAD_BASE_
 
   // write excel
   const XLSX = await import('xlsx');
+  XLSX.set_fs(fs);
   const summary = [
     ['Metric','Value'],
     ['Target', result.target],

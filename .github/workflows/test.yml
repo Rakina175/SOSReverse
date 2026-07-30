@@ -25,9 +25,6 @@ jobs:
 
       - name: Build
         run: npm run build     
-        
-      - name: Install wait-on
-        run: npm install --no-save wait-on
 
       - name: Start Vite Server
         run: |
@@ -42,20 +39,17 @@ jobs:
       - name: Show Vite Log
         if: always()
         run: cat vite.log      
-        
+
+      - name: Run All Tests and Reports
+        run: npm run test:all
+        shell: bash
+
       - name: Upload Reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
            name: reports
            path: |
-              selenium-tests/reports/**
-              selenium-tests/results/**
-              appium-tests/reports/**
-              appium-tests/results/**
-              load-tests/reports/**
-              load-tests/results/**
-              Vulnerability Test Results/**
-              security-review.md
+              reports/**
               executive-summary.md
               dependency-report.md

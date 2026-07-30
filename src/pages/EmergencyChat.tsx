@@ -10,12 +10,10 @@ export const EmergencyChat: React.FC = () => {
   const [text, setText] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  if (!user) return null;
-
   // Identify active emergency we are talking in
-  const activeSOS = activeEmergency || emergencies.find(
+  const activeSOS = user ? (activeEmergency || emergencies.find(
     (e) => (e.responderId === user.uid || e.userId === user.uid) && e.status !== 'Resolved'
-  );
+  )) : undefined;
 
   // Auto-scroll chat area
   const scrollToBottom = () => {
@@ -37,6 +35,8 @@ export const EmergencyChat: React.FC = () => {
       console.error('Failed to send message:', err);
     }
   };
+
+  if (!user) return null;
 
   // Quick action shortcut messages based on role
   const citizenShortcuts = [

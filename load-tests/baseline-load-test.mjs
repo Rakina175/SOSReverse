@@ -104,6 +104,7 @@ async function run() {
   console.log('Saved load test JSON results to', RESULTS_PATH);
 
   const XLSX = await import('xlsx');
+  XLSX.set_fs(fs);
   const summary = [
     ['Metric', 'Value'],
     ['Target URL', payload.target],
