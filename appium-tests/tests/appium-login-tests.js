@@ -29,7 +29,7 @@ const __dirname = path.dirname(__filename);
 
 const PLATFORM = process.argv[2] || 'android';
 const dryRunArg = process.argv.includes('--dry-run');
-const REPORT_PATH = path.join(__dirname, '..', 'reports', 'appium-mobile-test-report-300.xlsx');
+const REPORT_PATH = path.join(__dirname, '..', 'reports', 'appium-mobile-test-report-400.xlsx');
 
 const APPIUM_PORT = Number(process.env.APPIUM_PORT || 4723);
 
@@ -48,7 +48,7 @@ function mask(s, max = 15) {
   return s.slice(0, max) + '...';
 }
 
-function generateTestCases(total = 310) {
+function generateTestCases(total = 400) {
   const cases = [];
 
   // Valid credentials
@@ -121,7 +121,7 @@ function generateTestCases(total = 310) {
 async function run() {
   console.log(`Starting Appium Mobile E2E Test Suite for ${PLATFORM.toUpperCase()}`);
   
-  const testCases = generateTestCases(310);
+  const testCases = generateTestCases(400);
   console.log(`Generated ${testCases.length} mobile test cases.`);
 
   const results = [];
@@ -277,6 +277,27 @@ async function run() {
   const REPORT_PATH_ALT = path.join(reportsDir, 'appium-mobile-test-report.xlsx');
   xlsx.writeFile(wb, REPORT_PATH_ALT);
   console.log(`\nSuccess: Generated Appium Excel reports at ${REPORT_PATH} and ${REPORT_PATH_ALT}`);
+
+  // Write JSON Results for copy-reports / generate-report
+  const APPIUM_RESULTS_PATH = path.join(__dirname, '..', 'results', 'appium-test-results.json');
+  const appiumPayload = {
+    generatedAt: new Date().toISOString(),
+    status: failedCount === 0 ? 'passed' : 'completed-with-failures',
+    tests: results.map(r => ({
+      id: r['Test ID'],
+      name: r['Description'],
+      status: r['Status'],
+      executionTime: `${(r['Duration (ms)'] / 1000).toFixed(2)} sec`,
+      timestamp: r['Timestamp'],
+      details: r['Error Details'] || 'Success'
+    }))
+  };
+  const appiumResultsDir = path.dirname(APPIUM_RESULTS_PATH);
+  if (!fs.existsSync(appiumResultsDir)) {
+    fs.mkdirSync(appiumResultsDir, { recursive: true });
+  }
+  fs.writeFileSync(APPIUM_RESULTS_PATH, JSON.stringify(appiumPayload, null, 2), 'utf8');
+  console.log(`Saved Appium JSON results to ${APPIUM_RESULTS_PATH}`);
 }
 
 run().catch((e) => {

@@ -16,7 +16,7 @@
     "appium:test:dry": "node appium-tests/tests/appium-login-tests.js android --dry-run",
     "appium:report": "node appium-tests/generate-report.cjs",
     "security:report": "node .github/scripts/generate-security-report.cjs",
-    "test:all": "npm run selenium:test && npm run selenium:report && npm run appium:test:dry && npm run appium:report && npm run load:test:baseline && node scripts/copy-reports.cjs"
+    "test:all": "npm run selenium:test && npm run selenium:report && npm run appium:test:dry && npm run appium:report && npm run load:test:baseline && npm run security:report && node scripts/copy-reports.cjs"
   },
   "dependencies": {
     "@capacitor/core": "^8.4.2",

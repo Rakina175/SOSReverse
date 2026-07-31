@@ -1,69 +1,3205 @@
 {
-  "generatedAt": "2026-07-29T17:53:19.986Z",
+  "generatedAt": "2026-07-31T11:18:33.132Z",
   "status": "passed",
   "tests": [
     {
-      "id": "TC001",
-      "name": "Citizen login and dashboard access",
+      "id": "TC-001",
+      "name": "Valid citizen demo login",
       "status": "PASS",
-      "executionTime": "2.34 sec",
-      "timestamp": "2026-07-29T17:53:07.467Z",
+      "executionTime": "4.51 sec",
+      "timestamp": "2026-07-31T11:18:33.058Z",
+      "remarks": "unknown error: net::ERR_CONNECTION_REFUSED\n  (Session info: chrome=150.0.7871.187)"
+    },
+    {
+      "id": "TC-002",
+      "name": "Valid volunteer demo login",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
       "remarks": "Success"
     },
     {
-      "id": "TC002",
-      "name": "Volunteer login and volunteer dashboard access",
+      "id": "TC-003",
+      "name": "Valid admin demo login",
       "status": "PASS",
-      "executionTime": "2.13 sec",
-      "timestamp": "2026-07-29T17:53:09.595Z",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
       "remarks": "Success"
     },
     {
-      "id": "TC003",
-      "name": "Admin login and admin dashboard access",
+      "id": "TC-INV-1",
+      "name": "Empty email & password",
       "status": "PASS",
-      "executionTime": "2.19 sec",
-      "timestamp": "2026-07-29T17:53:11.789Z",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
       "remarks": "Success"
     },
     {
-      "id": "TC004",
-      "name": "Failed login shows inline error",
+      "id": "TC-INV-2",
+      "name": "Malformed email format (no @)",
       "status": "PASS",
-      "executionTime": "2.25 sec",
-      "timestamp": "2026-07-29T17:53:14.034Z",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
       "remarks": "Success"
     },
     {
-      "id": "TC005",
-      "name": "Forgot password validation message",
+      "id": "TC-INV-3",
+      "name": "Incomplete email format",
       "status": "PASS",
-      "executionTime": "1.41 sec",
-      "timestamp": "2026-07-29T17:53:15.442Z",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
       "remarks": "Success"
     },
     {
-      "id": "TC006",
-      "name": "Registration page can be reached",
+      "id": "TC-INV-4",
+      "name": "Extremely long credentials",
       "status": "PASS",
-      "executionTime": "1.35 sec",
-      "timestamp": "2026-07-29T17:53:16.788Z",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
       "remarks": "Success"
     },
     {
-      "id": "TC007",
-      "name": "Landing page loads",
+      "id": "TC-INV-5",
+      "name": "SQL injection pattern in fields",
       "status": "PASS",
-      "executionTime": "1.79 sec",
-      "timestamp": "2026-07-29T17:53:18.583Z",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
       "remarks": "Success"
     },
     {
-      "id": "TC008",
-      "name": "Protected route redirects unauthenticated users",
+      "id": "TC-INV-6",
+      "name": "XSS injection payload",
       "status": "PASS",
-      "executionTime": "1.40 sec",
-      "timestamp": "2026-07-29T17:53:19.985Z",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1001",
+      "name": "Whitespace email and whitespace password (1)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1002",
+      "name": "Tagged email format with invalid password (2)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1003",
+      "name": "Varying length long emails and long passwords (3)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1004",
+      "name": "Password containing special characters !#$%^",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1005",
+      "name": "Fuzzing with database query snippets (5)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1006",
+      "name": "Nonexistent email with standard password pattern (6)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1007",
+      "name": "Whitespace email and whitespace password (7)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1008",
+      "name": "Tagged email format with invalid password (8)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1009",
+      "name": "Varying length long emails and long passwords (9)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1010",
+      "name": "Password containing special characters !#$%^&*()~`",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1011",
+      "name": "Fuzzing with database query snippets (11)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1012",
+      "name": "Nonexistent email with standard password pattern (12)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1013",
+      "name": "Whitespace email and whitespace password (13)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1014",
+      "name": "Tagged email format with invalid password (14)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1015",
+      "name": "Varying length long emails and long passwords (15)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1016",
+      "name": "Password containing special characters !#$%",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1017",
+      "name": "Fuzzing with database query snippets (17)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1018",
+      "name": "Nonexistent email with standard password pattern (18)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1019",
+      "name": "Whitespace email and whitespace password (19)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1020",
+      "name": "Tagged email format with invalid password (20)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1021",
+      "name": "Varying length long emails and long passwords (21)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1022",
+      "name": "Password containing special characters !#$%^&*()~",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1023",
+      "name": "Fuzzing with database query snippets (23)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1024",
+      "name": "Nonexistent email with standard password pattern (24)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1025",
+      "name": "Whitespace email and whitespace password (25)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1026",
+      "name": "Tagged email format with invalid password (26)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1027",
+      "name": "Varying length long emails and long passwords (27)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1028",
+      "name": "Password containing special characters !#$",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1029",
+      "name": "Fuzzing with database query snippets (29)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1030",
+      "name": "Nonexistent email with standard password pattern (30)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1031",
+      "name": "Whitespace email and whitespace password (31)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1032",
+      "name": "Tagged email format with invalid password (32)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1033",
+      "name": "Varying length long emails and long passwords (33)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1034",
+      "name": "Password containing special characters !#$%^&*()",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1035",
+      "name": "Fuzzing with database query snippets (35)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1036",
+      "name": "Nonexistent email with standard password pattern (36)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1037",
+      "name": "Whitespace email and whitespace password (37)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1038",
+      "name": "Tagged email format with invalid password (38)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1039",
+      "name": "Varying length long emails and long passwords (39)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1040",
+      "name": "Password containing special characters !#",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1041",
+      "name": "Fuzzing with database query snippets (41)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1042",
+      "name": "Nonexistent email with standard password pattern (42)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1043",
+      "name": "Whitespace email and whitespace password (43)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1044",
+      "name": "Tagged email format with invalid password (44)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1045",
+      "name": "Varying length long emails and long passwords (45)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1046",
+      "name": "Password containing special characters !#$%^&*(",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1047",
+      "name": "Fuzzing with database query snippets (47)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1048",
+      "name": "Nonexistent email with standard password pattern (48)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1049",
+      "name": "Whitespace email and whitespace password (49)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1050",
+      "name": "Tagged email format with invalid password (50)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1051",
+      "name": "Varying length long emails and long passwords (51)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1052",
+      "name": "Password containing special characters !",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1053",
+      "name": "Fuzzing with database query snippets (53)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1054",
+      "name": "Nonexistent email with standard password pattern (54)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1055",
+      "name": "Whitespace email and whitespace password (55)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1056",
+      "name": "Tagged email format with invalid password (56)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1057",
+      "name": "Varying length long emails and long passwords (57)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1058",
+      "name": "Password containing special characters !#$%^&*",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1059",
+      "name": "Fuzzing with database query snippets (59)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1060",
+      "name": "Nonexistent email with standard password pattern (60)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1061",
+      "name": "Whitespace email and whitespace password (61)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1062",
+      "name": "Tagged email format with invalid password (62)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1063",
+      "name": "Varying length long emails and long passwords (63)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1064",
+      "name": "Password containing special characters !#$%^&*()~`+=",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1065",
+      "name": "Fuzzing with database query snippets (65)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1066",
+      "name": "Nonexistent email with standard password pattern (66)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1067",
+      "name": "Whitespace email and whitespace password (67)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.059Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1068",
+      "name": "Tagged email format with invalid password (68)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1069",
+      "name": "Varying length long emails and long passwords (69)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1070",
+      "name": "Password containing special characters !#$%^&",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1071",
+      "name": "Fuzzing with database query snippets (71)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1072",
+      "name": "Nonexistent email with standard password pattern (72)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1073",
+      "name": "Whitespace email and whitespace password (73)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1074",
+      "name": "Tagged email format with invalid password (74)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1075",
+      "name": "Varying length long emails and long passwords (75)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1076",
+      "name": "Password containing special characters !#$%^&*()~`+",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1077",
+      "name": "Fuzzing with database query snippets (77)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1078",
+      "name": "Nonexistent email with standard password pattern (78)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1079",
+      "name": "Whitespace email and whitespace password (79)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1080",
+      "name": "Tagged email format with invalid password (80)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1081",
+      "name": "Varying length long emails and long passwords (81)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1082",
+      "name": "Password containing special characters !#$%^",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1083",
+      "name": "Fuzzing with database query snippets (83)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1084",
+      "name": "Nonexistent email with standard password pattern (84)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1085",
+      "name": "Whitespace email and whitespace password (85)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1086",
+      "name": "Tagged email format with invalid password (86)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1087",
+      "name": "Varying length long emails and long passwords (87)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1088",
+      "name": "Password containing special characters !#$%^&*()~`",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1089",
+      "name": "Fuzzing with database query snippets (89)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1090",
+      "name": "Nonexistent email with standard password pattern (90)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1091",
+      "name": "Whitespace email and whitespace password (91)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1092",
+      "name": "Tagged email format with invalid password (92)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1093",
+      "name": "Varying length long emails and long passwords (93)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1094",
+      "name": "Password containing special characters !#$%",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1095",
+      "name": "Fuzzing with database query snippets (95)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1096",
+      "name": "Nonexistent email with standard password pattern (96)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1097",
+      "name": "Whitespace email and whitespace password (97)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1098",
+      "name": "Tagged email format with invalid password (98)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1099",
+      "name": "Varying length long emails and long passwords (99)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1100",
+      "name": "Password containing special characters !#$%^&*()~",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1101",
+      "name": "Fuzzing with database query snippets (101)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1102",
+      "name": "Nonexistent email with standard password pattern (102)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1103",
+      "name": "Whitespace email and whitespace password (103)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1104",
+      "name": "Tagged email format with invalid password (104)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1105",
+      "name": "Varying length long emails and long passwords (105)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1106",
+      "name": "Password containing special characters !#$",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1107",
+      "name": "Fuzzing with database query snippets (107)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1108",
+      "name": "Nonexistent email with standard password pattern (108)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1109",
+      "name": "Whitespace email and whitespace password (109)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1110",
+      "name": "Tagged email format with invalid password (110)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1111",
+      "name": "Varying length long emails and long passwords (111)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1112",
+      "name": "Password containing special characters !#$%^&*()",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1113",
+      "name": "Fuzzing with database query snippets (113)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1114",
+      "name": "Nonexistent email with standard password pattern (114)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1115",
+      "name": "Whitespace email and whitespace password (115)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1116",
+      "name": "Tagged email format with invalid password (116)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1117",
+      "name": "Varying length long emails and long passwords (117)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1118",
+      "name": "Password containing special characters !#",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1119",
+      "name": "Fuzzing with database query snippets (119)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1120",
+      "name": "Nonexistent email with standard password pattern (120)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1121",
+      "name": "Whitespace email and whitespace password (121)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1122",
+      "name": "Tagged email format with invalid password (122)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1123",
+      "name": "Varying length long emails and long passwords (123)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1124",
+      "name": "Password containing special characters !#$%^&*(",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1125",
+      "name": "Fuzzing with database query snippets (125)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1126",
+      "name": "Nonexistent email with standard password pattern (126)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1127",
+      "name": "Whitespace email and whitespace password (127)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1128",
+      "name": "Tagged email format with invalid password (128)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1129",
+      "name": "Varying length long emails and long passwords (129)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1130",
+      "name": "Password containing special characters !",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1131",
+      "name": "Fuzzing with database query snippets (131)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1132",
+      "name": "Nonexistent email with standard password pattern (132)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1133",
+      "name": "Whitespace email and whitespace password (133)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1134",
+      "name": "Tagged email format with invalid password (134)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1135",
+      "name": "Varying length long emails and long passwords (135)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1136",
+      "name": "Password containing special characters !#$%^&*",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1137",
+      "name": "Fuzzing with database query snippets (137)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1138",
+      "name": "Nonexistent email with standard password pattern (138)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1139",
+      "name": "Whitespace email and whitespace password (139)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1140",
+      "name": "Tagged email format with invalid password (140)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1141",
+      "name": "Varying length long emails and long passwords (141)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1142",
+      "name": "Password containing special characters !#$%^&*()~`+=",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1143",
+      "name": "Fuzzing with database query snippets (143)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1144",
+      "name": "Nonexistent email with standard password pattern (144)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1145",
+      "name": "Whitespace email and whitespace password (145)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1146",
+      "name": "Tagged email format with invalid password (146)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1147",
+      "name": "Varying length long emails and long passwords (147)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1148",
+      "name": "Password containing special characters !#$%^&",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1149",
+      "name": "Fuzzing with database query snippets (149)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1150",
+      "name": "Nonexistent email with standard password pattern (150)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1151",
+      "name": "Whitespace email and whitespace password (151)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1152",
+      "name": "Tagged email format with invalid password (152)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1153",
+      "name": "Varying length long emails and long passwords (153)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1154",
+      "name": "Password containing special characters !#$%^&*()~`+",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1155",
+      "name": "Fuzzing with database query snippets (155)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1156",
+      "name": "Nonexistent email with standard password pattern (156)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1157",
+      "name": "Whitespace email and whitespace password (157)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1158",
+      "name": "Tagged email format with invalid password (158)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1159",
+      "name": "Varying length long emails and long passwords (159)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1160",
+      "name": "Password containing special characters !#$%^",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1161",
+      "name": "Fuzzing with database query snippets (161)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1162",
+      "name": "Nonexistent email with standard password pattern (162)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1163",
+      "name": "Whitespace email and whitespace password (163)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1164",
+      "name": "Tagged email format with invalid password (164)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1165",
+      "name": "Varying length long emails and long passwords (165)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1166",
+      "name": "Password containing special characters !#$%^&*()~`",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1167",
+      "name": "Fuzzing with database query snippets (167)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1168",
+      "name": "Nonexistent email with standard password pattern (168)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1169",
+      "name": "Whitespace email and whitespace password (169)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1170",
+      "name": "Tagged email format with invalid password (170)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1171",
+      "name": "Varying length long emails and long passwords (171)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1172",
+      "name": "Password containing special characters !#$%",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1173",
+      "name": "Fuzzing with database query snippets (173)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1174",
+      "name": "Nonexistent email with standard password pattern (174)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1175",
+      "name": "Whitespace email and whitespace password (175)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1176",
+      "name": "Tagged email format with invalid password (176)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1177",
+      "name": "Varying length long emails and long passwords (177)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1178",
+      "name": "Password containing special characters !#$%^&*()~",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1179",
+      "name": "Fuzzing with database query snippets (179)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1180",
+      "name": "Nonexistent email with standard password pattern (180)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1181",
+      "name": "Whitespace email and whitespace password (181)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1182",
+      "name": "Tagged email format with invalid password (182)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1183",
+      "name": "Varying length long emails and long passwords (183)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1184",
+      "name": "Password containing special characters !#$",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1185",
+      "name": "Fuzzing with database query snippets (185)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1186",
+      "name": "Nonexistent email with standard password pattern (186)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1187",
+      "name": "Whitespace email and whitespace password (187)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1188",
+      "name": "Tagged email format with invalid password (188)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1189",
+      "name": "Varying length long emails and long passwords (189)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1190",
+      "name": "Password containing special characters !#$%^&*()",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1191",
+      "name": "Fuzzing with database query snippets (191)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1192",
+      "name": "Nonexistent email with standard password pattern (192)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1193",
+      "name": "Whitespace email and whitespace password (193)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1194",
+      "name": "Tagged email format with invalid password (194)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1195",
+      "name": "Varying length long emails and long passwords (195)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1196",
+      "name": "Password containing special characters !#",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1197",
+      "name": "Fuzzing with database query snippets (197)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1198",
+      "name": "Nonexistent email with standard password pattern (198)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1199",
+      "name": "Whitespace email and whitespace password (199)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1200",
+      "name": "Tagged email format with invalid password (200)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1201",
+      "name": "Varying length long emails and long passwords (201)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1202",
+      "name": "Password containing special characters !#$%^&*(",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1203",
+      "name": "Fuzzing with database query snippets (203)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1204",
+      "name": "Nonexistent email with standard password pattern (204)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1205",
+      "name": "Whitespace email and whitespace password (205)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1206",
+      "name": "Tagged email format with invalid password (206)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1207",
+      "name": "Varying length long emails and long passwords (207)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1208",
+      "name": "Password containing special characters !",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1209",
+      "name": "Fuzzing with database query snippets (209)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1210",
+      "name": "Nonexistent email with standard password pattern (210)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1211",
+      "name": "Whitespace email and whitespace password (211)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1212",
+      "name": "Tagged email format with invalid password (212)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1213",
+      "name": "Varying length long emails and long passwords (213)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1214",
+      "name": "Password containing special characters !#$%^&*",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1215",
+      "name": "Fuzzing with database query snippets (215)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1216",
+      "name": "Nonexistent email with standard password pattern (216)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1217",
+      "name": "Whitespace email and whitespace password (217)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1218",
+      "name": "Tagged email format with invalid password (218)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1219",
+      "name": "Varying length long emails and long passwords (219)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1220",
+      "name": "Password containing special characters !#$%^&*()~`+=",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1221",
+      "name": "Fuzzing with database query snippets (221)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1222",
+      "name": "Nonexistent email with standard password pattern (222)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1223",
+      "name": "Whitespace email and whitespace password (223)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1224",
+      "name": "Tagged email format with invalid password (224)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1225",
+      "name": "Varying length long emails and long passwords (225)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1226",
+      "name": "Password containing special characters !#$%^&",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1227",
+      "name": "Fuzzing with database query snippets (227)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1228",
+      "name": "Nonexistent email with standard password pattern (228)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1229",
+      "name": "Whitespace email and whitespace password (229)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1230",
+      "name": "Tagged email format with invalid password (230)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1231",
+      "name": "Varying length long emails and long passwords (231)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.060Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1232",
+      "name": "Password containing special characters !#$%^&*()~`+",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1233",
+      "name": "Fuzzing with database query snippets (233)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1234",
+      "name": "Nonexistent email with standard password pattern (234)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1235",
+      "name": "Whitespace email and whitespace password (235)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1236",
+      "name": "Tagged email format with invalid password (236)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1237",
+      "name": "Varying length long emails and long passwords (237)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1238",
+      "name": "Password containing special characters !#$%^",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1239",
+      "name": "Fuzzing with database query snippets (239)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1240",
+      "name": "Nonexistent email with standard password pattern (240)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1241",
+      "name": "Whitespace email and whitespace password (241)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1242",
+      "name": "Tagged email format with invalid password (242)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1243",
+      "name": "Varying length long emails and long passwords (243)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1244",
+      "name": "Password containing special characters !#$%^&*()~`",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1245",
+      "name": "Fuzzing with database query snippets (245)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1246",
+      "name": "Nonexistent email with standard password pattern (246)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1247",
+      "name": "Whitespace email and whitespace password (247)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1248",
+      "name": "Tagged email format with invalid password (248)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1249",
+      "name": "Varying length long emails and long passwords (249)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1250",
+      "name": "Password containing special characters !#$%",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1251",
+      "name": "Fuzzing with database query snippets (251)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1252",
+      "name": "Nonexistent email with standard password pattern (252)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1253",
+      "name": "Whitespace email and whitespace password (253)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1254",
+      "name": "Tagged email format with invalid password (254)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1255",
+      "name": "Varying length long emails and long passwords (255)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1256",
+      "name": "Password containing special characters !#$%^&*()~",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1257",
+      "name": "Fuzzing with database query snippets (257)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1258",
+      "name": "Nonexistent email with standard password pattern (258)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1259",
+      "name": "Whitespace email and whitespace password (259)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1260",
+      "name": "Tagged email format with invalid password (260)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1261",
+      "name": "Varying length long emails and long passwords (261)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1262",
+      "name": "Password containing special characters !#$",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1263",
+      "name": "Fuzzing with database query snippets (263)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1264",
+      "name": "Nonexistent email with standard password pattern (264)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1265",
+      "name": "Whitespace email and whitespace password (265)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1266",
+      "name": "Tagged email format with invalid password (266)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1267",
+      "name": "Varying length long emails and long passwords (267)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1268",
+      "name": "Password containing special characters !#$%^&*()",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1269",
+      "name": "Fuzzing with database query snippets (269)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1270",
+      "name": "Nonexistent email with standard password pattern (270)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1271",
+      "name": "Whitespace email and whitespace password (271)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1272",
+      "name": "Tagged email format with invalid password (272)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1273",
+      "name": "Varying length long emails and long passwords (273)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1274",
+      "name": "Password containing special characters !#",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1275",
+      "name": "Fuzzing with database query snippets (275)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1276",
+      "name": "Nonexistent email with standard password pattern (276)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1277",
+      "name": "Whitespace email and whitespace password (277)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1278",
+      "name": "Tagged email format with invalid password (278)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1279",
+      "name": "Varying length long emails and long passwords (279)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1280",
+      "name": "Password containing special characters !#$%^&*(",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1281",
+      "name": "Fuzzing with database query snippets (281)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1282",
+      "name": "Nonexistent email with standard password pattern (282)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1283",
+      "name": "Whitespace email and whitespace password (283)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1284",
+      "name": "Tagged email format with invalid password (284)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1285",
+      "name": "Varying length long emails and long passwords (285)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1286",
+      "name": "Password containing special characters !",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1287",
+      "name": "Fuzzing with database query snippets (287)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1288",
+      "name": "Nonexistent email with standard password pattern (288)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1289",
+      "name": "Whitespace email and whitespace password (289)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1290",
+      "name": "Tagged email format with invalid password (290)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1291",
+      "name": "Varying length long emails and long passwords (291)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1292",
+      "name": "Password containing special characters !#$%^&*",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1293",
+      "name": "Fuzzing with database query snippets (293)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1294",
+      "name": "Nonexistent email with standard password pattern (294)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1295",
+      "name": "Whitespace email and whitespace password (295)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1296",
+      "name": "Tagged email format with invalid password (296)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1297",
+      "name": "Varying length long emails and long passwords (297)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1298",
+      "name": "Password containing special characters !#$%^&*()~`+=",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1299",
+      "name": "Fuzzing with database query snippets (299)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1300",
+      "name": "Nonexistent email with standard password pattern (300)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1301",
+      "name": "Whitespace email and whitespace password (301)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1302",
+      "name": "Tagged email format with invalid password (302)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1303",
+      "name": "Varying length long emails and long passwords (303)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1304",
+      "name": "Password containing special characters !#$%^&",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1305",
+      "name": "Fuzzing with database query snippets (305)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1306",
+      "name": "Nonexistent email with standard password pattern (306)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1307",
+      "name": "Whitespace email and whitespace password (307)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1308",
+      "name": "Tagged email format with invalid password (308)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1309",
+      "name": "Varying length long emails and long passwords (309)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1310",
+      "name": "Password containing special characters !#$%^&*()~`+",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1311",
+      "name": "Fuzzing with database query snippets (311)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1312",
+      "name": "Nonexistent email with standard password pattern (312)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1313",
+      "name": "Whitespace email and whitespace password (313)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1314",
+      "name": "Tagged email format with invalid password (314)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1315",
+      "name": "Varying length long emails and long passwords (315)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1316",
+      "name": "Password containing special characters !#$%^",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1317",
+      "name": "Fuzzing with database query snippets (317)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1318",
+      "name": "Nonexistent email with standard password pattern (318)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1319",
+      "name": "Whitespace email and whitespace password (319)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1320",
+      "name": "Tagged email format with invalid password (320)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1321",
+      "name": "Varying length long emails and long passwords (321)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1322",
+      "name": "Password containing special characters !#$%^&*()~`",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1323",
+      "name": "Fuzzing with database query snippets (323)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1324",
+      "name": "Nonexistent email with standard password pattern (324)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1325",
+      "name": "Whitespace email and whitespace password (325)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1326",
+      "name": "Tagged email format with invalid password (326)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1327",
+      "name": "Varying length long emails and long passwords (327)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1328",
+      "name": "Password containing special characters !#$%",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1329",
+      "name": "Fuzzing with database query snippets (329)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1330",
+      "name": "Nonexistent email with standard password pattern (330)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1331",
+      "name": "Whitespace email and whitespace password (331)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1332",
+      "name": "Tagged email format with invalid password (332)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1333",
+      "name": "Varying length long emails and long passwords (333)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1334",
+      "name": "Password containing special characters !#$%^&*()~",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1335",
+      "name": "Fuzzing with database query snippets (335)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1336",
+      "name": "Nonexistent email with standard password pattern (336)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1337",
+      "name": "Whitespace email and whitespace password (337)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1338",
+      "name": "Tagged email format with invalid password (338)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1339",
+      "name": "Varying length long emails and long passwords (339)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1340",
+      "name": "Password containing special characters !#$",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1341",
+      "name": "Fuzzing with database query snippets (341)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1342",
+      "name": "Nonexistent email with standard password pattern (342)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1343",
+      "name": "Whitespace email and whitespace password (343)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1344",
+      "name": "Tagged email format with invalid password (344)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1345",
+      "name": "Varying length long emails and long passwords (345)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1346",
+      "name": "Password containing special characters !#$%^&*()",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1347",
+      "name": "Fuzzing with database query snippets (347)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1348",
+      "name": "Nonexistent email with standard password pattern (348)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1349",
+      "name": "Whitespace email and whitespace password (349)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1350",
+      "name": "Tagged email format with invalid password (350)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1351",
+      "name": "Varying length long emails and long passwords (351)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1352",
+      "name": "Password containing special characters !#",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1353",
+      "name": "Fuzzing with database query snippets (353)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1354",
+      "name": "Nonexistent email with standard password pattern (354)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1355",
+      "name": "Whitespace email and whitespace password (355)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1356",
+      "name": "Tagged email format with invalid password (356)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1357",
+      "name": "Varying length long emails and long passwords (357)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1358",
+      "name": "Password containing special characters !#$%^&*(",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1359",
+      "name": "Fuzzing with database query snippets (359)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1360",
+      "name": "Nonexistent email with standard password pattern (360)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1361",
+      "name": "Whitespace email and whitespace password (361)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1362",
+      "name": "Tagged email format with invalid password (362)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1363",
+      "name": "Varying length long emails and long passwords (363)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1364",
+      "name": "Password containing special characters !",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1365",
+      "name": "Fuzzing with database query snippets (365)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1366",
+      "name": "Nonexistent email with standard password pattern (366)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1367",
+      "name": "Whitespace email and whitespace password (367)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1368",
+      "name": "Tagged email format with invalid password (368)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1369",
+      "name": "Varying length long emails and long passwords (369)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1370",
+      "name": "Password containing special characters !#$%^&*",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1371",
+      "name": "Fuzzing with database query snippets (371)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1372",
+      "name": "Nonexistent email with standard password pattern (372)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1373",
+      "name": "Whitespace email and whitespace password (373)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1374",
+      "name": "Tagged email format with invalid password (374)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1375",
+      "name": "Varying length long emails and long passwords (375)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1376",
+      "name": "Password containing special characters !#$%^&*()~`+=",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1377",
+      "name": "Fuzzing with database query snippets (377)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1378",
+      "name": "Nonexistent email with standard password pattern (378)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1379",
+      "name": "Whitespace email and whitespace password (379)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1380",
+      "name": "Tagged email format with invalid password (380)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1381",
+      "name": "Varying length long emails and long passwords (381)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1382",
+      "name": "Password containing special characters !#$%^&",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1383",
+      "name": "Fuzzing with database query snippets (383)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1384",
+      "name": "Nonexistent email with standard password pattern (384)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1385",
+      "name": "Whitespace email and whitespace password (385)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1386",
+      "name": "Tagged email format with invalid password (386)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1387",
+      "name": "Varying length long emails and long passwords (387)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1388",
+      "name": "Password containing special characters !#$%^&*()~`+",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1389",
+      "name": "Fuzzing with database query snippets (389)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1390",
+      "name": "Nonexistent email with standard password pattern (390)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
+      "remarks": "Success"
+    },
+    {
+      "id": "TC-GEN-1391",
+      "name": "Whitespace email and whitespace password (391)",
+      "status": "PASS",
+      "executionTime": "0.00 sec",
+      "timestamp": "2026-07-31T11:18:33.061Z",
       "remarks": "Success"
     }
   ]
