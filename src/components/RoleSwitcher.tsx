@@ -26,9 +26,9 @@ export const RoleSwitcher: React.FC = () => {
         await loginUser(email, pass);
       } catch (err) {
         // If fail, register
-        const name = role === 'citizen' ? 'Jane Doe (Citizen)' 
-                   : role === 'volunteer' ? 'Officer John (Volunteer)' 
-                   : 'Super Admin';
+        const name = role === 'citizen' ? 'Jane Doe (Citizen)'
+          : role === 'volunteer' ? 'Officer John (Volunteer)'
+            : 'Super Admin';
         const phone = role === 'citizen' ? '555-0199' : role === 'volunteer' ? '555-9111' : '555-0000';
         await registerUser(email, pass, name, phone, role);
       }
@@ -99,8 +99,8 @@ export const RoleSwitcher: React.FC = () => {
             <p className="text-slate-400 text-[10px]">{user.email}</p>
             <div className="flex items-center gap-1.5 mt-1.5">
               {user.role === 'admin' ? <Shield size={12} className="text-emerald-400" /> :
-               user.role === 'volunteer' ? <HeartHandshake size={12} className="text-indigo-400" /> :
-               <User size={12} className="text-rose-400" />}
+                user.role === 'volunteer' ? <HeartHandshake size={12} className="text-indigo-400" /> :
+                  <User size={12} className="text-rose-400" />}
               <span className="uppercase text-[9px] font-bold text-slate-300 tracking-wider">
                 {user.role}
               </span>
@@ -120,11 +120,10 @@ export const RoleSwitcher: React.FC = () => {
           <button
             onClick={() => handleQuickLogin('citizen')}
             disabled={loading}
-            className={`flex flex-col items-center justify-center p-2 rounded-lg border text-center transition-all cursor-pointer ${
-              user?.role === 'citizen'
+            className={`flex flex-col items-center justify-center p-2 rounded-lg border text-center transition-all cursor-pointer ${user?.role === 'citizen'
                 ? 'bg-rose-500/20 border-rose-500 text-rose-300'
                 : 'bg-slate-800/30 border-slate-700/60 text-slate-300 hover:bg-slate-800'
-            }`}
+              }`}
           >
             <User size={16} />
             <span className="text-[9px] font-bold mt-1">Citizen</span>
@@ -133,11 +132,10 @@ export const RoleSwitcher: React.FC = () => {
           <button
             onClick={() => handleQuickLogin('volunteer')}
             disabled={loading}
-            className={`flex flex-col items-center justify-center p-2 rounded-lg border text-center transition-all cursor-pointer ${
-              user?.role === 'volunteer'
+            className={`flex flex-col items-center justify-center p-2 rounded-lg border text-center transition-all cursor-pointer ${user?.role === 'volunteer'
                 ? 'bg-indigo-500/20 border-indigo-500 text-indigo-300'
                 : 'bg-slate-800/30 border-slate-700/60 text-slate-300 hover:bg-slate-800'
-            }`}
+              }`}
           >
             <HeartHandshake size={16} />
             <span className="text-[9px] font-bold mt-1">Volunteer</span>
@@ -146,11 +144,10 @@ export const RoleSwitcher: React.FC = () => {
           <button
             onClick={() => handleQuickLogin('admin')}
             disabled={loading}
-            className={`flex flex-col items-center justify-center p-2 rounded-lg border text-center transition-all cursor-pointer ${
-              user?.role === 'admin'
+            className={`flex flex-col items-center justify-center p-2 rounded-lg border text-center transition-all cursor-pointer ${user?.role === 'admin'
                 ? 'bg-emerald-500/20 border-emerald-500 text-emerald-300'
                 : 'bg-slate-800/30 border-slate-700/60 text-slate-300 hover:bg-slate-800'
-            }`}
+              }`}
           >
             <Shield size={16} />
             <span className="text-[9px] font-bold mt-1">Admin</span>
@@ -169,7 +166,7 @@ export const RoleSwitcher: React.FC = () => {
             <Cpu size={12} />
             Simulate Active Responder Movement
           </button>
-          
+
           <button
             onClick={handleStopGPS}
             className="w-full text-left py-1.5 px-2 bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 rounded text-[11px] font-semibold flex items-center gap-1.5 cursor-pointer justify-center"

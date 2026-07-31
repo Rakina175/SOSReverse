@@ -4,7 +4,7 @@ import { Bell, Trash2, Database, RefreshCw } from 'lucide-react';
 
 export const Settings: React.FC = () => {
   const { user, isFirebase } = useAuth();
-  
+
   // Notification configs states (mocked/local storage)
   const [sounds, setSounds] = useState(true);
   const [pushNotifs, setPushNotifs] = useState(true);
@@ -104,7 +104,7 @@ export const Settings: React.FC = () => {
 
   return (
     <div className="max-w-3xl mx-auto pb-10">
-      
+
       {/* Page Title */}
       <div className="border-b border-slate-800 pb-4 mb-6">
         <h2 className="text-2xl font-extrabold text-white tracking-tight m-0">System Settings</h2>
@@ -114,7 +114,7 @@ export const Settings: React.FC = () => {
       </div>
 
       <div className="flex flex-col gap-6">
-        
+
         {/* Card: Notification Preferences */}
         <div className="glass-card rounded-2xl border border-slate-800 p-5">
           <h3 className="text-sm font-bold text-slate-200 uppercase tracking-wider mb-4 flex items-center gap-2 border-b border-slate-800 pb-2">
@@ -170,13 +170,13 @@ export const Settings: React.FC = () => {
         </div>
 
         {/* Card: Developer Sandbox Controls */}
-        {!isFirebase && (
+        {false && !isFirebase && (
           <div className="glass-card rounded-2xl border border-indigo-500/10 bg-gradient-to-br from-indigo-950/5 to-slate-900/60 p-5">
             <h3 className="text-sm font-bold text-indigo-300 uppercase tracking-wider mb-4 flex items-center gap-2 border-b border-indigo-900/30 pb-2">
               <Database size={16} className="text-indigo-400" />
               Developer Sandbox Tools (Local Storage)
             </h3>
-            
+
             <p className="text-[10px] text-slate-400 mb-4 leading-normal">
               These commands allow you to manipulate local database credentials instantly, aiding reviews, testing and evaluation.
             </p>
@@ -190,7 +190,7 @@ export const Settings: React.FC = () => {
                   <RefreshCw size={14} />
                   Inject 3 Mock Contacts
                 </button>
-                
+
                 <button
                   onClick={handleSeedHistory}
                   className="w-full sm:flex-1 py-2.5 px-4 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow shadow-indigo-600/10"

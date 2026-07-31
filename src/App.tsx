@@ -21,7 +21,7 @@ import { Settings } from './pages/Settings';
 // Components
 import { Layout } from './components/Layout';
 import { ProtectedRoute } from './components/ProtectedRoute';
-import { RoleSwitcher } from './components/RoleSwitcher';
+//import { RoleSwitcher } from './components/RoleSwitcher';
 
 function App() {
   return (
@@ -129,9 +129,9 @@ function App() {
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </Layout>
-          
+
           {/* Floating simulator panel overlay */}
-          <RoleSwitcher />
+          {/* <RoleSwitcher /> */}
         </SOSProvider>
       </AuthProvider>
     </BrowserRouter>
