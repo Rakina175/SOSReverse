@@ -52,6 +52,14 @@ function main() {
   } catch (e) {
     console.error('Failed to run generate-executive-summary.cjs:', e);
   }
+
+  // Run Consolidated Total Report generation
+  try {
+    console.log('Generating Grand Consolidated Total Report...');
+    execSync('node scripts/generate-total-report.cjs', { stdio: 'inherit', cwd: ROOT });
+  } catch (e) {
+    console.error('Failed to run generate-total-report.cjs:', e);
+  }
 }
 
 main();

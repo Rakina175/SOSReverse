@@ -107,6 +107,8 @@ async function run() {
   const rps = totalRequests / durationSec;
   const throughput = durationSec ? totalRequests / durationSec : 0;
 
+  const cases = buildSyntheticLoadCases();
+
   const payload = {
     generatedAt: new Date().toISOString(),
     target,
@@ -117,6 +119,7 @@ async function run() {
     rps: Number(rps.toFixed(2)),
     throughput: Number(throughput.toFixed(2)),
     responseStats: stats,
+    cases,
   };
 
   fs.writeFileSync(RESULTS_PATH, JSON.stringify(payload, null, 2));
@@ -152,8 +155,6 @@ async function run() {
     ['RPS', payload.rps],
     ['Errors', payload.totalErrors],
   ];
-
-  const cases = buildSyntheticLoadCases();
 
   const workbook = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(workbook, XLSX.utils.aoa_to_sheet(summary), 'Summary');
