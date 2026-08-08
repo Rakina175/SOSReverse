@@ -12,7 +12,7 @@ import {
   getDoc
 } from 'firebase/firestore';
 import { db, isFirebaseEnabled } from '../firebase/config';
-import { useAuth } from './AuthContext';
+import { useAuth, apiFetch } from './AuthContext';
 
 export interface EmergencyContact {
   id: string;
@@ -115,7 +115,7 @@ export const SOSProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
   // 1. Sync Contacts
   useEffect(() => {
-    if (!user) {
+    if (!user || !user.isEmailVerified) {
       setContacts([]);
       return;
     }
@@ -131,23 +131,33 @@ export const SOSProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       });
       return unsubscribe;
     } else {
-      // Sandbox Simulator
-      const loadLocalContacts = () => {
-        const local = JSON.parse(localStorage.getItem('sos_contacts') || '[]');
-        const filtered = local.filter((c: any) => c.userId === user.uid);
-        setContacts(filtered);
+      const loadContacts = async () => {
+        try {
+          const res = await apiFetch('/api/contacts');
+          if (res.ok) {
+            const list = await res.json();
+            setContacts(list);
+          }
+        } catch (e) {
+          console.error('Failed to load contacts:', e);
+        }
       };
       
-      loadLocalContacts();
-      window.addEventListener('storage', loadLocalContacts);
-      return () => window.removeEventListener('storage', loadLocalContacts);
+      loadContacts();
+      const interval = setInterval(loadContacts, 3000);
+      return () => clearInterval(interval);
     }
   }, [user]);
 
   // 2. Sync Emergencies (Global list for Volunteers/Admins, active check for citizens)
   useEffect(() => {
+    if (!user || !user.isEmailVerified) {
+      setEmergencies([]);
+      setActiveEmergency(null);
+      return;
+    }
+
     if (isFirebaseEnabled && db) {
-      // Fetch all non-resolved or resolved within 24h
       const q = query(collection(db, 'emergencies'), orderBy('timestamp', 'desc'));
       const unsubscribe = onSnapshot(q, (snapshot) => {
         const list: Emergency[] = [];
@@ -156,34 +166,40 @@ export const SOSProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         });
         setEmergencies(list);
 
-        // Find active emergency for logged-in citizen
-        if (user) {
-          const active = list.find(e => e.userId === user.uid && e.status !== 'Resolved');
-          setActiveEmergency(active || null);
-        }
+        const active = list.find(e => e.userId === user.uid && e.status !== 'Resolved');
+        setActiveEmergency(active || null);
       });
       return unsubscribe;
     } else {
-      // Sandbox Simulator
-      const loadLocalEmergencies = () => {
-        const local = JSON.parse(localStorage.getItem('sos_emergencies') || '[]');
-        setEmergencies(local);
+      const loadEmergencies = async () => {
+        try {
+          const res = await apiFetch('/api/emergencies');
+          if (res.ok) {
+            const list = await res.json();
+            setEmergencies(list);
 
-        if (user) {
-          const active = local.find((e: any) => e.userId === user.uid && e.status !== 'Resolved');
-          setActiveEmergency(active || null);
+            const active = list.find((e: any) => e.userId === user.uid && e.status !== 'Resolved');
+            setActiveEmergency(active || null);
+          }
+        } catch (e) {
+          console.error('Failed to load emergencies:', e);
         }
       };
 
-      loadLocalEmergencies();
-      const interval = setInterval(loadLocalEmergencies, 1500); // Polling backup for sandbox tabs
+      loadEmergencies();
+      const interval = setInterval(loadEmergencies, 1500);
       return () => clearInterval(interval);
     }
   }, [user]);
 
   // 3. Sync Active Chat Messages
   useEffect(() => {
-    const activeId = activeEmergency?.id || emergencies.find(e => (e.responderId === user?.uid || e.userId === user?.uid) && e.status !== 'Resolved')?.id;
+    if (!user || !user.isEmailVerified) {
+      setChatMessages([]);
+      return;
+    }
+
+    const activeId = activeEmergency?.id || emergencies.find(e => (e.responderId === user.uid || e.userId === user.uid) && e.status !== 'Resolved')?.id;
     
     if (!activeId) {
       setChatMessages([]);
@@ -205,15 +221,20 @@ export const SOSProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       });
       return unsubscribe;
     } else {
-      // Sandbox simulator
-      const loadLocalMessages = () => {
-        const local = JSON.parse(localStorage.getItem('sos_messages') || '[]');
-        const filtered = local.filter((m: any) => m.emergencyId === activeId);
-        setChatMessages(filtered.sort((a: any, b: any) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime()));
+      const loadMessages = async () => {
+        try {
+          const res = await apiFetch(`/api/chats/${activeId}`);
+          if (res.ok) {
+            const list = await res.json();
+            setChatMessages(list);
+          }
+        } catch (e) {
+          console.error('Failed to load messages:', e);
+        }
       };
 
-      loadLocalMessages();
-      const interval = setInterval(loadLocalMessages, 1000);
+      loadMessages();
+      const interval = setInterval(loadMessages, 1000);
       return () => clearInterval(interval);
     }
   }, [activeEmergency, emergencies, user]);
@@ -223,26 +244,23 @@ export const SOSProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   // ----------------------------------------------------
   const addContact = async (name: string, phoneNumber: string, relationship: string, alternateNumber: string) => {
     if (!user) return;
-    const isFirst = contacts.length === 0;
     
-    const contactData = {
-      userId: user.uid,
-      name,
-      phoneNumber,
-      relationship,
-      alternateNumber,
-      isPrimary: isFirst,
-    };
-
     if (isFirebaseEnabled && db) {
+      const isFirst = contacts.length === 0;
+      const contactData = {
+        userId: user.uid,
+        name,
+        phoneNumber,
+        relationship,
+        alternateNumber,
+        isPrimary: isFirst,
+      };
       await addDoc(collection(db, 'contacts'), contactData);
     } else {
-      const local = JSON.parse(localStorage.getItem('sos_contacts') || '[]');
-      const newContact = { id: 'contact_' + Math.random().toString(36).substr(2, 9), ...contactData };
-      local.push(newContact);
-      localStorage.setItem('sos_contacts', JSON.stringify(local));
-      // Dispatch event to refresh local listeners
-      window.dispatchEvent(new Event('storage'));
+      await apiFetch('/api/contacts', {
+        method: 'POST',
+        body: JSON.stringify({ name, phoneNumber, relationship, alternateNumber })
+      });
     }
   };
 
@@ -251,95 +269,76 @@ export const SOSProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       const docRef = doc(db, 'contacts', id);
       await updateDoc(docRef, { name, phoneNumber, relationship, alternateNumber });
     } else {
-      const local = JSON.parse(localStorage.getItem('sos_contacts') || '[]');
-      const updated = local.map((c: any) => 
-        c.id === id ? { ...c, name, phoneNumber, relationship, alternateNumber } : c
-      );
-      localStorage.setItem('sos_contacts', JSON.stringify(updated));
-      window.dispatchEvent(new Event('storage'));
+      await apiFetch(`/api/contacts/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify({ name, phoneNumber, relationship, alternateNumber })
+      });
     }
   };
 
   const deleteContact = async (id: string) => {
-    const contactToDelete = contacts.find(c => c.id === id);
-    
     if (isFirebaseEnabled && db) {
+      const contactToDelete = contacts.find(c => c.id === id);
       await deleteDoc(doc(db, 'contacts', id));
       
-      // If we deleted the primary contact and have others left, assign a new primary
       if (contactToDelete?.isPrimary && contacts.length > 1) {
         const remaining = contacts.filter(c => c.id !== id);
         await updateDoc(doc(db, 'contacts', remaining[0].id), { isPrimary: true });
       }
     } else {
-      const local = JSON.parse(localStorage.getItem('sos_contacts') || '[]');
-      const filtered = local.filter((c: any) => c.id !== id);
-      
-      if (contactToDelete?.isPrimary && filtered.length > 0) {
-        // Find first one matching user and mark primary
-        const userContactIdx = filtered.findIndex((c: any) => c.userId === user?.uid);
-        if (userContactIdx !== -1) {
-          filtered[userContactIdx].isPrimary = true;
-        }
-      }
-      
-      localStorage.setItem('sos_contacts', JSON.stringify(filtered));
-      window.dispatchEvent(new Event('storage'));
+      await apiFetch(`/api/contacts/${id}`, {
+        method: 'DELETE'
+      });
     }
   };
 
   const setPrimaryContact = async (id: string) => {
     if (isFirebaseEnabled && db) {
-      // Clear previous primary
       const updates = contacts.map(async (c) => {
         const ref = doc(db, 'contacts', c.id);
         return updateDoc(ref, { isPrimary: c.id === id });
       });
       await Promise.all(updates);
     } else {
-      const local = JSON.parse(localStorage.getItem('sos_contacts') || '[]');
-      const updated = local.map((c: any) => {
-        if (c.userId === user?.uid) {
-          return { ...c, isPrimary: c.id === id };
-        }
-        return c;
+      await apiFetch(`/api/contacts/${id}/primary`, {
+        method: 'POST'
       });
-      localStorage.setItem('sos_contacts', JSON.stringify(updated));
-      window.dispatchEvent(new Event('storage'));
     }
   };
 
   // ----------------------------------------------------
-  // SOS Incident Functions
+  // SOS Functions
   // ----------------------------------------------------
   const sendSOS = async (type: EmergencyType, description: string, latitude: number, longitude: number, address: string) => {
     if (!user) return;
-
-    const sosData = {
-      userId: user.uid,
-      userName: user.fullName,
-      type,
-      description,
-      latitude,
-      longitude,
-      address,
-      timestamp: new Date().toISOString(),
-      status: 'Pending' as EmergencyStatus,
-      responderId: null,
-      responderName: null,
-      responderLatitude: null,
-      responderLongitude: null,
-      resolvedAt: null
-    };
-
+    
     if (isFirebaseEnabled && db) {
+      const sosData = {
+        userId: user.uid,
+        userName: user.fullName,
+        type,
+        description,
+        latitude,
+        longitude,
+        address,
+        timestamp: new Date().toISOString(),
+        status: 'Pending' as EmergencyStatus,
+        responderId: null,
+        responderName: null,
+        responderLatitude: null,
+        responderLongitude: null,
+        resolvedAt: null
+      };
       await addDoc(collection(db, 'emergencies'), sosData);
     } else {
-      const local = JSON.parse(localStorage.getItem('sos_emergencies') || '[]');
-      const newSOS = { id: 'sos_' + Math.random().toString(36).substr(2, 9), ...sosData };
-      local.push(newSOS);
-      localStorage.setItem('sos_emergencies', JSON.stringify(local));
-      window.dispatchEvent(new Event('storage'));
+      const res = await apiFetch('/api/emergencies', {
+        method: 'POST',
+        body: JSON.stringify({ type, description, latitude, longitude, address })
+      });
+      if (res.ok) {
+        const newSOS = await res.json();
+        setActiveEmergency(newSOS);
+      }
     }
   };
 
@@ -350,24 +349,20 @@ export const SOSProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         resolvedAt: new Date().toISOString()
       });
     } else {
-      const local = JSON.parse(localStorage.getItem('sos_emergencies') || '[]');
-      const updated = local.map((e: any) => 
-        e.id === id ? { ...e, status: 'Resolved', resolvedAt: new Date().toISOString() } : e
-      );
-      localStorage.setItem('sos_emergencies', JSON.stringify(updated));
-      window.dispatchEvent(new Event('storage'));
+      await apiFetch(`/api/emergencies/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify({ status: 'Resolved', resolvedAt: new Date().toISOString() })
+      });
     }
   };
 
   const acceptEmergency = async (id: string) => {
     if (!user) return;
 
-    // A volunteer responder accepts the emergency
     const updates = {
       status: 'Accepted' as EmergencyStatus,
       responderId: user.uid,
       responderName: user.fullName,
-      // Initialize responder location slightly offset from the target for visual tracking route
       responderLatitude: user.latitude || 40.7128 + (Math.random() - 0.5) * 0.03,
       responderLongitude: user.longitude || -74.0060 + (Math.random() - 0.5) * 0.03,
     };
@@ -375,12 +370,10 @@ export const SOSProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     if (isFirebaseEnabled && db) {
       await updateDoc(doc(db, 'emergencies', id), updates);
     } else {
-      const local = JSON.parse(localStorage.getItem('sos_emergencies') || '[]');
-      const updated = local.map((e: any) => 
-        e.id === id ? { ...e, ...updates } : e
-      );
-      localStorage.setItem('sos_emergencies', JSON.stringify(updated));
-      window.dispatchEvent(new Event('storage'));
+      await apiFetch(`/api/emergencies/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify(updates)
+      });
     }
   };
 
@@ -394,35 +387,30 @@ export const SOSProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     if (isFirebaseEnabled && db) {
       await updateDoc(doc(db, 'emergencies', id), updates);
     } else {
-      const local = JSON.parse(localStorage.getItem('sos_emergencies') || '[]');
-      const updated = local.map((e: any) => 
-        e.id === id ? { ...e, ...updates } : e
-      );
-      localStorage.setItem('sos_emergencies', JSON.stringify(updated));
-      window.dispatchEvent(new Event('storage'));
+      await apiFetch(`/api/emergencies/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify(updates)
+      });
     }
   };
 
-  // Chat message support
   const sendChatMessage = async (emergencyId: string, text: string) => {
     if (!user) return;
 
-    const messageData = {
-      emergencyId,
-      senderId: user.uid,
-      senderName: user.fullName,
-      text,
-      timestamp: new Date().toISOString()
-    };
-
     if (isFirebaseEnabled && db) {
+      const messageData = {
+        emergencyId,
+        senderId: user.uid,
+        senderName: user.fullName,
+        text,
+        timestamp: new Date().toISOString()
+      };
       await addDoc(collection(db, 'chats'), messageData);
     } else {
-      const local = JSON.parse(localStorage.getItem('sos_messages') || '[]');
-      const newMessage = { id: 'msg_' + Math.random().toString(36).substr(2, 9), ...messageData };
-      local.push(newMessage);
-      localStorage.setItem('sos_messages', JSON.stringify(local));
-      window.dispatchEvent(new Event('storage'));
+      await apiFetch('/api/chats', {
+        method: 'POST',
+        body: JSON.stringify({ emergencyId, text })
+      });
     }
   };
 
@@ -431,7 +419,6 @@ export const SOSProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     if (simulationIntervalRef.current) clearInterval(simulationIntervalRef.current);
 
     simulationIntervalRef.current = setInterval(async () => {
-      // Find current emergency
       let emergency: Emergency | undefined;
       
       if (isFirebaseEnabled && db) {
@@ -441,8 +428,11 @@ export const SOSProvider: React.FC<{ children: React.ReactNode }> = ({ children 
           emergency = { id: docSnap.id, ...docSnap.data() } as Emergency;
         }
       } else {
-        const local = JSON.parse(localStorage.getItem('sos_emergencies') || '[]');
-        emergency = local.find((e: any) => e.id === emergencyId);
+        const res = await apiFetch(`/api/emergencies`);
+        if (res.ok) {
+          const list = await res.json();
+          emergency = list.find((e: any) => e.id === emergencyId);
+        }
       }
 
       if (!emergency || !emergency.responderLatitude || !emergency.responderLongitude || emergency.status === 'Resolved') {
@@ -455,7 +445,6 @@ export const SOSProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       const respLat = emergency.responderLatitude;
       const respLon = emergency.responderLongitude;
 
-      // Distance checking
       const dist = calculateDistance(respLat, respLon, victimLat, victimLon);
       
       const nextStatus: EmergencyStatus = dist <= 0.05 ? 'Arrived' : 'En Route';
@@ -466,7 +455,6 @@ export const SOSProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         stopTrackingSimulation();
       }
 
-      // Update in db
       const updates = {
         responderLatitude: nextLat,
         responderLongitude: nextLon,
@@ -476,15 +464,12 @@ export const SOSProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       if (isFirebaseEnabled && db) {
         await updateDoc(doc(db, 'emergencies', emergencyId), updates);
       } else {
-        const local = JSON.parse(localStorage.getItem('sos_emergencies') || '[]');
-        const updated = local.map((e: any) => 
-          e.id === emergencyId ? { ...e, ...updates } : e
-        );
-        localStorage.setItem('sos_emergencies', JSON.stringify(updated));
-        window.dispatchEvent(new Event('storage'));
+        await apiFetch(`/api/emergencies/${emergencyId}`, {
+          method: 'PUT',
+          body: JSON.stringify(updates)
+        });
       }
 
-      // Auto mock message from responder on arrival
       if (nextStatus === 'Arrived') {
         sendChatMessage(emergencyId, "I have arrived at your location. Please let me know where you are or look out for me!");
       }
@@ -498,7 +483,6 @@ export const SOSProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     }
   };
 
-  // Clear tracking simulations on unmount
   useEffect(() => {
     return () => {
       if (simulationIntervalRef.current) clearInterval(simulationIntervalRef.current);

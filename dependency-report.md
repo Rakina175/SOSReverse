@@ -3,7 +3,7 @@
 Dependencies analyzed from package.json.
 
 ## Package Summary
-- Total dependencies: 7
+- Total dependencies: 17
 - Total devDependencies: 20
 
 ## Recommendations

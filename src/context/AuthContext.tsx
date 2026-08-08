@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useRef } from 'react';
 import { 
   createUserWithEmailAndPassword, 
   signInWithEmailAndPassword, 
@@ -6,8 +6,9 @@ import {
   sendPasswordResetEmail, 
   onAuthStateChanged 
 } from 'firebase/auth';
-import { doc, setDoc, getDoc, updateDoc, serverTimestamp } from 'firebase/firestore';
+import { doc, setDoc, getDoc, updateDoc, serverTimestamp, collection, query, where, getDocs } from 'firebase/firestore';
 import { auth, db, isFirebaseEnabled } from '../firebase/config';
+import { validateAndNormalizePhone } from '../utils/validation';
 
 export interface UserProfile {
   uid: string;
@@ -18,19 +19,16 @@ export interface UserProfile {
   profilePhoto: string;
   createdAt: string;
   lastActive: string;
-  // Personal Info
+  isEmailVerified: boolean;
   gender: string;
   dob: string;
-  // Medical Info
   bloodGroup: string;
   allergies: string;
   medicalConditions: string;
   medications: string;
   emergencyNotes: string;
-  // Location Info
   homeAddress: string;
   currentCity: string;
-  // Responder Info
   latitude: number;
   longitude: number;
   rangeRadius: 1 | 3 | 5 | 10;
@@ -42,7 +40,7 @@ interface AuthContextType {
   loading: boolean;
   isFirebase: boolean;
   registerUser: (email: string, password: string, fullName: string, phoneNumber: string, role: 'citizen' | 'volunteer' | 'admin') => Promise<void>;
-  loginUser: (email: string, password: string) => Promise<void>;
+  loginUser: (identifier: string, password: string) => Promise<void>;
   logoutUser: () => Promise<void>;
   resetPassword: (email: string) => Promise<void>;
   updateProfile: (data: Partial<UserProfile>) => Promise<void>;
@@ -56,46 +54,110 @@ export const useAuth = () => {
   return context;
 };
 
-// Default profile generator
-const createDefaultProfile = (uid: string, email: string, fullName: string, phoneNumber: string, role: 'citizen' | 'volunteer' | 'admin'): UserProfile => {
-  // Generate a random avatar from dicebear or simple UI avatar
-  const avatarUrl = `https://api.dicebear.com/7.x/bottts/svg?seed=${encodeURIComponent(fullName)}`;
-  
-  // Simulated initial locations in NYC area
-  // Citizen closer to Manhattan, Volunteer in Brooklyn, etc.
-  const lat = role === 'volunteer' ? 40.7128 + (Math.random() - 0.5) * 0.05 : 40.7128;
-  const lon = role === 'volunteer' ? -74.0060 + (Math.random() - 0.5) * 0.05 : -74.0060;
+// Global access token for Authorization header
+let globalAccessToken: string | null = null;
 
-  return {
-    uid,
-    fullName,
-    email,
-    phoneNumber,
-    role,
-    profilePhoto: avatarUrl,
-    createdAt: new Date().toISOString(),
-    lastActive: new Date().toISOString(),
-    gender: '',
-    dob: '',
-    bloodGroup: '',
-    allergies: '',
-    medicalConditions: '',
-    medications: '',
-    emergencyNotes: '',
-    homeAddress: '',
-    currentCity: 'New York City',
-    latitude: lat,
-    longitude: lon,
-    rangeRadius: 3, // Default 3KM
-    isAvailable: true,
+// Global callback for apiFetch to trigger logout on 401
+let logoutUserCallback: (() => Promise<void>) | null = null;
+
+// Centralized response parsing helper that prevents unexpected end of JSON input errors
+export const safeParseJson = async (response: Response, fallbackMessage: string) => {
+  const contentType = response.headers.get('Content-Type');
+  if (contentType && contentType.includes('application/json')) {
+    try {
+      const data = await response.json();
+      if (!response.ok) {
+        throw new Error(data.message || fallbackMessage);
+      }
+      return data;
+    } catch (e: any) {
+      if (e.message && e.message !== fallbackMessage) {
+        throw e;
+      }
+      throw new Error(fallbackMessage, { cause: e });
+    }
+  }
+  throw new Error(fallbackMessage);
+};
+
+// Centralized fetch wrapper to handle authorization headers & automatic token refresh
+export const apiFetch = async (url: string, options: RequestInit = {}): Promise<Response> => {
+  options.headers = {
+    ...options.headers,
+    'Content-Type': 'application/json',
   };
+
+  if (globalAccessToken) {
+    (options.headers as any)['Authorization'] = `Bearer ${globalAccessToken}`;
+  }
+  options.credentials = 'include';
+
+  let response = await fetch(url, options);
+
+  if (response.status === 401) {
+    globalAccessToken = null;
+    localStorage.removeItem('sos_current_user');
+    if (logoutUserCallback) {
+      logoutUserCallback().catch(err => console.error('Auto logout on 401 failed:', err));
+    }
+  } else if (response.status === 403) {
+    const clone = response.clone();
+    const contentType = clone.headers.get('Content-Type');
+    if (contentType && contentType.includes('application/json')) {
+      try {
+        const data = await clone.json();
+        if (data.code === 'TOKEN_EXPIRED') {
+          const refreshResponse = await fetch('/api/auth/refresh', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include'
+          });
+
+          if (refreshResponse.ok) {
+            const refreshContentType = refreshResponse.headers.get('Content-Type');
+            if (refreshContentType && refreshContentType.includes('application/json')) {
+              const refreshData = await refreshResponse.json();
+              globalAccessToken = refreshData.accessToken;
+              
+              (options.headers as any)['Authorization'] = `Bearer ${globalAccessToken}`;
+              response = await fetch(url, options);
+              
+              if (response.status === 401) {
+                globalAccessToken = null;
+                localStorage.removeItem('sos_current_user');
+                if (logoutUserCallback) {
+                  logoutUserCallback().catch(err => console.error('Auto logout on 401 failed:', err));
+                }
+              }
+            }
+          } else {
+            globalAccessToken = null;
+            localStorage.removeItem('sos_current_user');
+            if (logoutUserCallback) {
+              logoutUserCallback().catch(err => console.error('Auto logout on refresh failure failed:', err));
+            }
+          }
+        }
+      } catch (err) {
+        console.warn('Token refresh error during apiFetch:', err);
+      }
+    }
+  }
+
+  return response;
 };
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState(true);
 
-  // Sync state between firebase and context
+  const userRef = useRef<UserProfile | null>(null);
+  userRef.current = user;
+
+  useEffect(() => {
+    logoutUserCallback = logoutUser;
+  });
+
   useEffect(() => {
     if (isFirebaseEnabled && auth) {
       const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
@@ -107,12 +169,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
             if (userDoc.exists()) {
               const data = userDoc.data() as UserProfile;
               setUser(data);
-              // Update last active
               await updateDoc(userDocRef, {
                 lastActive: new Date().toISOString()
               });
             } else {
               console.error('User doc not found in Firestore for UID:', firebaseUser.uid);
+              try {
+                await signOut(auth);
+              } catch (_) {}
               setUser(null);
             }
           } catch (error) {
@@ -126,34 +190,63 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       });
       return unsubscribe;
     } else {
-      // Sandbox Mode: Load active session
-      const storedUser = localStorage.getItem('sos_current_user');
-      if (storedUser) {
-        setUser(JSON.parse(storedUser));
-      }
-      
-      // Seed default mock users if not already present
-      const mockUsers = JSON.parse(localStorage.getItem('sos_users') || '[]');
-      const defaultUsers = [
-        { email: 'mock_citizen@sos.com', password: 'password123', name: 'Jane Doe (Citizen)', phone: '555-0199', role: 'citizen' },
-        { email: 'mock_volunteer@sos.com', password: 'password123', name: 'Officer John (Volunteer)', phone: '555-9111', role: 'volunteer' },
-        { email: 'mock_admin@sos.com', password: 'password123', name: 'Super Admin', phone: '555-0000', role: 'admin' }
-      ];
-      const updatedUsers = [...mockUsers];
-      let didUpdate = false;
-      for (const du of defaultUsers) {
-        if (!mockUsers.some((u: any) => u.email === du.email)) {
-          const uid = 'mock_uid_' + Math.random().toString(36).substring(2, 11);
-          const profile = createDefaultProfile(uid, du.email, du.name, du.phone, du.role as any);
-          updatedUsers.push({ ...profile, password: du.password });
-          didUpdate = true;
+      // Backend auth check on initialization
+      const initializeAuth = async () => {
+        try {
+          const refreshResponse = await fetch('/api/auth/refresh', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include'
+          });
+
+          if (userRef.current) return;
+
+          if (refreshResponse.ok) {
+            const refreshData = await refreshResponse.json();
+            if (userRef.current) return;
+            globalAccessToken = refreshData.accessToken;
+
+            const userRes = await fetch('/api/auth/me', {
+              headers: { 'Authorization': `Bearer ${globalAccessToken}` }
+            });
+
+            if (userRef.current) return;
+
+            if (userRes.ok) {
+              const userData = await userRes.json();
+              if (userRef.current) return;
+              if (userData.isEmailVerified) {
+                setUser(userData);
+                localStorage.setItem('sos_current_user', JSON.stringify(userData));
+              } else {
+                setUser(null);
+                localStorage.removeItem('sos_current_user');
+              }
+            } else {
+              setUser(null);
+              localStorage.removeItem('sos_current_user');
+            }
+          } else {
+            // Server session is invalid or doesn't exist. Clear local storage.
+            if (!userRef.current) {
+              globalAccessToken = null;
+              setUser(null);
+              localStorage.removeItem('sos_current_user');
+            }
+          }
+        } catch (e) {
+          console.error('API Auth initialization failed:', e);
+          if (!userRef.current) {
+            setUser(null);
+          }
+        } finally {
+          if (!userRef.current) {
+            setLoading(false);
+          }
         }
-      }
-      if (didUpdate) {
-        localStorage.setItem('sos_users', JSON.stringify(updatedUsers));
-      }
-      
-      setLoading(false);
+      };
+
+      initializeAuth();
     }
   }, []);
 
@@ -163,7 +256,35 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       if (isFirebaseEnabled && auth && db) {
         const credentials = await createUserWithEmailAndPassword(auth, email, password);
         const uid = credentials.user.uid;
-        const profile = createDefaultProfile(uid, email, fullName, phoneNumber, role);
+        
+        // Generate placeholder responder coordinates in NYC
+        const lat = role === 'volunteer' ? 40.7128 + (Math.random() - 0.5) * 0.05 : 40.7128;
+        const lon = role === 'volunteer' ? -74.0060 + (Math.random() - 0.5) * 0.05 : -74.0060;
+        
+        const profile: UserProfile = {
+          uid,
+          fullName,
+          email,
+          phoneNumber,
+          role,
+          profilePhoto: `https://api.dicebear.com/7.x/bottts/svg?seed=${encodeURIComponent(fullName)}`,
+          createdAt: new Date().toISOString(),
+          lastActive: new Date().toISOString(),
+          isEmailVerified: false,
+          gender: '',
+          dob: '',
+          bloodGroup: '',
+          allergies: '',
+          medicalConditions: '',
+          medications: '',
+          emergencyNotes: '',
+          homeAddress: '',
+          currentCity: 'New York City',
+          latitude: lat,
+          longitude: lon,
+          rangeRadius: 3,
+          isAvailable: true
+        };
         
         await setDoc(doc(db, 'users', uid), {
           ...profile,
@@ -173,63 +294,75 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         
         setUser(profile);
       } else {
-        // Sandbox Simulation
-        await new Promise((resolve) => setTimeout(resolve, 600)); // Simulate delay
-        
-        const mockUsers = JSON.parse(localStorage.getItem('sos_users') || '[]');
-        if (mockUsers.some((u: any) => u.email === email)) {
-          throw new Error('Email already exists');
-        }
-        
-        const uid = 'mock_uid_' + Math.random().toString(36).substr(2, 9);
-        const profile = createDefaultProfile(uid, email, fullName, phoneNumber, role);
-        
-        mockUsers.push({ ...profile, password }); // Store password for mock login
-        localStorage.setItem('sos_users', JSON.stringify(mockUsers));
-        
-        localStorage.setItem('sos_current_user', JSON.stringify(profile));
-        setUser(profile);
+        // Backend secure API call
+        const response = await fetch('/api/auth/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password, fullName, phoneNumber, role }),
+          credentials: 'include'
+        });
+
+        const data = await safeParseJson(response, 'Unable to connect to the registration service. Please try again.');
+
+        // Clean register does not auto login since they need to verify email
+        setUser(null);
+        localStorage.removeItem('sos_current_user');
+        globalAccessToken = null;
+
+        return data;
       }
     } finally {
       setLoading(false);
     }
   };
 
-  const loginUser = async (email: string, password: string) => {
+  const loginUser = async (identifier: string, password: string) => {
     setLoading(true);
+    // CRITICAL: Clear existing session before attempting a new login to prevent session state pollution on failure!
+    setUser(null);
+    localStorage.removeItem('sos_current_user');
+    globalAccessToken = null;
+
     try {
       if (isFirebaseEnabled && auth && db) {
-        const credentials = await signInWithEmailAndPassword(auth, email, password);
+        let targetEmail = identifier;
+        const phoneCheck = validateAndNormalizePhone(identifier);
+        if (phoneCheck.isValid) {
+          const usersRef = collection(db, 'users');
+          const q = query(usersRef, where('phoneNumber', '==', phoneCheck.normalized));
+          const querySnapshot = await getDocs(q);
+          if (!querySnapshot.empty) {
+            const userDoc = querySnapshot.docs[0];
+            targetEmail = userDoc.data().email;
+          } else {
+            throw new Error('Mobile number is not registered.');
+          }
+        }
+        const credentials = await signInWithEmailAndPassword(auth, targetEmail, password);
         const userDocRef = doc(db, 'users', credentials.user.uid);
         const userDoc = await getDoc(userDocRef);
         if (userDoc.exists()) {
           setUser(userDoc.data() as UserProfile);
         } else {
+          try {
+            await signOut(auth);
+          } catch (_) {}
           throw new Error('User profile record not found.');
         }
       } else {
-        // Sandbox Simulation
-        await new Promise((resolve) => setTimeout(resolve, 600));
-        
-        const mockUsers = JSON.parse(localStorage.getItem('sos_users') || '[]');
-        const matched = mockUsers.find((u: any) => u.email === email && u.password === password);
-        
-        if (!matched) {
-          throw new Error('Invalid email or password');
-        }
-        
-        // Remove password before saving in current session state
-        const { password: _, ...profile } = matched;
-        const updatedProfile = { ...profile, lastActive: new Date().toISOString() };
-        
-        // Update lastActive in DB
-        const updatedMockUsers = mockUsers.map((u: any) => 
-          u.uid === profile.uid ? { ...u, lastActive: updatedProfile.lastActive } : u
-        );
-        localStorage.setItem('sos_users', JSON.stringify(updatedMockUsers));
-        
-        localStorage.setItem('sos_current_user', JSON.stringify(updatedProfile));
-        setUser(updatedProfile);
+        // Backend secure API call
+        const response = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ identifier, password }),
+          credentials: 'include'
+        });
+
+        const data = await safeParseJson(response, 'Unable to connect to the authentication service. Please try again.');
+
+        globalAccessToken = data.accessToken;
+        setUser(data.user);
+        localStorage.setItem('sos_current_user', JSON.stringify(data.user));
       }
     } finally {
       setLoading(false);
@@ -242,7 +375,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       if (isFirebaseEnabled && auth) {
         await signOut(auth);
       } else {
-        await new Promise((resolve) => setTimeout(resolve, 300));
+        await fetch('/api/auth/logout', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'include'
+        });
+        globalAccessToken = null;
         localStorage.removeItem('sos_current_user');
       }
       setUser(null);
@@ -255,19 +393,22 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     if (isFirebaseEnabled && auth) {
       await sendPasswordResetEmail(auth, email);
     } else {
-      await new Promise((resolve) => setTimeout(resolve, 400));
-      const mockUsers = JSON.parse(localStorage.getItem('sos_users') || '[]');
-      if (!mockUsers.some((u: any) => u.email === email)) {
-        throw new Error('User with this email does not exist.');
+      const response = await fetch('/api/auth/forgot-password', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+        credentials: 'include'
+      });
+
+      const data = await response.json();
+      if (!response.ok) {
+        throw new Error(data.message || 'Failed to dispatch reset email.');
       }
-      console.log(`[Simulator] Password reset email link mocked to: ${email}`);
     }
   };
 
   const updateProfile = async (data: Partial<UserProfile>) => {
     if (!user) throw new Error('No user is currently authenticated');
-    
-    const updated = { ...user, ...data, lastActive: new Date().toISOString() };
     
     try {
       if (isFirebaseEnabled && db) {
@@ -276,19 +417,20 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           ...data,
           lastActive: new Date().toISOString()
         });
-        setUser(updated);
+        setUser({ ...user, ...data, lastActive: new Date().toISOString() });
       } else {
-        // Sandbox Simulation
-        await new Promise((resolve) => setTimeout(resolve, 500));
-        
-        const mockUsers = JSON.parse(localStorage.getItem('sos_users') || '[]');
-        const updatedMockUsers = mockUsers.map((u: any) => 
-          u.uid === user.uid ? { ...u, ...data, lastActive: updated.lastActive } : u
-        );
-        
-        localStorage.setItem('sos_users', JSON.stringify(updatedMockUsers));
-        localStorage.setItem('sos_current_user', JSON.stringify(updated));
-        setUser(updated);
+        const response = await apiFetch('/api/auth/profile', {
+          method: 'PUT',
+          body: JSON.stringify(data)
+        });
+
+        const updatedUser = await response.json();
+        if (!response.ok) {
+          throw new Error(updatedUser.message || 'Failed to update profile');
+        }
+
+        setUser(updatedUser);
+        localStorage.setItem('sos_current_user', JSON.stringify(updatedUser));
       }
     } catch (err) {
       console.error('Failed to update profile:', err);

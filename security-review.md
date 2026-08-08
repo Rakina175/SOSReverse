@@ -1,6 +1,6 @@
 # Security Review
 
-**Generated At:** 2026-07-31T11:19:36.564Z
+**Generated At:** 2026-08-01T10:50:47.075Z
 
 ## Findings Summary
 - Total findings: 400

@@ -32,6 +32,11 @@ export const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children, allowe
     return <Navigate to="/login" replace />;
   }
 
+  // Check email verification status
+  if (!user.isEmailVerified) {
+    return <Navigate to="/verify-email-pending" replace />;
+  }
+
   // Role checking
   if (allowedRoles && !allowedRoles.includes(user.role)) {
     // Redirect admin to admin dashboard, volunteer to volunteer dashboard, citizen to dashboard

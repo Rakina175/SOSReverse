@@ -16,6 +16,10 @@ import { EmergencyHistory } from './pages/EmergencyHistory';
 import { UserProfile } from './pages/UserProfile';
 import { VolunteerDashboard } from './pages/VolunteerDashboard';
 import { AdminDashboard } from './pages/AdminDashboard';
+import { ForgotPassword } from './pages/ForgotPassword';
+import { ResetPassword } from './pages/ResetPassword';
+import { VerifyEmail } from './pages/VerifyEmail';
+import { VerifyEmailPending } from './pages/VerifyEmailPending';
 import { Settings } from './pages/Settings';
 
 // Components
@@ -34,6 +38,10 @@ function App() {
               <Route path="/" element={<LandingPage />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Registration />} />
+              <Route path="/forgot-password" element={<ForgotPassword />} />
+              <Route path="/reset-password" element={<ResetPassword />} />
+              <Route path="/verify-email" element={<VerifyEmail />} />
+              <Route path="/verify-email-pending" element={<VerifyEmailPending />} />
 
               {/* Protected Citizen Routes */}
               <Route

@@ -4,6 +4,7 @@ import { Bell, Trash2, Database, RefreshCw } from 'lucide-react';
 
 export const Settings: React.FC = () => {
   const { user, isFirebase } = useAuth();
+  const showSandbox = false;
 
   // Notification configs states (mocked/local storage)
   const [sounds, setSounds] = useState(true);
@@ -170,7 +171,7 @@ export const Settings: React.FC = () => {
         </div>
 
         {/* Card: Developer Sandbox Controls */}
-        {false && !isFirebase && (
+        {showSandbox && !isFirebase && (
           <div className="glass-card rounded-2xl border border-indigo-500/10 bg-gradient-to-br from-indigo-950/5 to-slate-900/60 p-5">
             <h3 className="text-sm font-bold text-indigo-300 uppercase tracking-wider mb-4 flex items-center gap-2 border-b border-indigo-900/30 pb-2">
               <Database size={16} className="text-indigo-400" />

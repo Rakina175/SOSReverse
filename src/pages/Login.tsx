@@ -1,17 +1,60 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { ShieldAlert, Mail, Lock, AlertCircle, ArrowRight, Info } from 'lucide-react';
+import { ShieldAlert, Mail, Phone, Lock, AlertCircle, ArrowRight, Info, Eye, EyeOff, ShieldCheck, KeyRound } from 'lucide-react';
+import { validateAndNormalizeEmail, validateAndNormalizePhone } from '../utils/validation';
 
 export const Login: React.FC = () => {
-  const { loginUser, resetPassword } = useAuth();
+  const { loginUser } = useAuth();
   const navigate = useNavigate();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [infoMessage, setInfoMessage] = useState('');
+
+  // Resend verification email configurations
+  const [showResend, setShowResend] = useState(false);
+  const [resendEmail, setResendEmail] = useState('');
+  const [resendSuccess, setResendSuccess] = useState('');
+  const [resendLoading, setResendLoading] = useState(false);
+
+  const handleResendVerification = async () => {
+    setResendLoading(true);
+    setResendSuccess('');
+    setError('');
+    try {
+      const response = await fetch('/api/auth/resend-verification', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: resendEmail || email })
+      });
+      let data: any = {};
+      const contentType = response.headers.get('Content-Type');
+      if (contentType && contentType.includes('application/json')) {
+        data = await response.json();
+      }
+      if (!response.ok) {
+        throw new Error(data.message || 'Failed to resend verification email.');
+      }
+      setResendSuccess(data.message || 'If this email is registered, a new verification link has been sent.');
+    } catch (resendErr: any) {
+      setError(resendErr.message || 'Failed to resend verification email.');
+    } finally {
+      setResendLoading(false);
+    }
+  };
+
+  const getIdentifierIcon = () => {
+    const val = email.trim();
+    if (!val) return <Mail className="absolute left-3.5 top-3.5 text-slate-500" size={16} />;
+    if (/^[0-9+]/.test(val) || !val.includes('@')) {
+      return <Phone className="absolute left-3.5 top-3.5 text-slate-500" size={16} />;
+    }
+    return <Mail className="absolute left-3.5 top-3.5 text-slate-500" size={16} />;
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -20,49 +63,37 @@ export const Login: React.FC = () => {
       return;
     }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      setError('Please enter a valid email address.');
+    const trimmedInput = email.trim();
+    const emailCheck = validateAndNormalizeEmail(trimmedInput);
+    const phoneCheck = validateAndNormalizePhone(trimmedInput);
+
+    if (!emailCheck.isValid && !phoneCheck.isValid) {
+      setError('Please enter a valid email address or mobile number.');
       return;
     }
 
     setLoading(true);
     setError('');
     setInfoMessage('');
+    setShowResend(false);
+    setResendSuccess('');
 
     try {
-      await loginUser(email, password);
-      // AuthProvider useEffect will set the user and ProtectedRoute will push them to correct dashboard,
-      // but let's do a soft redirect based on the role to speed up routing
+      await loginUser(trimmedInput, password);
       const userSession = JSON.parse(localStorage.getItem('sos_current_user') || 'null');
       if (userSession) {
         if (userSession.role === 'admin') navigate('/admin');
         else if (userSession.role === 'volunteer') navigate('/volunteer');
         else navigate('/dashboard');
       } else {
-        // Fallback to reload/redirect
         navigate('/dashboard');
       }
     } catch (err: any) {
       setError(err.message || 'Failed to sign in. Please verify credentials.');
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleForgotPassword = async () => {
-    if (!email) {
-      setError('Please enter your email address to reset your password.');
-      return;
-    }
-    setLoading(true);
-    setError('');
-    setInfoMessage('');
-    try {
-      await resetPassword(email);
-      setInfoMessage('A password reset link has been dispatched to your email.');
-    } catch (err: any) {
-      setError(err.message || 'Failed to dispatch reset email.');
+      if (err.message && err.message.toLowerCase().includes('verify your email')) {
+        setShowResend(true);
+        setResendEmail(trimmedInput);
+      }
     } finally {
       setLoading(false);
     }
@@ -101,6 +132,26 @@ export const Login: React.FC = () => {
           </div>
         )}
 
+        {/* Resend Verification Widget */}
+        {showResend && (
+          <div className="mb-4 p-3.5 rounded-xl bg-slate-950/80 border border-slate-800 flex flex-col gap-2 text-xs">
+            <p className="text-slate-350 leading-tight">
+              Didn't receive the verification email or it expired? Click below to request a new link.
+            </p>
+            <button
+              type="button"
+              onClick={handleResendVerification}
+              disabled={resendLoading}
+              className="w-full py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg font-bold text-2xs cursor-pointer transition-colors disabled:opacity-50"
+            >
+              {resendLoading ? 'Requesting New Link...' : 'Resend Verification Link'}
+            </button>
+            {resendSuccess && (
+              <p className="text-emerald-400 text-3xs font-bold mt-1">{resendSuccess}</p>
+            )}
+          </div>
+        )}
+
         {/* Info/Success Message */}
         {infoMessage && (
           <div className="mb-4 p-3 rounded-xl bg-indigo-500/15 border border-indigo-500/25 flex items-start gap-2.5 text-xs text-indigo-400">
@@ -111,12 +162,12 @@ export const Login: React.FC = () => {
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <div>
-            <label className="text-xs font-bold text-slate-400 block mb-1.5 uppercase tracking-wider">Email Address</label>
+            <label className="text-xs font-bold text-slate-400 block mb-1.5 uppercase tracking-wider">Email or Mobile Number</label>
             <div className="relative">
-              <Mail className="absolute left-3.5 top-3.5 text-slate-500" size={16} />
+              {getIdentifierIcon()}
               <input
                 type="email"
-                placeholder="name@email.com"
+                placeholder="name@email.com or +919876543210"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full glass-input py-3 pl-10 pr-4 rounded-xl text-sm"
@@ -128,24 +179,30 @@ export const Login: React.FC = () => {
           <div>
             <div className="flex justify-between items-center mb-1.5">
               <label className="text-xs font-bold text-slate-400 block uppercase tracking-wider">Password</label>
-              <button
-                type="button"
-                onClick={handleForgotPassword}
+              <Link
+                to="/forgot-password"
                 className="text-[10px] font-semibold text-rose-400 hover:text-rose-300 cursor-pointer"
               >
                 Forgot Password?
-              </button>
+              </Link>
             </div>
             <div className="relative">
               <Lock className="absolute left-3.5 top-3.5 text-slate-500" size={16} />
               <input
-                type="password"
+                type={showPassword ? 'text' : 'password'}
                 placeholder="••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full glass-input py-3 pl-10 pr-4 rounded-xl text-sm"
+                className="w-full glass-input py-3 pl-10 pr-10 rounded-xl text-sm"
                 required
               />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-3.5 top-3.5 text-slate-500 hover:text-slate-300"
+              >
+                {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+              </button>
             </div>
           </div>
 
@@ -164,6 +221,19 @@ export const Login: React.FC = () => {
             )}
           </button>
         </form>
+
+        {/* Secure Authentication Badges */}
+        <div className="mt-5 p-3.5 rounded-2xl bg-emerald-500/5 border border-emerald-500/10 flex items-center justify-around text-slate-400 text-[10px]">
+          <div className="flex items-center gap-1.5 font-semibold">
+            <ShieldCheck className="text-emerald-400" size={14} />
+            <span>256-bit SSL Protection</span>
+          </div>
+          <div className="w-[1px] h-3 bg-slate-800"></div>
+          <div className="flex items-center gap-1.5 font-semibold">
+            <KeyRound className="text-emerald-400" size={14} />
+            <span>Brute-force Locked</span>
+          </div>
+        </div>
 
         <div className="mt-5 text-center text-xs text-slate-400 border-t border-slate-900 pt-4">
           Need protective monitoring?{' '}
