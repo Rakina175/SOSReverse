@@ -1,10 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { ShieldAlert, HeartHandshake, Zap, ShieldCheck, MapPin, ArrowRight, Radio } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 
 export const LandingPage: React.FC = () => {
   const { user } = useAuth();
+
+  if (user) {
+    return <Navigate to={user.role === 'volunteer' ? '/volunteer' : user.role === 'admin' ? '/admin' : '/dashboard'} replace />;
+  }
 
   return (
     <div className="min-h-screen bg-brand-dark flex flex-col text-slate-100 selection:bg-rose-600 selection:text-white">
@@ -28,21 +32,12 @@ export const LandingPage: React.FC = () => {
           <Link to="/login" className="text-sm font-semibold text-slate-400 hover:text-white transition-colors">
             Login
           </Link>
-          {user ? (
-            <Link 
-              to={user.role === 'volunteer' ? '/volunteer' : user.role === 'admin' ? '/admin' : '/dashboard'}
-              className="text-sm font-semibold bg-rose-600 hover:bg-rose-500 px-4 py-2 rounded-xl text-white shadow-lg shadow-rose-600/20 transition-all hover:-translate-y-0.5 duration-200"
-            >
-              Go to App
-            </Link>
-          ) : (
-            <Link 
-              to="/register" 
-              className="text-sm font-semibold bg-rose-600 hover:bg-rose-500 px-4 py-2 rounded-xl text-white shadow-lg shadow-rose-600/20 transition-all hover:-translate-y-0.5 duration-200"
-            >
-              Join Network
-            </Link>
-          )}
+          <Link 
+            to="/register" 
+            className="text-sm font-semibold bg-rose-600 hover:bg-rose-500 px-4 py-2 rounded-xl text-white shadow-lg shadow-rose-600/20 transition-all hover:-translate-y-0.5 duration-200"
+          >
+            Join Network
+          </Link>
         </div>
       </header>
 

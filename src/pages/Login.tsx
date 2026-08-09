@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { ShieldAlert, Mail, Phone, Lock, AlertCircle, ArrowRight, Info, Eye, EyeOff, ShieldCheck, KeyRound } from 'lucide-react';
+import { ShieldAlert, Mail, Phone, Lock, AlertCircle, ArrowRight, Info, Eye, EyeOff } from 'lucide-react';
 import { validateAndNormalizeEmail, validateAndNormalizePhone } from '../utils/validation';
 
 export const Login: React.FC = () => {
@@ -99,11 +99,7 @@ export const Login: React.FC = () => {
     }
   };
 
-  // Demo accounts helper
-  const handleAutofill = (demoRole: 'citizen' | 'volunteer' | 'admin') => {
-    setEmail(`mock_${demoRole}@sos.com`);
-    setPassword('password123');
-  };
+
 
   return (
     <div className="min-h-screen bg-brand-dark flex flex-col justify-center items-center p-4 relative overflow-hidden">
@@ -222,18 +218,7 @@ export const Login: React.FC = () => {
           </button>
         </form>
 
-        {/* Secure Authentication Badges */}
-        <div className="mt-5 p-3.5 rounded-2xl bg-emerald-500/5 border border-emerald-500/10 flex items-center justify-around text-slate-400 text-[10px]">
-          <div className="flex items-center gap-1.5 font-semibold">
-            <ShieldCheck className="text-emerald-400" size={14} />
-            <span>256-bit SSL Protection</span>
-          </div>
-          <div className="w-[1px] h-3 bg-slate-800"></div>
-          <div className="flex items-center gap-1.5 font-semibold">
-            <KeyRound className="text-emerald-400" size={14} />
-            <span>Brute-force Locked</span>
-          </div>
-        </div>
+
 
         <div className="mt-5 text-center text-xs text-slate-400 border-t border-slate-900 pt-4">
           Need protective monitoring?{' '}
@@ -243,36 +228,7 @@ export const Login: React.FC = () => {
         </div>
       </div>
 
-      {/* Demo Credentials Drawer */}
-      <div className="glass-card max-w-sm w-full mt-6 rounded-2xl border border-slate-800/80 p-4 text-xs">
-        <p className="font-bold text-indigo-200 text-center mb-2 uppercase tracking-wide flex items-center justify-center gap-1.5">
-          <Info size={14} className="text-indigo-400" />
-          Test Account Autofills (Sandbox)
-        </p>
-        <p className="text-[10px] text-slate-400 text-center mb-3">
-          Click any button to populate credentials for immediate login.
-        </p>
-        <div className="grid grid-cols-3 gap-2">
-          <button
-            onClick={() => handleAutofill('citizen')}
-            className="py-2 bg-slate-900 hover:bg-rose-950/20 border border-slate-800 hover:border-rose-500/20 rounded-lg font-semibold text-rose-300 cursor-pointer text-[10px]"
-          >
-            Citizen
-          </button>
-          <button
-            onClick={() => handleAutofill('volunteer')}
-            className="py-2 bg-slate-900 hover:bg-indigo-950/20 border border-slate-800 hover:border-indigo-500/20 rounded-lg font-semibold text-indigo-300 cursor-pointer text-[10px]"
-          >
-            Volunteer
-          </button>
-          <button
-            onClick={() => handleAutofill('admin')}
-            className="py-2 bg-slate-900 hover:bg-emerald-950/20 border border-slate-800 hover:border-emerald-500/20 rounded-lg font-semibold text-emerald-300 cursor-pointer text-[10px]"
-          >
-            Admin
-          </button>
-        </div>
-      </div>
+
     </div>
   );
 };

@@ -62,7 +62,7 @@ export const RoleSwitcher: React.FC = () => {
         title="Open Simulator Controls"
       >
         <Cpu size={20} className="animate-spin-slow" />
-        <span className="text-xs font-semibold pr-1">Developer Sandbox</span>
+        <span className="text-xs font-semibold pr-1">Developer Tools</span>
       </button>
     );
   }
@@ -84,9 +84,9 @@ export const RoleSwitcher: React.FC = () => {
 
       {/* Connection Mode */}
       <div className="flex items-center justify-between text-xs mb-3 px-2 py-1 bg-slate-900/60 rounded border border-slate-800">
-        <span className="text-slate-400">Database Engine:</span>
+        <span className="text-slate-400">Active Storage:</span>
         <span className={`font-semibold ${isFirebase ? 'text-emerald-400' : 'text-amber-400 animate-pulse'}`}>
-          {isFirebase ? 'Cloud Firebase' : 'Sandbox (LocalStorage)'}
+          {isFirebase ? 'Cloud Firebase' : 'LocalStorage'}
         </span>
       </div>
 

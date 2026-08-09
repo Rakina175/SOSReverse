@@ -1,5 +1,8 @@
 import { createClient } from '@supabase/supabase-js';
 import bcrypt from 'bcryptjs';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const SUPABASE_URL = process.env.SUPABASE_URL || 'https://placeholder-url.supabase.co';
 const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || 'placeholder-key';
@@ -164,29 +167,53 @@ export const db = isTest ? {
     getAll: async () => {
       const { data, error } = await supabase.from('emergencies').select('*').order('createdAt', { ascending: false });
       if (error) throw error;
-      return data;
+      return data.map(item => ({
+        ...item,
+        timestamp: item.createdAt
+      }));
     },
     add: async (emergency) => {
-      const { data, error } = await supabase.from('emergencies').insert(emergency).select().single();
+      const { timestamp, ...dbEmergency } = emergency;
+      if (!dbEmergency.createdAt) {
+        dbEmergency.createdAt = new Date().toISOString();
+      }
+      const { data, error } = await supabase.from('emergencies').insert(dbEmergency).select().single();
       if (error) throw error;
-      return data;
+      return {
+        ...data,
+        timestamp: data.createdAt
+      };
     },
     update: async (id, updates) => {
-      const { data, error } = await supabase.from('emergencies').update(updates).eq('id', id).select().single();
+      const { timestamp, ...dbUpdates } = updates;
+      const { data, error } = await supabase.from('emergencies').update(dbUpdates).eq('id', id).select().single();
       if (error) throw error;
-      return data;
+      return {
+        ...data,
+        timestamp: data.createdAt
+      };
     }
   },
   chats: {
     getByEmergencyId: async (emergencyId) => {
       const { data, error } = await supabase.from('chats').select('*').eq('emergencyId', emergencyId).order('createdAt', { ascending: true });
       if (error) throw error;
-      return data;
+      return data.map(item => ({
+        ...item,
+        timestamp: item.createdAt
+      }));
     },
     add: async (message) => {
-      const { data, error } = await supabase.from('chats').insert(message).select().single();
+      const { timestamp, ...dbMessage } = message;
+      if (!dbMessage.createdAt) {
+        dbMessage.createdAt = new Date().toISOString();
+      }
+      const { data, error } = await supabase.from('chats').insert(dbMessage).select().single();
       if (error) throw error;
-      return data;
+      return {
+        ...data,
+        timestamp: data.createdAt
+      };
     }
   }
 };

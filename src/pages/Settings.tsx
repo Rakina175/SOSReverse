@@ -4,7 +4,7 @@ import { Bell, Trash2, Database, RefreshCw } from 'lucide-react';
 
 export const Settings: React.FC = () => {
   const { user, isFirebase } = useAuth();
-  const showSandbox = false;
+  const showDeveloperControls = false;
 
   // Notification configs states (mocked/local storage)
   const [sounds, setSounds] = useState(true);
@@ -14,9 +14,9 @@ export const Settings: React.FC = () => {
   if (!user) return null;
 
   const handleClearSimulator = () => {
-    if (confirm('CAUTION: This will erase all registered accounts, contacts, and emergency reports stored in your local storage sandbox database. Proceed?')) {
+    if (confirm('CAUTION: This will erase all registered accounts, contacts, and emergency reports stored in your local storage database. Proceed?')) {
       localStorage.clear();
-      alert('Sandbox database wiped. Reloading session.');
+      alert('Database wiped. Reloading session.');
       window.location.reload();
     }
   };
@@ -110,7 +110,7 @@ export const Settings: React.FC = () => {
       <div className="border-b border-slate-800 pb-4 mb-6">
         <h2 className="text-2xl font-extrabold text-white tracking-tight m-0">System Settings</h2>
         <p className="text-xs text-slate-400 mt-1">
-          Adjust alert notifications and manage your local database simulation credentials.
+          Adjust alert notifications and manage your local preferences.
         </p>
       </div>
 
@@ -170,12 +170,12 @@ export const Settings: React.FC = () => {
           </div>
         </div>
 
-        {/* Card: Developer Sandbox Controls */}
-        {showSandbox && !isFirebase && (
+        {/* Card: Developer Controls */}
+        {showDeveloperControls && !isFirebase && (
           <div className="glass-card rounded-2xl border border-indigo-500/10 bg-gradient-to-br from-indigo-950/5 to-slate-900/60 p-5">
             <h3 className="text-sm font-bold text-indigo-300 uppercase tracking-wider mb-4 flex items-center gap-2 border-b border-indigo-900/30 pb-2">
               <Database size={16} className="text-indigo-400" />
-              Developer Sandbox Tools (Local Storage)
+              Developer Tools (Local Storage)
             </h3>
 
             <p className="text-[10px] text-slate-400 mb-4 leading-normal">
@@ -206,7 +206,7 @@ export const Settings: React.FC = () => {
                 className="w-full py-2.5 px-4 bg-slate-900 hover:bg-rose-950/25 border border-slate-800 hover:border-rose-500/20 text-slate-400 hover:text-rose-400 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer"
               >
                 <Trash2 size={14} />
-                Clear Sandbox Database (Full Reset)
+                Clear Local Database (Full Reset)
               </button>
             </div>
           </div>

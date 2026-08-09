@@ -28,10 +28,10 @@ if (isFirebaseEnabled) {
     db = getFirestore(app);
     console.log('Firebase initialized successfully.');
   } catch (error) {
-    console.error('Firebase initialization failed. Falling back to Sandbox Simulation Mode:', error);
+    console.error('Firebase initialization failed. Falling back to Simulation Mode:', error);
   }
 } else {
-  console.warn('Firebase configuration missing or incomplete. Running in Sandbox Simulation Mode.');
+  console.warn('Firebase configuration missing or incomplete. Running in Simulation Mode.');
 }
 
 export { auth, db, isFirebaseEnabled };

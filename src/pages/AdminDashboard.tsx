@@ -149,7 +149,7 @@ export const AdminDashboard: React.FC = () => {
           <div className="flex flex-col gap-3 overflow-y-auto max-h-[22rem] pr-1">
             {volunteers.length === 0 ? (
               <div className="my-auto py-10 text-center text-slate-500 italic text-xs">
-                No registered volunteers found on the network database.
+                No registered volunteers found on the network.
               </div>
             ) : (
               volunteers.map((v) => {

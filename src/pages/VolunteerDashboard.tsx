@@ -18,6 +18,7 @@ export const VolunteerDashboard: React.FC = () => {
 
   const [declinedIds, setDeclinedIds] = useState<string[]>([]);
   const [activeTab, setActiveTab] = useState<'radar' | 'mission'>('radar');
+  const [showAllRanges, setShowAllRanges] = useState(false);
 
   // Identify active mission for current volunteer
   const activeMission = user ? emergencies.find(
@@ -32,6 +33,25 @@ export const VolunteerDashboard: React.FC = () => {
       setActiveTab('radar');
     }
   }, [activeMission]);
+
+  // Geolocation trigger to update volunteer coordinates in database
+  useEffect(() => {
+    if (!user) return;
+    
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          updateProfile({
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude
+          }).catch(err => console.error('Failed to update responder location:', err));
+        },
+        (error) => {
+          console.warn('Geolocation permission declined or failed for responder:', error);
+        }
+      );
+    }
+  }, [user?.isAvailable]);
 
   // Toggle availability
   const handleToggleAvailable = async () => {
@@ -91,6 +111,8 @@ export const VolunteerDashboard: React.FC = () => {
     if (e.status !== 'Pending') return false;
     if (declinedIds.includes(e.id)) return false;
 
+    if (showAllRanges) return true; // Skip distance check
+
     // Calculate distance
     const dist = getDistanceKm(user.latitude, user.longitude, e.latitude, e.longitude);
     return dist <= user.rangeRadius;
@@ -119,9 +141,12 @@ export const VolunteerDashboard: React.FC = () => {
             {([1, 3, 5, 10] as const).map((r) => (
               <button
                 key={r}
-                onClick={() => handleRangeChange(r)}
+                onClick={() => {
+                  setShowAllRanges(false);
+                  handleRangeChange(r);
+                }}
                 className={`px-2.5 py-1 rounded-lg text-[10px] font-bold cursor-pointer transition-colors ${
-                  user.rangeRadius === r 
+                  user.rangeRadius === r && !showAllRanges
                     ? 'bg-indigo-600 text-white shadow' 
                     : 'text-slate-400 hover:text-slate-200'
                 }`}
@@ -129,6 +154,16 @@ export const VolunteerDashboard: React.FC = () => {
                 {r}k
               </button>
             ))}
+            <button
+              onClick={() => setShowAllRanges(true)}
+              className={`px-2.5 py-1 rounded-lg text-[10px] font-bold cursor-pointer transition-colors ${
+                showAllRanges 
+                  ? 'bg-indigo-600 text-white shadow' 
+                  : 'text-slate-400 hover:text-slate-200'
+              }`}
+            >
+              All
+            </button>
           </div>
 
           <button
@@ -193,7 +228,7 @@ export const VolunteerDashboard: React.FC = () => {
               </div>
               <h3 className="text-sm font-bold text-white mb-1.5">Emergency Radar Clear</h3>
               <p className="text-xs text-slate-400 leading-normal max-w-xs">
-                No active SOS signals detected within your {user.rangeRadius} KM safety radius right now. Remaining on high alert.
+                No active SOS signals detected {showAllRanges ? 'on the network' : `within your ${user.rangeRadius} KM safety radius`} right now. Remaining on high alert.
               </p>
             </div>
           ) : (

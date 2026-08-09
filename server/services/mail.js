@@ -2,6 +2,9 @@ import nodemailer from 'nodemailer';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -53,7 +56,7 @@ export async function sendMail({ to, subject, html }) {
     }
   }
 
-  // Local Simulation / Sandbox Fallback
+  // Local Simulation / Fallback
   console.log('\n=================== MOCK EMAIL SENT ===================');
   console.log(`TO:      ${to}`);
   console.log(`FROM:    ${from}`);

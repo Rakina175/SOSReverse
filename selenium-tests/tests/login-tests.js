@@ -35,7 +35,7 @@ function mask(s, max = 15) {
 function generateTestCases(total = 400) {
   const cases = [];
 
-  // 1. Valid demo credentials from sandbox AuthContext seed:
+  // 1. Valid demo credentials from local AuthContext seed:
   cases.push({ id: 'TC-001', email: 'mock_citizen@sos.com', password: 'password123', expected: 'success', desc: 'Valid citizen demo login' });
   cases.push({ id: 'TC-002', email: 'mock_volunteer@sos.com', password: 'password123', expected: 'success', desc: 'Valid volunteer demo login' });
   cases.push({ id: 'TC-003', email: 'mock_admin@sos.com', password: 'password123', expected: 'success', desc: 'Valid admin demo login' });
