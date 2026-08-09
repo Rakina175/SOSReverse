@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-08-09T14:55:01.884Z",
+  "generatedAt": "2026-08-09T18:19:33.022Z",
   "status": "passed",
   "tests": [
     {
       "id": "TC-001",
       "name": "Valid citizen demo login",
       "status": "PASS",
-      "executionTime": "2.44 sec",
-      "timestamp": "2026-08-09T14:55:01.794Z",
+      "executionTime": "4.33 sec",
+      "timestamp": "2026-08-09T18:19:32.868Z",
       "remarks": "unknown error: net::ERR_CONNECTION_REFUSED\n  (Session info: chrome=151.0.7922.77)"
     },
     {
@@ -15,7 +15,7 @@
       "name": "Valid volunteer demo login",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.794Z",
+      "timestamp": "2026-08-09T18:19:32.868Z",
       "remarks": "Success"
     },
     {
@@ -23,7 +23,7 @@
       "name": "Valid admin demo login",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.794Z",
+      "timestamp": "2026-08-09T18:19:32.868Z",
       "remarks": "Success"
     },
     {
@@ -31,7 +31,7 @@
       "name": "Empty email & password",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.794Z",
+      "timestamp": "2026-08-09T18:19:32.868Z",
       "remarks": "Success"
     },
     {
@@ -39,7 +39,7 @@
       "name": "Malformed email format (no @)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.794Z",
+      "timestamp": "2026-08-09T18:19:32.868Z",
       "remarks": "Success"
     },
     {
@@ -47,7 +47,7 @@
       "name": "Incomplete email format",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.794Z",
+      "timestamp": "2026-08-09T18:19:32.868Z",
       "remarks": "Success"
     },
     {
@@ -55,7 +55,7 @@
       "name": "Extremely long credentials",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.794Z",
+      "timestamp": "2026-08-09T18:19:32.868Z",
       "remarks": "Success"
     },
     {
@@ -63,7 +63,7 @@
       "name": "SQL injection pattern in fields",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.794Z",
+      "timestamp": "2026-08-09T18:19:32.868Z",
       "remarks": "Success"
     },
     {
@@ -71,7 +71,7 @@
       "name": "XSS injection payload",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.794Z",
+      "timestamp": "2026-08-09T18:19:32.869Z",
       "remarks": "Success"
     },
     {
@@ -79,7 +79,7 @@
       "name": "Whitespace email and whitespace password (1)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.794Z",
+      "timestamp": "2026-08-09T18:19:32.869Z",
       "remarks": "Success"
     },
     {
@@ -87,7 +87,7 @@
       "name": "Tagged email format with invalid password (2)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.794Z",
+      "timestamp": "2026-08-09T18:19:32.869Z",
       "remarks": "Success"
     },
     {
@@ -95,7 +95,7 @@
       "name": "Varying length long emails and long passwords (3)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.794Z",
+      "timestamp": "2026-08-09T18:19:32.869Z",
       "remarks": "Success"
     },
     {
@@ -103,7 +103,7 @@
       "name": "Password containing special characters !#$%^",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.794Z",
+      "timestamp": "2026-08-09T18:19:32.869Z",
       "remarks": "Success"
     },
     {
@@ -111,7 +111,7 @@
       "name": "Fuzzing with database query snippets (5)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.794Z",
+      "timestamp": "2026-08-09T18:19:32.869Z",
       "remarks": "Success"
     },
     {
@@ -119,7 +119,7 @@
       "name": "Nonexistent email with standard password pattern (6)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.794Z",
+      "timestamp": "2026-08-09T18:19:32.869Z",
       "remarks": "Success"
     },
     {
@@ -127,7 +127,7 @@
       "name": "Whitespace email and whitespace password (7)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.794Z",
+      "timestamp": "2026-08-09T18:19:32.869Z",
       "remarks": "Success"
     },
     {
@@ -135,7 +135,7 @@
       "name": "Tagged email format with invalid password (8)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.794Z",
+      "timestamp": "2026-08-09T18:19:32.869Z",
       "remarks": "Success"
     },
     {
@@ -143,7 +143,7 @@
       "name": "Varying length long emails and long passwords (9)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.794Z",
+      "timestamp": "2026-08-09T18:19:32.869Z",
       "remarks": "Success"
     },
     {
@@ -151,7 +151,7 @@
       "name": "Password containing special characters !#$%^&*()~`",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.794Z",
+      "timestamp": "2026-08-09T18:19:32.869Z",
       "remarks": "Success"
     },
     {
@@ -159,7 +159,7 @@
       "name": "Fuzzing with database query snippets (11)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.794Z",
+      "timestamp": "2026-08-09T18:19:32.869Z",
       "remarks": "Success"
     },
     {
@@ -167,7 +167,7 @@
       "name": "Nonexistent email with standard password pattern (12)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.794Z",
+      "timestamp": "2026-08-09T18:19:32.869Z",
       "remarks": "Success"
     },
     {
@@ -175,7 +175,7 @@
       "name": "Whitespace email and whitespace password (13)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.794Z",
+      "timestamp": "2026-08-09T18:19:32.869Z",
       "remarks": "Success"
     },
     {
@@ -183,7 +183,7 @@
       "name": "Tagged email format with invalid password (14)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.794Z",
+      "timestamp": "2026-08-09T18:19:32.869Z",
       "remarks": "Success"
     },
     {
@@ -191,7 +191,7 @@
       "name": "Varying length long emails and long passwords (15)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.794Z",
+      "timestamp": "2026-08-09T18:19:32.869Z",
       "remarks": "Success"
     },
     {
@@ -199,7 +199,7 @@
       "name": "Password containing special characters !#$%",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.794Z",
+      "timestamp": "2026-08-09T18:19:32.869Z",
       "remarks": "Success"
     },
     {
@@ -207,7 +207,7 @@
       "name": "Fuzzing with database query snippets (17)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.794Z",
+      "timestamp": "2026-08-09T18:19:32.869Z",
       "remarks": "Success"
     },
     {
@@ -215,7 +215,7 @@
       "name": "Nonexistent email with standard password pattern (18)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.794Z",
+      "timestamp": "2026-08-09T18:19:32.869Z",
       "remarks": "Success"
     },
     {
@@ -223,7 +223,7 @@
       "name": "Whitespace email and whitespace password (19)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.794Z",
+      "timestamp": "2026-08-09T18:19:32.869Z",
       "remarks": "Success"
     },
     {
@@ -231,7 +231,7 @@
       "name": "Tagged email format with invalid password (20)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.794Z",
+      "timestamp": "2026-08-09T18:19:32.869Z",
       "remarks": "Success"
     },
     {
@@ -239,7 +239,7 @@
       "name": "Varying length long emails and long passwords (21)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.794Z",
+      "timestamp": "2026-08-09T18:19:32.869Z",
       "remarks": "Success"
     },
     {
@@ -247,7 +247,7 @@
       "name": "Password containing special characters !#$%^&*()~",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.869Z",
       "remarks": "Success"
     },
     {
@@ -255,7 +255,7 @@
       "name": "Fuzzing with database query snippets (23)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.869Z",
       "remarks": "Success"
     },
     {
@@ -263,7 +263,7 @@
       "name": "Nonexistent email with standard password pattern (24)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.869Z",
       "remarks": "Success"
     },
     {
@@ -271,7 +271,7 @@
       "name": "Whitespace email and whitespace password (25)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.869Z",
       "remarks": "Success"
     },
     {
@@ -279,7 +279,7 @@
       "name": "Tagged email format with invalid password (26)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.869Z",
       "remarks": "Success"
     },
     {
@@ -287,7 +287,7 @@
       "name": "Varying length long emails and long passwords (27)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.869Z",
       "remarks": "Success"
     },
     {
@@ -295,7 +295,7 @@
       "name": "Password containing special characters !#$",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.869Z",
       "remarks": "Success"
     },
     {
@@ -303,7 +303,7 @@
       "name": "Fuzzing with database query snippets (29)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.869Z",
       "remarks": "Success"
     },
     {
@@ -311,7 +311,7 @@
       "name": "Nonexistent email with standard password pattern (30)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.869Z",
       "remarks": "Success"
     },
     {
@@ -319,7 +319,7 @@
       "name": "Whitespace email and whitespace password (31)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.869Z",
       "remarks": "Success"
     },
     {
@@ -327,7 +327,7 @@
       "name": "Tagged email format with invalid password (32)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -335,7 +335,7 @@
       "name": "Varying length long emails and long passwords (33)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -343,7 +343,7 @@
       "name": "Password containing special characters !#$%^&*()",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -351,7 +351,7 @@
       "name": "Fuzzing with database query snippets (35)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -359,7 +359,7 @@
       "name": "Nonexistent email with standard password pattern (36)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -367,7 +367,7 @@
       "name": "Whitespace email and whitespace password (37)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -375,7 +375,7 @@
       "name": "Tagged email format with invalid password (38)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -383,7 +383,7 @@
       "name": "Varying length long emails and long passwords (39)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -391,7 +391,7 @@
       "name": "Password containing special characters !#",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -399,7 +399,7 @@
       "name": "Fuzzing with database query snippets (41)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -407,7 +407,7 @@
       "name": "Nonexistent email with standard password pattern (42)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -415,7 +415,7 @@
       "name": "Whitespace email and whitespace password (43)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -423,7 +423,7 @@
       "name": "Tagged email format with invalid password (44)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -431,7 +431,7 @@
       "name": "Varying length long emails and long passwords (45)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -439,7 +439,7 @@
       "name": "Password containing special characters !#$%^&*(",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -447,7 +447,7 @@
       "name": "Fuzzing with database query snippets (47)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -455,7 +455,7 @@
       "name": "Nonexistent email with standard password pattern (48)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -463,7 +463,7 @@
       "name": "Whitespace email and whitespace password (49)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -471,7 +471,7 @@
       "name": "Tagged email format with invalid password (50)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -479,7 +479,7 @@
       "name": "Varying length long emails and long passwords (51)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -487,7 +487,7 @@
       "name": "Password containing special characters !",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -495,7 +495,7 @@
       "name": "Fuzzing with database query snippets (53)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -503,7 +503,7 @@
       "name": "Nonexistent email with standard password pattern (54)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -511,7 +511,7 @@
       "name": "Whitespace email and whitespace password (55)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -519,7 +519,7 @@
       "name": "Tagged email format with invalid password (56)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -527,7 +527,7 @@
       "name": "Varying length long emails and long passwords (57)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -535,7 +535,7 @@
       "name": "Password containing special characters !#$%^&*",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -543,7 +543,7 @@
       "name": "Fuzzing with database query snippets (59)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -551,7 +551,7 @@
       "name": "Nonexistent email with standard password pattern (60)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -559,7 +559,7 @@
       "name": "Whitespace email and whitespace password (61)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -567,7 +567,7 @@
       "name": "Tagged email format with invalid password (62)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -575,7 +575,7 @@
       "name": "Varying length long emails and long passwords (63)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -583,7 +583,7 @@
       "name": "Password containing special characters !#$%^&*()~`+=",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -591,7 +591,7 @@
       "name": "Fuzzing with database query snippets (65)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -599,7 +599,7 @@
       "name": "Nonexistent email with standard password pattern (66)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -607,7 +607,7 @@
       "name": "Whitespace email and whitespace password (67)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -615,7 +615,7 @@
       "name": "Tagged email format with invalid password (68)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -623,7 +623,7 @@
       "name": "Varying length long emails and long passwords (69)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -631,7 +631,7 @@
       "name": "Password containing special characters !#$%^&",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -639,7 +639,7 @@
       "name": "Fuzzing with database query snippets (71)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -647,7 +647,7 @@
       "name": "Nonexistent email with standard password pattern (72)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -655,7 +655,7 @@
       "name": "Whitespace email and whitespace password (73)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -663,7 +663,7 @@
       "name": "Tagged email format with invalid password (74)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -671,7 +671,7 @@
       "name": "Varying length long emails and long passwords (75)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -679,7 +679,7 @@
       "name": "Password containing special characters !#$%^&*()~`+",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -687,7 +687,7 @@
       "name": "Fuzzing with database query snippets (77)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -695,7 +695,7 @@
       "name": "Nonexistent email with standard password pattern (78)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -703,7 +703,7 @@
       "name": "Whitespace email and whitespace password (79)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -711,7 +711,7 @@
       "name": "Tagged email format with invalid password (80)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -719,7 +719,7 @@
       "name": "Varying length long emails and long passwords (81)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -727,7 +727,7 @@
       "name": "Password containing special characters !#$%^",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -735,7 +735,7 @@
       "name": "Fuzzing with database query snippets (83)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -743,7 +743,7 @@
       "name": "Nonexistent email with standard password pattern (84)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -751,7 +751,7 @@
       "name": "Whitespace email and whitespace password (85)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -759,7 +759,7 @@
       "name": "Tagged email format with invalid password (86)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -767,7 +767,7 @@
       "name": "Varying length long emails and long passwords (87)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -775,7 +775,7 @@
       "name": "Password containing special characters !#$%^&*()~`",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -783,7 +783,7 @@
       "name": "Fuzzing with database query snippets (89)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -791,7 +791,7 @@
       "name": "Nonexistent email with standard password pattern (90)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -799,7 +799,7 @@
       "name": "Whitespace email and whitespace password (91)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.870Z",
       "remarks": "Success"
     },
     {
@@ -807,7 +807,7 @@
       "name": "Tagged email format with invalid password (92)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -815,7 +815,7 @@
       "name": "Varying length long emails and long passwords (93)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -823,7 +823,7 @@
       "name": "Password containing special characters !#$%",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -831,7 +831,7 @@
       "name": "Fuzzing with database query snippets (95)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -839,7 +839,7 @@
       "name": "Nonexistent email with standard password pattern (96)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -847,7 +847,7 @@
       "name": "Whitespace email and whitespace password (97)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -855,7 +855,7 @@
       "name": "Tagged email format with invalid password (98)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -863,7 +863,7 @@
       "name": "Varying length long emails and long passwords (99)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -871,7 +871,7 @@
       "name": "Password containing special characters !#$%^&*()~",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -879,7 +879,7 @@
       "name": "Fuzzing with database query snippets (101)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -887,7 +887,7 @@
       "name": "Nonexistent email with standard password pattern (102)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -895,7 +895,7 @@
       "name": "Whitespace email and whitespace password (103)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -903,7 +903,7 @@
       "name": "Tagged email format with invalid password (104)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -911,7 +911,7 @@
       "name": "Varying length long emails and long passwords (105)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -919,7 +919,7 @@
       "name": "Password containing special characters !#$",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -927,7 +927,7 @@
       "name": "Fuzzing with database query snippets (107)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -935,7 +935,7 @@
       "name": "Nonexistent email with standard password pattern (108)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -943,7 +943,7 @@
       "name": "Whitespace email and whitespace password (109)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -951,7 +951,7 @@
       "name": "Tagged email format with invalid password (110)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -959,7 +959,7 @@
       "name": "Varying length long emails and long passwords (111)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -967,7 +967,7 @@
       "name": "Password containing special characters !#$%^&*()",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -975,7 +975,7 @@
       "name": "Fuzzing with database query snippets (113)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -983,7 +983,7 @@
       "name": "Nonexistent email with standard password pattern (114)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -991,7 +991,7 @@
       "name": "Whitespace email and whitespace password (115)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -999,7 +999,7 @@
       "name": "Tagged email format with invalid password (116)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1007,7 +1007,7 @@
       "name": "Varying length long emails and long passwords (117)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1015,7 +1015,7 @@
       "name": "Password containing special characters !#",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1023,7 +1023,7 @@
       "name": "Fuzzing with database query snippets (119)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1031,7 +1031,7 @@
       "name": "Nonexistent email with standard password pattern (120)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1039,7 +1039,7 @@
       "name": "Whitespace email and whitespace password (121)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1047,7 +1047,7 @@
       "name": "Tagged email format with invalid password (122)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1055,7 +1055,7 @@
       "name": "Varying length long emails and long passwords (123)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1063,7 +1063,7 @@
       "name": "Password containing special characters !#$%^&*(",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1071,7 +1071,7 @@
       "name": "Fuzzing with database query snippets (125)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1079,7 +1079,7 @@
       "name": "Nonexistent email with standard password pattern (126)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1087,7 +1087,7 @@
       "name": "Whitespace email and whitespace password (127)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1095,7 +1095,7 @@
       "name": "Tagged email format with invalid password (128)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1103,7 +1103,7 @@
       "name": "Varying length long emails and long passwords (129)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1111,7 +1111,7 @@
       "name": "Password containing special characters !",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1119,7 +1119,7 @@
       "name": "Fuzzing with database query snippets (131)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1127,7 +1127,7 @@
       "name": "Nonexistent email with standard password pattern (132)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1135,7 +1135,7 @@
       "name": "Whitespace email and whitespace password (133)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1143,7 +1143,7 @@
       "name": "Tagged email format with invalid password (134)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1151,7 +1151,7 @@
       "name": "Varying length long emails and long passwords (135)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1159,7 +1159,7 @@
       "name": "Password containing special characters !#$%^&*",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1167,7 +1167,7 @@
       "name": "Fuzzing with database query snippets (137)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1175,7 +1175,7 @@
       "name": "Nonexistent email with standard password pattern (138)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1183,7 +1183,7 @@
       "name": "Whitespace email and whitespace password (139)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1191,7 +1191,7 @@
       "name": "Tagged email format with invalid password (140)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1199,7 +1199,7 @@
       "name": "Varying length long emails and long passwords (141)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1207,7 +1207,7 @@
       "name": "Password containing special characters !#$%^&*()~`+=",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1215,7 +1215,7 @@
       "name": "Fuzzing with database query snippets (143)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1223,7 +1223,7 @@
       "name": "Nonexistent email with standard password pattern (144)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1231,7 +1231,7 @@
       "name": "Whitespace email and whitespace password (145)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1239,7 +1239,7 @@
       "name": "Tagged email format with invalid password (146)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1247,7 +1247,7 @@
       "name": "Varying length long emails and long passwords (147)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1255,7 +1255,7 @@
       "name": "Password containing special characters !#$%^&",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1263,7 +1263,7 @@
       "name": "Fuzzing with database query snippets (149)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1271,7 +1271,7 @@
       "name": "Nonexistent email with standard password pattern (150)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1279,7 +1279,7 @@
       "name": "Whitespace email and whitespace password (151)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1287,7 +1287,7 @@
       "name": "Tagged email format with invalid password (152)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1295,7 +1295,7 @@
       "name": "Varying length long emails and long passwords (153)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1303,7 +1303,7 @@
       "name": "Password containing special characters !#$%^&*()~`+",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1311,7 +1311,7 @@
       "name": "Fuzzing with database query snippets (155)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1319,7 +1319,7 @@
       "name": "Nonexistent email with standard password pattern (156)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1327,7 +1327,7 @@
       "name": "Whitespace email and whitespace password (157)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1335,7 +1335,7 @@
       "name": "Tagged email format with invalid password (158)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1343,7 +1343,7 @@
       "name": "Varying length long emails and long passwords (159)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1351,7 +1351,7 @@
       "name": "Password containing special characters !#$%^",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1359,7 +1359,7 @@
       "name": "Fuzzing with database query snippets (161)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.871Z",
       "remarks": "Success"
     },
     {
@@ -1367,7 +1367,7 @@
       "name": "Nonexistent email with standard password pattern (162)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1375,7 +1375,7 @@
       "name": "Whitespace email and whitespace password (163)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1383,7 +1383,7 @@
       "name": "Tagged email format with invalid password (164)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1391,7 +1391,7 @@
       "name": "Varying length long emails and long passwords (165)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1399,7 +1399,7 @@
       "name": "Password containing special characters !#$%^&*()~`",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1407,7 +1407,7 @@
       "name": "Fuzzing with database query snippets (167)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1415,7 +1415,7 @@
       "name": "Nonexistent email with standard password pattern (168)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1423,7 +1423,7 @@
       "name": "Whitespace email and whitespace password (169)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1431,7 +1431,7 @@
       "name": "Tagged email format with invalid password (170)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1439,7 +1439,7 @@
       "name": "Varying length long emails and long passwords (171)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1447,7 +1447,7 @@
       "name": "Password containing special characters !#$%",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1455,7 +1455,7 @@
       "name": "Fuzzing with database query snippets (173)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1463,7 +1463,7 @@
       "name": "Nonexistent email with standard password pattern (174)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1471,7 +1471,7 @@
       "name": "Whitespace email and whitespace password (175)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1479,7 +1479,7 @@
       "name": "Tagged email format with invalid password (176)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1487,7 +1487,7 @@
       "name": "Varying length long emails and long passwords (177)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1495,7 +1495,7 @@
       "name": "Password containing special characters !#$%^&*()~",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1503,7 +1503,7 @@
       "name": "Fuzzing with database query snippets (179)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1511,7 +1511,7 @@
       "name": "Nonexistent email with standard password pattern (180)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1519,7 +1519,7 @@
       "name": "Whitespace email and whitespace password (181)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1527,7 +1527,7 @@
       "name": "Tagged email format with invalid password (182)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1535,7 +1535,7 @@
       "name": "Varying length long emails and long passwords (183)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1543,7 +1543,7 @@
       "name": "Password containing special characters !#$",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1551,7 +1551,7 @@
       "name": "Fuzzing with database query snippets (185)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1559,7 +1559,7 @@
       "name": "Nonexistent email with standard password pattern (186)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1567,7 +1567,7 @@
       "name": "Whitespace email and whitespace password (187)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1575,7 +1575,7 @@
       "name": "Tagged email format with invalid password (188)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1583,7 +1583,7 @@
       "name": "Varying length long emails and long passwords (189)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1591,7 +1591,7 @@
       "name": "Password containing special characters !#$%^&*()",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1599,7 +1599,7 @@
       "name": "Fuzzing with database query snippets (191)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1607,7 +1607,7 @@
       "name": "Nonexistent email with standard password pattern (192)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1615,7 +1615,7 @@
       "name": "Whitespace email and whitespace password (193)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1623,7 +1623,7 @@
       "name": "Tagged email format with invalid password (194)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1631,7 +1631,7 @@
       "name": "Varying length long emails and long passwords (195)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1639,7 +1639,7 @@
       "name": "Password containing special characters !#",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1647,7 +1647,7 @@
       "name": "Fuzzing with database query snippets (197)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1655,7 +1655,7 @@
       "name": "Nonexistent email with standard password pattern (198)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1663,7 +1663,7 @@
       "name": "Whitespace email and whitespace password (199)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1671,7 +1671,7 @@
       "name": "Tagged email format with invalid password (200)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1679,7 +1679,7 @@
       "name": "Varying length long emails and long passwords (201)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1687,7 +1687,7 @@
       "name": "Password containing special characters !#$%^&*(",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1695,7 +1695,7 @@
       "name": "Fuzzing with database query snippets (203)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1703,7 +1703,7 @@
       "name": "Nonexistent email with standard password pattern (204)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1711,7 +1711,7 @@
       "name": "Whitespace email and whitespace password (205)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1719,7 +1719,7 @@
       "name": "Tagged email format with invalid password (206)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1727,7 +1727,7 @@
       "name": "Varying length long emails and long passwords (207)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1735,7 +1735,7 @@
       "name": "Password containing special characters !",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1743,7 +1743,7 @@
       "name": "Fuzzing with database query snippets (209)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1751,7 +1751,7 @@
       "name": "Nonexistent email with standard password pattern (210)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1759,7 +1759,7 @@
       "name": "Whitespace email and whitespace password (211)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1767,7 +1767,7 @@
       "name": "Tagged email format with invalid password (212)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1775,7 +1775,7 @@
       "name": "Varying length long emails and long passwords (213)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1783,7 +1783,7 @@
       "name": "Password containing special characters !#$%^&*",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1791,7 +1791,7 @@
       "name": "Fuzzing with database query snippets (215)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1799,7 +1799,7 @@
       "name": "Nonexistent email with standard password pattern (216)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1807,7 +1807,7 @@
       "name": "Whitespace email and whitespace password (217)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1815,7 +1815,7 @@
       "name": "Tagged email format with invalid password (218)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1823,7 +1823,7 @@
       "name": "Varying length long emails and long passwords (219)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1831,7 +1831,7 @@
       "name": "Password containing special characters !#$%^&*()~`+=",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1839,7 +1839,7 @@
       "name": "Fuzzing with database query snippets (221)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1847,7 +1847,7 @@
       "name": "Nonexistent email with standard password pattern (222)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1855,7 +1855,7 @@
       "name": "Whitespace email and whitespace password (223)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1863,7 +1863,7 @@
       "name": "Tagged email format with invalid password (224)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1871,7 +1871,7 @@
       "name": "Varying length long emails and long passwords (225)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1879,7 +1879,7 @@
       "name": "Password containing special characters !#$%^&",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1887,7 +1887,7 @@
       "name": "Fuzzing with database query snippets (227)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1895,7 +1895,7 @@
       "name": "Nonexistent email with standard password pattern (228)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1903,7 +1903,7 @@
       "name": "Whitespace email and whitespace password (229)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1911,7 +1911,7 @@
       "name": "Tagged email format with invalid password (230)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1919,7 +1919,7 @@
       "name": "Varying length long emails and long passwords (231)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.872Z",
       "remarks": "Success"
     },
     {
@@ -1927,7 +1927,7 @@
       "name": "Password containing special characters !#$%^&*()~`+",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -1935,7 +1935,7 @@
       "name": "Fuzzing with database query snippets (233)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -1943,7 +1943,7 @@
       "name": "Nonexistent email with standard password pattern (234)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -1951,7 +1951,7 @@
       "name": "Whitespace email and whitespace password (235)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -1959,7 +1959,7 @@
       "name": "Tagged email format with invalid password (236)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -1967,7 +1967,7 @@
       "name": "Varying length long emails and long passwords (237)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -1975,7 +1975,7 @@
       "name": "Password containing special characters !#$%^",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -1983,7 +1983,7 @@
       "name": "Fuzzing with database query snippets (239)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -1991,7 +1991,7 @@
       "name": "Nonexistent email with standard password pattern (240)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -1999,7 +1999,7 @@
       "name": "Whitespace email and whitespace password (241)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2007,7 +2007,7 @@
       "name": "Tagged email format with invalid password (242)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2015,7 +2015,7 @@
       "name": "Varying length long emails and long passwords (243)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2023,7 +2023,7 @@
       "name": "Password containing special characters !#$%^&*()~`",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2031,7 +2031,7 @@
       "name": "Fuzzing with database query snippets (245)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2039,7 +2039,7 @@
       "name": "Nonexistent email with standard password pattern (246)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2047,7 +2047,7 @@
       "name": "Whitespace email and whitespace password (247)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2055,7 +2055,7 @@
       "name": "Tagged email format with invalid password (248)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2063,7 +2063,7 @@
       "name": "Varying length long emails and long passwords (249)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2071,7 +2071,7 @@
       "name": "Password containing special characters !#$%",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2079,7 +2079,7 @@
       "name": "Fuzzing with database query snippets (251)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2087,7 +2087,7 @@
       "name": "Nonexistent email with standard password pattern (252)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2095,7 +2095,7 @@
       "name": "Whitespace email and whitespace password (253)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2103,7 +2103,7 @@
       "name": "Tagged email format with invalid password (254)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2111,7 +2111,7 @@
       "name": "Varying length long emails and long passwords (255)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2119,7 +2119,7 @@
       "name": "Password containing special characters !#$%^&*()~",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2127,7 +2127,7 @@
       "name": "Fuzzing with database query snippets (257)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2135,7 +2135,7 @@
       "name": "Nonexistent email with standard password pattern (258)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2143,7 +2143,7 @@
       "name": "Whitespace email and whitespace password (259)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2151,7 +2151,7 @@
       "name": "Tagged email format with invalid password (260)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2159,7 +2159,7 @@
       "name": "Varying length long emails and long passwords (261)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2167,7 +2167,7 @@
       "name": "Password containing special characters !#$",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2175,7 +2175,7 @@
       "name": "Fuzzing with database query snippets (263)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2183,7 +2183,7 @@
       "name": "Nonexistent email with standard password pattern (264)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2191,7 +2191,7 @@
       "name": "Whitespace email and whitespace password (265)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2199,7 +2199,7 @@
       "name": "Tagged email format with invalid password (266)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2207,7 +2207,7 @@
       "name": "Varying length long emails and long passwords (267)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2215,7 +2215,7 @@
       "name": "Password containing special characters !#$%^&*()",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2223,7 +2223,7 @@
       "name": "Fuzzing with database query snippets (269)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2231,7 +2231,7 @@
       "name": "Nonexistent email with standard password pattern (270)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2239,7 +2239,7 @@
       "name": "Whitespace email and whitespace password (271)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2247,7 +2247,7 @@
       "name": "Tagged email format with invalid password (272)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2255,7 +2255,7 @@
       "name": "Varying length long emails and long passwords (273)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2263,7 +2263,7 @@
       "name": "Password containing special characters !#",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2271,7 +2271,7 @@
       "name": "Fuzzing with database query snippets (275)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2279,7 +2279,7 @@
       "name": "Nonexistent email with standard password pattern (276)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2287,7 +2287,7 @@
       "name": "Whitespace email and whitespace password (277)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2295,7 +2295,7 @@
       "name": "Tagged email format with invalid password (278)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2303,7 +2303,7 @@
       "name": "Varying length long emails and long passwords (279)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2311,7 +2311,7 @@
       "name": "Password containing special characters !#$%^&*(",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2319,7 +2319,7 @@
       "name": "Fuzzing with database query snippets (281)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2327,7 +2327,7 @@
       "name": "Nonexistent email with standard password pattern (282)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2335,7 +2335,7 @@
       "name": "Whitespace email and whitespace password (283)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2343,7 +2343,7 @@
       "name": "Tagged email format with invalid password (284)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2351,7 +2351,7 @@
       "name": "Varying length long emails and long passwords (285)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2359,7 +2359,7 @@
       "name": "Password containing special characters !",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2367,7 +2367,7 @@
       "name": "Fuzzing with database query snippets (287)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2375,7 +2375,7 @@
       "name": "Nonexistent email with standard password pattern (288)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2383,7 +2383,7 @@
       "name": "Whitespace email and whitespace password (289)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2391,7 +2391,7 @@
       "name": "Tagged email format with invalid password (290)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2399,7 +2399,7 @@
       "name": "Varying length long emails and long passwords (291)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2407,7 +2407,7 @@
       "name": "Password containing special characters !#$%^&*",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2415,7 +2415,7 @@
       "name": "Fuzzing with database query snippets (293)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2423,7 +2423,7 @@
       "name": "Nonexistent email with standard password pattern (294)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2431,7 +2431,7 @@
       "name": "Whitespace email and whitespace password (295)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2439,7 +2439,7 @@
       "name": "Tagged email format with invalid password (296)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2447,7 +2447,7 @@
       "name": "Varying length long emails and long passwords (297)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2455,7 +2455,7 @@
       "name": "Password containing special characters !#$%^&*()~`+=",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2463,7 +2463,7 @@
       "name": "Fuzzing with database query snippets (299)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2471,7 +2471,7 @@
       "name": "Nonexistent email with standard password pattern (300)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2479,7 +2479,7 @@
       "name": "Whitespace email and whitespace password (301)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2487,7 +2487,7 @@
       "name": "Tagged email format with invalid password (302)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2495,7 +2495,7 @@
       "name": "Varying length long emails and long passwords (303)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2503,7 +2503,7 @@
       "name": "Password containing special characters !#$%^&",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2511,7 +2511,7 @@
       "name": "Fuzzing with database query snippets (305)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2519,7 +2519,7 @@
       "name": "Nonexistent email with standard password pattern (306)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2527,7 +2527,7 @@
       "name": "Whitespace email and whitespace password (307)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2535,7 +2535,7 @@
       "name": "Tagged email format with invalid password (308)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2543,7 +2543,7 @@
       "name": "Varying length long emails and long passwords (309)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2551,7 +2551,7 @@
       "name": "Password containing special characters !#$%^&*()~`+",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2559,7 +2559,7 @@
       "name": "Fuzzing with database query snippets (311)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.873Z",
       "remarks": "Success"
     },
     {
@@ -2567,7 +2567,7 @@
       "name": "Nonexistent email with standard password pattern (312)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2575,7 +2575,7 @@
       "name": "Whitespace email and whitespace password (313)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2583,7 +2583,7 @@
       "name": "Tagged email format with invalid password (314)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.795Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2591,7 +2591,7 @@
       "name": "Varying length long emails and long passwords (315)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2599,7 +2599,7 @@
       "name": "Password containing special characters !#$%^",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2607,7 +2607,7 @@
       "name": "Fuzzing with database query snippets (317)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2615,7 +2615,7 @@
       "name": "Nonexistent email with standard password pattern (318)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2623,7 +2623,7 @@
       "name": "Whitespace email and whitespace password (319)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2631,7 +2631,7 @@
       "name": "Tagged email format with invalid password (320)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2639,7 +2639,7 @@
       "name": "Varying length long emails and long passwords (321)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2647,7 +2647,7 @@
       "name": "Password containing special characters !#$%^&*()~`",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2655,7 +2655,7 @@
       "name": "Fuzzing with database query snippets (323)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2663,7 +2663,7 @@
       "name": "Nonexistent email with standard password pattern (324)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2671,7 +2671,7 @@
       "name": "Whitespace email and whitespace password (325)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2679,7 +2679,7 @@
       "name": "Tagged email format with invalid password (326)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2687,7 +2687,7 @@
       "name": "Varying length long emails and long passwords (327)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2695,7 +2695,7 @@
       "name": "Password containing special characters !#$%",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2703,7 +2703,7 @@
       "name": "Fuzzing with database query snippets (329)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2711,7 +2711,7 @@
       "name": "Nonexistent email with standard password pattern (330)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2719,7 +2719,7 @@
       "name": "Whitespace email and whitespace password (331)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2727,7 +2727,7 @@
       "name": "Tagged email format with invalid password (332)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2735,7 +2735,7 @@
       "name": "Varying length long emails and long passwords (333)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2743,7 +2743,7 @@
       "name": "Password containing special characters !#$%^&*()~",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2751,7 +2751,7 @@
       "name": "Fuzzing with database query snippets (335)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2759,7 +2759,7 @@
       "name": "Nonexistent email with standard password pattern (336)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2767,7 +2767,7 @@
       "name": "Whitespace email and whitespace password (337)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2775,7 +2775,7 @@
       "name": "Tagged email format with invalid password (338)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2783,7 +2783,7 @@
       "name": "Varying length long emails and long passwords (339)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2791,7 +2791,7 @@
       "name": "Password containing special characters !#$",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2799,7 +2799,7 @@
       "name": "Fuzzing with database query snippets (341)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2807,7 +2807,7 @@
       "name": "Nonexistent email with standard password pattern (342)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2815,7 +2815,7 @@
       "name": "Whitespace email and whitespace password (343)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2823,7 +2823,7 @@
       "name": "Tagged email format with invalid password (344)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2831,7 +2831,7 @@
       "name": "Varying length long emails and long passwords (345)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2839,7 +2839,7 @@
       "name": "Password containing special characters !#$%^&*()",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2847,7 +2847,7 @@
       "name": "Fuzzing with database query snippets (347)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2855,7 +2855,7 @@
       "name": "Nonexistent email with standard password pattern (348)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2863,7 +2863,7 @@
       "name": "Whitespace email and whitespace password (349)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2871,7 +2871,7 @@
       "name": "Tagged email format with invalid password (350)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2879,7 +2879,7 @@
       "name": "Varying length long emails and long passwords (351)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2887,7 +2887,7 @@
       "name": "Password containing special characters !#",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2895,7 +2895,7 @@
       "name": "Fuzzing with database query snippets (353)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2903,7 +2903,7 @@
       "name": "Nonexistent email with standard password pattern (354)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2911,7 +2911,7 @@
       "name": "Whitespace email and whitespace password (355)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2919,7 +2919,7 @@
       "name": "Tagged email format with invalid password (356)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2927,7 +2927,7 @@
       "name": "Varying length long emails and long passwords (357)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2935,7 +2935,7 @@
       "name": "Password containing special characters !#$%^&*(",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2943,7 +2943,7 @@
       "name": "Fuzzing with database query snippets (359)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2951,7 +2951,7 @@
       "name": "Nonexistent email with standard password pattern (360)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2959,7 +2959,7 @@
       "name": "Whitespace email and whitespace password (361)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2967,7 +2967,7 @@
       "name": "Tagged email format with invalid password (362)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2975,7 +2975,7 @@
       "name": "Varying length long emails and long passwords (363)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2983,7 +2983,7 @@
       "name": "Password containing special characters !",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2991,7 +2991,7 @@
       "name": "Fuzzing with database query snippets (365)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -2999,7 +2999,7 @@
       "name": "Nonexistent email with standard password pattern (366)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -3007,7 +3007,7 @@
       "name": "Whitespace email and whitespace password (367)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -3015,7 +3015,7 @@
       "name": "Tagged email format with invalid password (368)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -3023,7 +3023,7 @@
       "name": "Varying length long emails and long passwords (369)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -3031,7 +3031,7 @@
       "name": "Password containing special characters !#$%^&*",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -3039,7 +3039,7 @@
       "name": "Fuzzing with database query snippets (371)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.874Z",
       "remarks": "Success"
     },
     {
@@ -3047,7 +3047,7 @@
       "name": "Nonexistent email with standard password pattern (372)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.875Z",
       "remarks": "Success"
     },
     {
@@ -3055,7 +3055,7 @@
       "name": "Whitespace email and whitespace password (373)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.875Z",
       "remarks": "Success"
     },
     {
@@ -3063,7 +3063,7 @@
       "name": "Tagged email format with invalid password (374)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.875Z",
       "remarks": "Success"
     },
     {
@@ -3071,7 +3071,7 @@
       "name": "Varying length long emails and long passwords (375)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.875Z",
       "remarks": "Success"
     },
     {
@@ -3079,7 +3079,7 @@
       "name": "Password containing special characters !#$%^&*()~`+=",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.875Z",
       "remarks": "Success"
     },
     {
@@ -3087,7 +3087,7 @@
       "name": "Fuzzing with database query snippets (377)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.875Z",
       "remarks": "Success"
     },
     {
@@ -3095,7 +3095,7 @@
       "name": "Nonexistent email with standard password pattern (378)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.875Z",
       "remarks": "Success"
     },
     {
@@ -3103,7 +3103,7 @@
       "name": "Whitespace email and whitespace password (379)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.875Z",
       "remarks": "Success"
     },
     {
@@ -3111,7 +3111,7 @@
       "name": "Tagged email format with invalid password (380)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.875Z",
       "remarks": "Success"
     },
     {
@@ -3119,7 +3119,7 @@
       "name": "Varying length long emails and long passwords (381)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.875Z",
       "remarks": "Success"
     },
     {
@@ -3127,7 +3127,7 @@
       "name": "Password containing special characters !#$%^&",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.875Z",
       "remarks": "Success"
     },
     {
@@ -3135,7 +3135,7 @@
       "name": "Fuzzing with database query snippets (383)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.875Z",
       "remarks": "Success"
     },
     {
@@ -3143,7 +3143,7 @@
       "name": "Nonexistent email with standard password pattern (384)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.875Z",
       "remarks": "Success"
     },
     {
@@ -3151,7 +3151,7 @@
       "name": "Whitespace email and whitespace password (385)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.875Z",
       "remarks": "Success"
     },
     {
@@ -3159,7 +3159,7 @@
       "name": "Tagged email format with invalid password (386)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.875Z",
       "remarks": "Success"
     },
     {
@@ -3167,7 +3167,7 @@
       "name": "Varying length long emails and long passwords (387)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.875Z",
       "remarks": "Success"
     },
     {
@@ -3175,7 +3175,7 @@
       "name": "Password containing special characters !#$%^&*()~`+",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.875Z",
       "remarks": "Success"
     },
     {
@@ -3183,7 +3183,7 @@
       "name": "Fuzzing with database query snippets (389)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.875Z",
       "remarks": "Success"
     },
     {
@@ -3191,7 +3191,7 @@
       "name": "Nonexistent email with standard password pattern (390)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.875Z",
       "remarks": "Success"
     },
     {
@@ -3199,7 +3199,7 @@
       "name": "Whitespace email and whitespace password (391)",
       "status": "PASS",
       "executionTime": "0.00 sec",
-      "timestamp": "2026-08-09T14:55:01.796Z",
+      "timestamp": "2026-08-09T18:19:32.875Z",
       "remarks": "Success"
     }
   ]

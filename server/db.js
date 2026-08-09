@@ -238,6 +238,10 @@ export async function seedMockUsers() {
         profilePhoto: `https://api.dicebear.com/7.x/bottts/svg?seed=${encodeURIComponent(du.fullName)}`,
         passwordHash,
         isEmailVerified: true,
+        // Initialize session and security related fields used by auth flows
+        refreshTokens: [],
+        failedLoginAttempts: 0,
+        lockUntil: null,
         gender: '',
         dob: '',
         bloodGroup: '',
