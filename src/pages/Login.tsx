@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { ShieldAlert, Mail, Phone, Lock, AlertCircle, ArrowRight, Info, Eye, EyeOff } from 'lucide-react';
 import { validateAndNormalizeEmail, validateAndNormalizePhone } from '../utils/validation';
+import { getApiUrl } from '../utils/api';
 
 export const Login: React.FC = () => {
   const { loginUser } = useAuth();
@@ -26,7 +27,7 @@ export const Login: React.FC = () => {
     setResendSuccess('');
     setError('');
     try {
-      const response = await fetch('/api/auth/resend-verification', {
+      const response = await fetch(getApiUrl('/api/auth/resend-verification'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: resendEmail || email })
@@ -97,12 +98,6 @@ export const Login: React.FC = () => {
     } finally {
       setLoading(false);
     }
-  };
-
-  // Demo accounts helper
-  const handleAutofill = (demoRole: 'citizen' | 'volunteer' | 'admin') => {
-    setEmail(`mock_${demoRole}@sos.com`);
-    setPassword('password123');
   };
 
 
@@ -232,44 +227,7 @@ export const Login: React.FC = () => {
             Create an Account
           </Link>
         </div>
-      </div>
-
-      {/* Demo Credentials Drawer */}
-      {import.meta.env.DEV && (
-        <div className="glass-card max-w-sm w-full mt-6 rounded-2xl border border-slate-800/80 p-4 text-xs">
-          <p className="font-bold text-indigo-200 text-center mb-2 uppercase tracking-wide flex items-center justify-center gap-1.5">
-            <Info size={14} className="text-indigo-400" />
-            Test Account Autofills (Sandbox)
-          </p>
-          <p className="text-[10px] text-slate-400 text-center mb-3">
-            Click any button to populate credentials for immediate login.
-          </p>
-          <div className="grid grid-cols-3 gap-2">
-            <button
-              type="button"
-              onClick={() => handleAutofill('citizen')}
-              className="py-2 bg-slate-900 hover:bg-rose-950/20 border border-slate-800 hover:border-rose-500/20 rounded-lg font-semibold text-rose-300 cursor-pointer text-[10px]"
-            >
-              Citizen
-            </button>
-            <button
-              type="button"
-              onClick={() => handleAutofill('volunteer')}
-              className="py-2 bg-slate-900 hover:bg-indigo-950/20 border border-slate-800 hover:border-indigo-500/20 rounded-lg font-semibold text-indigo-300 cursor-pointer text-[10px]"
-            >
-              Volunteer
-            </button>
-            <button
-              type="button"
-              onClick={() => handleAutofill('admin')}
-              className="py-2 bg-slate-900 hover:bg-emerald-950/20 border border-slate-800 hover:border-emerald-500/20 rounded-lg font-semibold text-emerald-300 cursor-pointer text-[10px]"
-            >
-              Admin
-            </button>
-          </div>
-        </div>
-      )}
-
+      </div> 
     </div>
   );
 };

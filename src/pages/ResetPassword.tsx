@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { ShieldAlert, Lock, AlertCircle, CheckCircle2, Info, Check, X } from 'lucide-react';
+import { getApiUrl } from '../utils/api';
 
 const Requirement: React.FC<{ label: string; met: boolean }> = ({ label, met }) => (
   <div className={`flex items-center gap-1.5 text-2xs ${met ? 'text-emerald-400' : 'text-slate-500'}`}>
@@ -51,7 +52,7 @@ export const ResetPassword: React.FC = () => {
     setError('');
 
     try {
-      const response = await fetch('/api/auth/reset-password', {
+      const response = await fetch(getApiUrl('/api/auth/reset-password'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ token, newPassword: password }),

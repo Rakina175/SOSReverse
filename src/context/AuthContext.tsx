@@ -9,6 +9,7 @@ import {
 import { doc, setDoc, getDoc, updateDoc, serverTimestamp, collection, query, where, getDocs } from 'firebase/firestore';
 import { auth, db, isFirebaseEnabled } from '../firebase/config';
 import { validateAndNormalizePhone } from '../utils/validation';
+import { getApiUrl } from '../utils/api';
 
 export interface UserProfile {
   uid: string;
@@ -92,7 +93,8 @@ export const apiFetch = async (url: string, options: RequestInit = {}): Promise<
   }
   options.credentials = 'include';
 
-  let response = await fetch(url, options);
+  const resolvedUrl = getApiUrl(url);
+  let response = await fetch(resolvedUrl, options);
 
   if (response.status === 401) {
     globalAccessToken = null;
@@ -107,7 +109,7 @@ export const apiFetch = async (url: string, options: RequestInit = {}): Promise<
       try {
         const data = await clone.json();
         if (data.code === 'TOKEN_EXPIRED') {
-          const refreshResponse = await fetch('/api/auth/refresh', {
+          const refreshResponse = await fetch(getApiUrl('/api/auth/refresh'), {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             credentials: 'include'
@@ -120,7 +122,7 @@ export const apiFetch = async (url: string, options: RequestInit = {}): Promise<
               globalAccessToken = refreshData.accessToken;
               
               (options.headers as any)['Authorization'] = `Bearer ${globalAccessToken}`;
-              response = await fetch(url, options);
+              response = await fetch(resolvedUrl, options);
               
               if (response.status === 401) {
                 globalAccessToken = null;
@@ -193,7 +195,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       // Backend auth check on initialization
       const initializeAuth = async () => {
         try {
-          const refreshResponse = await fetch('/api/auth/refresh', {
+          const refreshResponse = await fetch(getApiUrl('/api/auth/refresh'), {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             credentials: 'include'
@@ -206,7 +208,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
             if (userRef.current) return;
             globalAccessToken = refreshData.accessToken;
 
-            const userRes = await fetch('/api/auth/me', {
+            const userRes = await fetch(getApiUrl('/api/auth/me'), {
               headers: { 'Authorization': `Bearer ${globalAccessToken}` }
             });
 
@@ -295,7 +297,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setUser(profile);
       } else {
         // Backend secure API call
-        const response = await fetch('/api/auth/register', {
+        const response = await fetch(getApiUrl('/api/auth/register'), {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email, password, fullName, phoneNumber, role }),
@@ -351,7 +353,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         }
       } else {
         // Backend secure API call
-        const response = await fetch('/api/auth/login', {
+        const response = await fetch(getApiUrl('/api/auth/login'), {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ identifier, password }),
@@ -375,7 +377,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       if (isFirebaseEnabled && auth) {
         await signOut(auth);
       } else {
-        await fetch('/api/auth/logout', {
+        await fetch(getApiUrl('/api/auth/logout'), {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           credentials: 'include'
@@ -393,7 +395,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     if (isFirebaseEnabled && auth) {
       await sendPasswordResetEmail(auth, email);
     } else {
-      const response = await fetch('/api/auth/forgot-password', {
+      const response = await fetch(getApiUrl('/api/auth/forgot-password'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { ShieldAlert, AlertCircle, CheckCircle2, Loader2, ArrowRight } from 'lucide-react';
+import { getApiUrl } from '../utils/api';
 
 export const VerifyEmail: React.FC = () => {
   const [searchParams] = useSearchParams();
@@ -21,7 +22,7 @@ export const VerifyEmail: React.FC = () => {
       }
 
       try {
-        const response = await fetch('/api/auth/verify-email', {
+        const response = await fetch(getApiUrl('/api/auth/verify-email'), {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ token }),
@@ -55,7 +56,7 @@ export const VerifyEmail: React.FC = () => {
     setErrorMsg('');
 
     try {
-      const response = await fetch('/api/auth/resend-verification', {
+      const response = await fetch(getApiUrl('/api/auth/resend-verification'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: resendEmail }),

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ShieldAlert, Mail, AlertCircle, ArrowLeft, CheckCircle2 } from 'lucide-react';
+import { getApiUrl } from '../utils/api';
 
 export const ForgotPassword: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -25,7 +26,7 @@ export const ForgotPassword: React.FC = () => {
     setError('');
 
     try {
-      const response = await fetch('/api/auth/forgot-password', {
+      const response = await fetch(getApiUrl('/api/auth/forgot-password'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),

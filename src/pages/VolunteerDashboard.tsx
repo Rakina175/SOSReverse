@@ -113,10 +113,19 @@ export const VolunteerDashboard: React.FC = () => {
 
     if (showAllRanges) return true; // Skip distance check
 
-    // Calculate distance
-    const dist = getDistanceKm(user.latitude, user.longitude, e.latitude, e.longitude);
+    // Calculate distance with Manhattan coords fallback
+    const valLat = user.latitude ?? 40.7128;
+    const valLon = user.longitude ?? -74.0060;
+    const dist = getDistanceKm(valLat, valLon, e.latitude, e.longitude);
     return dist <= user.rangeRadius;
   }) : [];
+
+  // Compute pending emergencies globally (excluding declined ones)
+  const totalPendingGlobal = user ? emergencies.filter((e) => {
+    if (e.status !== 'Pending') return false;
+    if (declinedIds.includes(e.id)) return false;
+    return true;
+  }).length : 0;
 
   if (!user) return null;
 
@@ -227,14 +236,32 @@ export const VolunteerDashboard: React.FC = () => {
                 <Radio size={32} />
               </div>
               <h3 className="text-sm font-bold text-white mb-1.5">Emergency Radar Clear</h3>
-              <p className="text-xs text-slate-400 leading-normal max-w-xs">
+              <p className="text-xs text-slate-400 leading-normal max-w-xs mb-4">
                 No active SOS signals detected {showAllRanges ? 'on the network' : `within your ${user.rangeRadius} KM safety radius`} right now. Remaining on high alert.
               </p>
+              {!showAllRanges && totalPendingGlobal > 0 && (
+                <div className="mt-2 p-3.5 bg-indigo-950/20 border border-indigo-500/20 rounded-2xl max-w-sm">
+                  <p className="text-2xs font-extrabold text-indigo-400 uppercase tracking-widest mb-1.5">
+                    🚨 Out of Range Alert
+                  </p>
+                  <p className="text-[10px] text-slate-300 leading-normal mb-3">
+                    There {totalPendingGlobal === 1 ? 'is 1 active SOS signal' : `are ${totalPendingGlobal} active SOS signals`} currently broadcasted outside your safety radius.
+                  </p>
+                  <button
+                    onClick={() => setShowAllRanges(true)}
+                    className="px-3.5 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-[10px] font-bold cursor-pointer transition-colors"
+                  >
+                    Switch to Global Radar
+                  </button>
+                </div>
+              )}
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {pendingInRange.map((sos) => {
-                const dist = getDistanceKm(user.latitude, user.longitude, sos.latitude, sos.longitude);
+                const valLat = user.latitude ?? 40.7128;
+                const valLon = user.longitude ?? -74.0060;
+                const dist = getDistanceKm(valLat, valLon, sos.latitude, sos.longitude);
                 return (
                   <div key={sos.id} className="glass-card rounded-2xl border border-slate-800/80 p-5 flex flex-col justify-between hover:border-indigo-500/25 transition-all">
                     <div>
