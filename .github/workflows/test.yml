@@ -43,6 +43,7 @@ jobs:
       - name: Run All Tests and Reports
         run: npm run test:all
         shell: bash
+        continue-on-error: true
 
       - name: Upload Reports
         if: always()

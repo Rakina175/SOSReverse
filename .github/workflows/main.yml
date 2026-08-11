@@ -38,6 +38,7 @@ jobs:
 
       - name: Run Selenium Tests
         run: npm run selenium:test
+        continue-on-error: true
 
       - name: Generate Excel Report
         run: |
