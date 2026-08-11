@@ -1,29 +1,60 @@
 /**
- * Resolves a relative API path to an absolute URL if VITE_API_URL is configured.
- * This is crucial for mobile devices (APKs) running the app natively,
- * as they cannot resolve relative endpoints (like /api/...) to the host machine.
+ * Resolves a relative API path to the correct backend URL.
+ *
+ * Local development:
+ *   /api/... -> http://localhost:5000/api/...
+ *
+ * Production:
+ *   Uses VITE_API_URL configured in the production environment.
+ *
+ * Mobile/native:
+ *   Uses VITE_API_URL when provided.
  */
-export const getApiUrl = (path: string): string => {
-  let baseUrl = import.meta.env.VITE_API_URL || '';
 
-  // If running in a web browser (not Capacitor native webview container),
-  // automatically resolve to the active hostname on port 5000.
-  // This prevents network failures if the host machine's IP address changes.
-  if (typeof window !== 'undefined' && window.location) {
-    const isMobileContainer = window.location.origin.includes('capacitor://') || 
-                              window.location.origin.includes('ionic://') ||
-                              window.location.origin.includes('localhost:80'); // standard native port check
-    if (!isMobileContainer) {
-      baseUrl = `${window.location.protocol}//${window.location.hostname}:5000`;
+export const getApiUrl = (path: string): string => {
+  // Use explicitly configured API URL first.
+  const configuredApiUrl =
+    import.meta.env.VITE_API_URL?.trim() || "";
+
+  let baseUrl = configuredApiUrl;
+
+  // If no API URL is configured and this is running in a normal web browser,
+  // use the local backend during development.
+  if (
+    !baseUrl &&
+    typeof window !== "undefined" &&
+    window.location
+  ) {
+    const hostname = window.location.hostname;
+
+    const isLocalhost =
+      hostname === "localhost" ||
+      hostname === "127.0.0.1" ||
+      hostname === "0.0.0.0";
+
+    const isNativeContainer =
+      window.location.origin.startsWith("capacitor://") ||
+      window.location.origin.startsWith("ionic://");
+
+    if (isLocalhost && !isNativeContainer) {
+      baseUrl = `${window.location.protocol}//${hostname}:5000`;
     }
   }
 
+  // If there is still no base URL, keep the path relative.
   if (!baseUrl) {
     return path;
   }
-  
-  // Strip trailing slash from baseUrl and leading slash from path to prevent double slash
-  const cleanBase = baseUrl.endsWith('/') ? baseUrl.slice(0, -1) : baseUrl;
-  const cleanPath = path.startsWith('/') ? path : `/${path}`;
+
+  // Remove trailing slash from base URL.
+  const cleanBase = baseUrl.endsWith("/")
+    ? baseUrl.slice(0, -1)
+    : baseUrl;
+
+  // Ensure path starts with /.
+  const cleanPath = path.startsWith("/")
+    ? path
+    : `/${path}`;
+
   return `${cleanBase}${cleanPath}`;
 };
