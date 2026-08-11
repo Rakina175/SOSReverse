@@ -1,0 +1,53 @@
+name: SOSReverse Test Automation
+
+on:
+  push:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  selenium:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build Project
+        run: npm run build
+
+      - name: Start Vite Server
+        run: |
+          nohup npm run dev -- --host 0.0.0.0 --port 5173 > vite.log 2>&1 &
+        shell: bash
+
+      - name: Wait for Vite Server
+        run: |
+          npx wait-on http://127.0.0.1:5173 --timeout 120000
+        shell: bash
+
+      - name: Run Selenium Tests
+        run: npm run selenium:test
+        continue-on-error: true
+
+      - name: Generate Excel Report
+        run: |
+          npm run selenium:report
+          node -e "const fs=require('fs'); fs.mkdirSync('reports', {recursive:true}); fs.copyFileSync('selenium-tests/reports/selenium-test-report.xlsx', 'reports/Selenium Report.xlsx');"
+
+      - name: Upload Excel Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: Selenium-Report
+          path: |
+            reports/Selenium Report.xlsx

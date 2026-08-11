@@ -1,0 +1,56 @@
+name: Full Test Pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build     
+
+      - name: Start Vite Server
+        run: |
+          nohup npm run dev -- --host 0.0.0.0 --port 5173 > vite.log 2>&1 &
+        shell: bash
+
+      - name: Wait for Vite Server
+        run: |
+          npx wait-on http://127.0.0.1:5173 --timeout 120000
+        shell: bash
+
+      - name: Show Vite Log
+        if: always()
+        run: cat vite.log      
+
+      - name: Run All Tests and Reports
+        run: npm run test:all
+        shell: bash
+        continue-on-error: true
+
+      - name: Upload Reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+           name: reports
+           path: |
+              reports/**
+              executive-summary.md
+              dependency-report.md
