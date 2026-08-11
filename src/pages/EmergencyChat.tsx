@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useSOS } from '../context/SOSContext';
-import { Send, MessageSquare, ArrowLeft, Radio } from 'lucide-react';
+import { Send, MessageSquare, ArrowLeft, Radio, CheckCircle } from 'lucide-react';
 
 export const EmergencyChat: React.FC = () => {
   const { user } = useAuth();
@@ -10,10 +10,33 @@ export const EmergencyChat: React.FC = () => {
   const [text, setText] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
+  // Refs & states to track resolved notifications from citizen/other user
+  const activeSOSIdRef = useRef<string | null>(null);
+  const [showClosedModal, setShowClosedModal] = useState(false);
+  const [closedSOSInfo, setClosedSOSInfo] = useState<any>(null);
+
   // Identify active emergency we are talking in
   const activeSOS = user ? (activeEmergency || emergencies.find(
     (e) => (e.responderId === user.uid || e.userId === user.uid) && e.status !== 'Resolved'
   )) : undefined;
+
+  // Fallback to closedSOSInfo if activeSOS is resolved but we are showing the closed modal
+  const displaySOS = activeSOS || closedSOSInfo;
+
+  useEffect(() => {
+    if (activeSOS) {
+      activeSOSIdRef.current = activeSOS.id;
+    } else if (activeSOSIdRef.current) {
+      // Active SOS signal ended. Find why.
+      const prevId = activeSOSIdRef.current;
+      const found = emergencies.find(e => e.id === prevId);
+      if (found && found.status === 'Resolved') {
+        setClosedSOSInfo(found);
+        setShowClosedModal(true);
+      }
+      activeSOSIdRef.current = null;
+    }
+  }, [activeSOS, emergencies]);
 
   // Auto-scroll chat area
   const scrollToBottom = () => {
@@ -26,10 +49,10 @@ export const EmergencyChat: React.FC = () => {
 
   const handleSend = async (e?: React.FormEvent) => {
     if (e) e.preventDefault();
-    if (!text.trim() || !activeSOS) return;
+    if (!text.trim() || !displaySOS) return;
 
     try {
-      await sendChatMessage(activeSOS.id, text);
+      await sendChatMessage(displaySOS.id, text);
       setText('');
     } catch (err) {
       console.error('Failed to send message:', err);
@@ -56,16 +79,16 @@ export const EmergencyChat: React.FC = () => {
   const shortcuts = user.role === 'volunteer' ? volunteerShortcuts : citizenShortcuts;
 
   const handleShortcutClick = async (shortcutText: string) => {
-    if (!activeSOS) return;
+    if (!displaySOS) return;
     try {
-      await sendChatMessage(activeSOS.id, shortcutText);
+      await sendChatMessage(displaySOS.id, shortcutText);
     } catch (err) {
       console.error('Failed to send shortcut:', err);
     }
   };
 
-  // Empty state if no active emergency is linked
-  if (!activeSOS) {
+  // Empty state if no active emergency is linked and modal is closed
+  if (!displaySOS) {
     return (
       <div className="glass-card rounded-2xl border border-slate-800 p-8 text-center max-w-md mx-auto my-10 flex flex-col items-center">
         <div className="p-3 bg-slate-900 border border-slate-800 text-slate-500 rounded-full mb-4">
@@ -76,7 +99,7 @@ export const EmergencyChat: React.FC = () => {
           Chat is only active when there is a live SOS broadcast currently accepted by a responder.
         </p>
         <Link
-          to="/dashboard"
+          to={user.role === 'volunteer' ? "/volunteer" : "/dashboard"}
           className="px-4 py-2 bg-rose-600 hover:bg-rose-500 text-white rounded-xl text-xs font-bold transition-all"
         >
           Return to Control Center
@@ -86,8 +109,40 @@ export const EmergencyChat: React.FC = () => {
   }
 
   return (
-    <div className="flex flex-col h-[calc(100vh-8rem)] lg:h-[calc(100vh-5rem)] max-w-4xl mx-auto glass-panel rounded-2xl border border-slate-800 overflow-hidden shadow-2xl">
+    <div className="flex flex-col h-[calc(100vh-8rem)] lg:h-[calc(100vh-5rem)] max-w-4xl mx-auto glass-panel rounded-2xl border border-slate-800 overflow-hidden shadow-2xl relative">
       
+      {/* Closed SOS Notification Modal */}
+      {showClosedModal && closedSOSInfo && (
+        <div className="absolute inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-sm p-4">
+          <div className="glass-card max-w-md w-full border border-slate-800 p-6 rounded-3xl shadow-2xl relative flex flex-col items-center text-center animate-scale-up">
+            {/* Icon with radial glow */}
+            <div className="w-16 h-16 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 rounded-full flex items-center justify-center mb-4 relative">
+              <div className="absolute inset-0 rounded-full border border-emerald-500/10 animate-ping"></div>
+              <CheckCircle size={32} />
+            </div>
+            
+            <h3 className="text-lg font-extrabold text-white mb-2">
+              SOS Alert Resolved
+            </h3>
+            
+            <p className="text-xs text-slate-300 leading-relaxed mb-6">
+              Citizen <strong className="text-white">{closedSOSInfo.userName}</strong> has marked themselves as <strong className="text-emerald-400">Safe</strong>. The emergency has been resolved and the chat session is now closed.
+            </p>
+
+            <Link
+              to={user.role === 'volunteer' ? '/volunteer' : '/dashboard'}
+              onClick={() => {
+                setShowClosedModal(false);
+                setClosedSOSInfo(null);
+              }}
+              className="w-full py-3 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-center text-xs font-bold transition-all shadow-lg cursor-pointer"
+            >
+              Acknowledge & Return to Dashboard
+            </Link>
+          </div>
+        </div>
+      )}
+
       {/* Chat header bar */}
       <div className="px-5 py-4 border-b border-slate-800 flex items-center justify-between bg-slate-900/40">
         <div className="flex items-center gap-3">
@@ -96,10 +151,10 @@ export const EmergencyChat: React.FC = () => {
           </div>
           <div>
             <h3 className="text-xs sm:text-sm font-extrabold text-white leading-none">
-              Incident Channel: {activeSOS.type}
+              Incident Channel: {displaySOS.type}
             </h3>
             <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider mt-1.5 block">
-              {user.role === 'volunteer' ? `Citizen: ${activeSOS.userName}` : `Responder: ${activeSOS.responderName || 'Assigning...'}`}
+              {user.role === 'volunteer' ? `Citizen: ${displaySOS.userName}` : `Responder: ${displaySOS.responderName || 'Assigning...'}`}
             </span>
           </div>
         </div>

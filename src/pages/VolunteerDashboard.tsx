@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useSOS, type EmergencyStatus } from '../context/SOSContext';
@@ -20,19 +20,37 @@ export const VolunteerDashboard: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'radar' | 'mission'>('radar');
   const [showAllRanges, setShowAllRanges] = useState(false);
 
+  // States to track resolved notification
+  const activeMissionIdRef = useRef<string | null>(null);
+  const [localResolvingId, setLocalResolvingId] = useState<string | null>(null);
+  const [showResolvedModal, setShowResolvedModal] = useState(false);
+  const [resolvedMissionInfo, setResolvedMissionInfo] = useState<any>(null);
+
   // Identify active mission for current volunteer
   const activeMission = user ? emergencies.find(
     (e) => e.responderId === user.uid && e.status !== 'Resolved'
   ) : undefined;
 
-  // Auto-switch tabs to active mission if one exists
+  // Auto-switch tabs to active mission if one exists, and track external resolution
   useEffect(() => {
     if (activeMission) {
       setActiveTab('mission');
+      activeMissionIdRef.current = activeMission.id;
     } else {
       setActiveTab('radar');
+      
+      // If we had an active mission, check if it was resolved by the citizen
+      if (activeMissionIdRef.current) {
+        const prevId = activeMissionIdRef.current;
+        const found = emergencies.find(e => e.id === prevId);
+        if (found && found.status === 'Resolved' && prevId !== localResolvingId) {
+          setResolvedMissionInfo(found);
+          setShowResolvedModal(true);
+        }
+        activeMissionIdRef.current = null;
+      }
     }
-  }, [activeMission]);
+  }, [activeMission, emergencies, localResolvingId]);
 
   // Geolocation trigger to update volunteer coordinates in database
   useEffect(() => {
@@ -92,6 +110,9 @@ export const VolunteerDashboard: React.FC = () => {
   const handleStatusChange = async (status: EmergencyStatus) => {
     if (!activeMission) return;
     try {
+      if (status === 'Resolved') {
+        setLocalResolvingId(activeMission.id);
+      }
       await updateEmergencyStatus(activeMission.id, status);
       
       if (status === 'En Route') {
@@ -103,6 +124,7 @@ export const VolunteerDashboard: React.FC = () => {
       }
     } catch (err: any) {
       alert(err.message || 'Failed to update status.');
+      setLocalResolvingId(null);
     }
   };
 
@@ -131,6 +153,38 @@ export const VolunteerDashboard: React.FC = () => {
 
   return (
     <div className="flex flex-col gap-6">
+      
+      {/* Citizen Resolved Notification Modal */}
+      {showResolvedModal && resolvedMissionInfo && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-sm p-4">
+          <div className="glass-card max-w-md w-full border border-slate-800 p-6 rounded-3xl shadow-2xl relative flex flex-col items-center text-center">
+            {/* Icon with radial glow */}
+            <div className="w-16 h-16 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 rounded-full flex items-center justify-center mb-4 relative">
+              <div className="absolute inset-0 rounded-full border border-emerald-500/10 animate-ping"></div>
+              <CheckCircle size={32} />
+            </div>
+            
+            <h3 className="text-lg font-extrabold text-white mb-2">
+              SOS Alert Resolved
+            </h3>
+            
+            <p className="text-xs text-slate-300 leading-relaxed mb-6">
+              Citizen <strong className="text-white">{resolvedMissionInfo.userName}</strong> has marked themselves as <strong className="text-emerald-400">Safe</strong>. The emergency alert is resolved and you have been returned to active searching.
+            </p>
+
+            <button
+              onClick={() => {
+                setShowResolvedModal(false);
+                setResolvedMissionInfo(null);
+                setLocalResolvingId(null);
+              }}
+              className="w-full py-3 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-xs font-bold transition-all shadow-lg cursor-pointer"
+            >
+              Acknowledge & Back to Radar
+            </button>
+          </div>
+        </div>
+      )}
       
       {/* Top Header Controls bar */}
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 p-5 glass-panel rounded-3xl border border-slate-800 bg-gradient-to-r from-slate-900/60 to-transparent">

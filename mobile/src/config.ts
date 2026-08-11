@@ -12,6 +12,6 @@ export const API_BASE = Platform.select({
 // If physical device is connected via USB and ADB reverse is running:
 // adb reverse tcp:5000 tcp:5000
 // we can use http://localhost:5000 directly.
-export const API_BASE_URL = 'http://localhost:5000'; 
+export const API_BASE_URL = 'http://172.23.50.255:5000'; 
 
 export const API_URL = `${API_BASE_URL}/api`;

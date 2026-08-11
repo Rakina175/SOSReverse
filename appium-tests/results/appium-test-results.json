@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T18:19:41.669Z",
+  "generatedAt": "2026-08-09T18:23:04.125Z",
   "status": "passed",
   "tests": [
     {
@@ -7,7 +7,7 @@
       "name": "Citizen valid mobile login",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:35.426Z",
+      "timestamp": "2026-08-09T18:22:57.692Z",
       "details": "Success"
     },
     {
@@ -15,15 +15,15 @@
       "name": "Volunteer valid mobile login",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:35.432Z",
+      "timestamp": "2026-08-09T18:22:57.698Z",
       "details": "Success"
     },
     {
       "id": "TC-003",
       "name": "Admin valid mobile login",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:35.446Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:22:57.717Z",
       "details": "Success"
     },
     {
@@ -31,31 +31,31 @@
       "name": "Empty inputs validation",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:35.462Z",
+      "timestamp": "2026-08-09T18:22:57.733Z",
       "details": "Success"
     },
     {
       "id": "TC-INV-2",
       "name": "Invalid email domain format",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:35.477Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:22:57.749Z",
       "details": "Success"
     },
     {
       "id": "TC-INV-3",
       "name": "Incomplete email domain dot",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:35.492Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:22:57.765Z",
       "details": "Success"
     },
     {
       "id": "TC-INV-4",
       "name": "Buffer overflow test input",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:35.508Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:22:57.780Z",
       "details": "Success"
     },
     {
@@ -63,15 +63,15 @@
       "name": "SQL command bypass test",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:35.524Z",
+      "timestamp": "2026-08-09T18:22:57.796Z",
       "details": "Success"
     },
     {
       "id": "TC-INV-6",
       "name": "XSS script injection",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:35.539Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:22:57.812Z",
       "details": "Success"
     },
     {
@@ -79,7 +79,7 @@
       "name": "Leading/trailing whitespace inputs (1)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:35.554Z",
+      "timestamp": "2026-08-09T18:22:57.827Z",
       "details": "Success"
     },
     {
@@ -87,7 +87,7 @@
       "name": "Alias email address with incorrect password (2)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:35.570Z",
+      "timestamp": "2026-08-09T18:22:57.843Z",
       "details": "Success"
     },
     {
@@ -95,7 +95,7 @@
       "name": "Varying length generated inputs (3)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:35.586Z",
+      "timestamp": "2026-08-09T18:22:57.858Z",
       "details": "Success"
     },
     {
@@ -103,7 +103,7 @@
       "name": "Password with special characters: !#$%^",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:35.602Z",
+      "timestamp": "2026-08-09T18:22:57.874Z",
       "details": "Success"
     },
     {
@@ -111,15 +111,15 @@
       "name": "Fuzzing password field with DB query injection (5)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:35.617Z",
+      "timestamp": "2026-08-09T18:22:57.889Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1006",
       "name": "Invalid registered user test case (6)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:35.633Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:22:57.904Z",
       "details": "Success"
     },
     {
@@ -127,7 +127,7 @@
       "name": "Leading/trailing whitespace inputs (7)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:35.648Z",
+      "timestamp": "2026-08-09T18:22:57.920Z",
       "details": "Success"
     },
     {
@@ -135,7 +135,7 @@
       "name": "Alias email address with incorrect password (8)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:35.663Z",
+      "timestamp": "2026-08-09T18:22:57.935Z",
       "details": "Success"
     },
     {
@@ -143,7 +143,7 @@
       "name": "Varying length generated inputs (9)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:35.681Z",
+      "timestamp": "2026-08-09T18:22:57.951Z",
       "details": "Success"
     },
     {
@@ -151,15 +151,15 @@
       "name": "Password with special characters: !#$%^&*()~`",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:35.695Z",
+      "timestamp": "2026-08-09T18:22:57.966Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1011",
       "name": "Fuzzing password field with DB query injection (11)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:35.710Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:22:57.982Z",
       "details": "Success"
     },
     {
@@ -167,7 +167,7 @@
       "name": "Invalid registered user test case (12)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:35.726Z",
+      "timestamp": "2026-08-09T18:22:57.998Z",
       "details": "Success"
     },
     {
@@ -175,7 +175,7 @@
       "name": "Leading/trailing whitespace inputs (13)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:35.741Z",
+      "timestamp": "2026-08-09T18:22:58.013Z",
       "details": "Success"
     },
     {
@@ -183,15 +183,15 @@
       "name": "Alias email address with incorrect password (14)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:35.756Z",
+      "timestamp": "2026-08-09T18:22:58.029Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1015",
       "name": "Varying length generated inputs (15)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:35.773Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:22:58.044Z",
       "details": "Success"
     },
     {
@@ -199,15 +199,15 @@
       "name": "Password with special characters: !#$%",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:35.788Z",
+      "timestamp": "2026-08-09T18:22:58.059Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1017",
       "name": "Fuzzing password field with DB query injection (17)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:35.804Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:22:58.074Z",
       "details": "Success"
     },
     {
@@ -215,7 +215,7 @@
       "name": "Invalid registered user test case (18)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:35.820Z",
+      "timestamp": "2026-08-09T18:22:58.091Z",
       "details": "Success"
     },
     {
@@ -223,7 +223,7 @@
       "name": "Leading/trailing whitespace inputs (19)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:35.835Z",
+      "timestamp": "2026-08-09T18:22:58.106Z",
       "details": "Success"
     },
     {
@@ -231,15 +231,15 @@
       "name": "Alias email address with incorrect password (20)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:35.851Z",
+      "timestamp": "2026-08-09T18:22:58.122Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1021",
       "name": "Varying length generated inputs (21)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:35.867Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:22:58.137Z",
       "details": "Success"
     },
     {
@@ -247,15 +247,15 @@
       "name": "Password with special characters: !#$%^&*()~",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:35.882Z",
+      "timestamp": "2026-08-09T18:22:58.153Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1023",
       "name": "Fuzzing password field with DB query injection (23)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:35.897Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:22:58.169Z",
       "details": "Success"
     },
     {
@@ -263,7 +263,7 @@
       "name": "Invalid registered user test case (24)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:35.912Z",
+      "timestamp": "2026-08-09T18:22:58.184Z",
       "details": "Success"
     },
     {
@@ -271,15 +271,15 @@
       "name": "Leading/trailing whitespace inputs (25)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:35.927Z",
+      "timestamp": "2026-08-09T18:22:58.199Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1026",
       "name": "Alias email address with incorrect password (26)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:35.942Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:22:58.215Z",
       "details": "Success"
     },
     {
@@ -287,7 +287,7 @@
       "name": "Varying length generated inputs (27)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:35.957Z",
+      "timestamp": "2026-08-09T18:22:58.231Z",
       "details": "Success"
     },
     {
@@ -295,7 +295,7 @@
       "name": "Password with special characters: !#$",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:35.972Z",
+      "timestamp": "2026-08-09T18:22:58.246Z",
       "details": "Success"
     },
     {
@@ -303,7 +303,7 @@
       "name": "Fuzzing password field with DB query injection (29)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:35.987Z",
+      "timestamp": "2026-08-09T18:22:58.261Z",
       "details": "Success"
     },
     {
@@ -311,15 +311,15 @@
       "name": "Invalid registered user test case (30)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:36.003Z",
+      "timestamp": "2026-08-09T18:22:58.277Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1031",
       "name": "Leading/trailing whitespace inputs (31)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:36.019Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:22:58.293Z",
       "details": "Success"
     },
     {
@@ -327,39 +327,39 @@
       "name": "Alias email address with incorrect password (32)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:36.034Z",
+      "timestamp": "2026-08-09T18:22:58.309Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1033",
       "name": "Varying length generated inputs (33)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:36.049Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:22:58.325Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1034",
       "name": "Password with special characters: !#$%^&*()",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:36.065Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:22:58.341Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1035",
       "name": "Fuzzing password field with DB query injection (35)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:36.081Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:22:58.356Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1036",
       "name": "Invalid registered user test case (36)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:36.097Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:22:58.371Z",
       "details": "Success"
     },
     {
@@ -367,7 +367,7 @@
       "name": "Leading/trailing whitespace inputs (37)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:36.112Z",
+      "timestamp": "2026-08-09T18:22:58.386Z",
       "details": "Success"
     },
     {
@@ -375,7 +375,7 @@
       "name": "Alias email address with incorrect password (38)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:36.128Z",
+      "timestamp": "2026-08-09T18:22:58.402Z",
       "details": "Success"
     },
     {
@@ -383,15 +383,15 @@
       "name": "Varying length generated inputs (39)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:36.144Z",
+      "timestamp": "2026-08-09T18:22:58.419Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1040",
       "name": "Password with special characters: !#",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:36.160Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:22:58.433Z",
       "details": "Success"
     },
     {
@@ -399,15 +399,15 @@
       "name": "Fuzzing password field with DB query injection (41)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:36.176Z",
+      "timestamp": "2026-08-09T18:22:58.449Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1042",
       "name": "Invalid registered user test case (42)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:36.190Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:22:58.465Z",
       "details": "Success"
     },
     {
@@ -415,31 +415,31 @@
       "name": "Leading/trailing whitespace inputs (43)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:36.205Z",
+      "timestamp": "2026-08-09T18:22:58.480Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1044",
       "name": "Alias email address with incorrect password (44)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:36.221Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:22:58.495Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1045",
       "name": "Varying length generated inputs (45)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:36.237Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:22:58.510Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1046",
       "name": "Password with special characters: !#$%^&*(",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:36.253Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:22:58.525Z",
       "details": "Success"
     },
     {
@@ -447,7 +447,7 @@
       "name": "Fuzzing password field with DB query injection (47)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:36.269Z",
+      "timestamp": "2026-08-09T18:22:58.541Z",
       "details": "Success"
     },
     {
@@ -455,15 +455,15 @@
       "name": "Invalid registered user test case (48)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:36.285Z",
+      "timestamp": "2026-08-09T18:22:58.558Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1049",
       "name": "Leading/trailing whitespace inputs (49)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:36.301Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:22:58.573Z",
       "details": "Success"
     },
     {
@@ -471,15 +471,15 @@
       "name": "Alias email address with incorrect password (50)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:36.317Z",
+      "timestamp": "2026-08-09T18:22:58.589Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1051",
       "name": "Varying length generated inputs (51)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:36.333Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:22:58.604Z",
       "details": "Success"
     },
     {
@@ -487,7 +487,7 @@
       "name": "Password with special characters: !",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:36.347Z",
+      "timestamp": "2026-08-09T18:22:58.619Z",
       "details": "Success"
     },
     {
@@ -495,31 +495,31 @@
       "name": "Fuzzing password field with DB query injection (53)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:36.364Z",
+      "timestamp": "2026-08-09T18:22:58.635Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1054",
       "name": "Invalid registered user test case (54)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:36.379Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:22:58.651Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1055",
       "name": "Leading/trailing whitespace inputs (55)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:36.394Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:22:58.667Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1056",
       "name": "Alias email address with incorrect password (56)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:36.411Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:22:58.682Z",
       "details": "Success"
     },
     {
@@ -527,23 +527,23 @@
       "name": "Varying length generated inputs (57)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:36.424Z",
+      "timestamp": "2026-08-09T18:22:58.697Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1058",
       "name": "Password with special characters: !#$%^&*",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:36.440Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:22:58.712Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1059",
       "name": "Fuzzing password field with DB query injection (59)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:36.455Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:22:58.728Z",
       "details": "Success"
     },
     {
@@ -551,15 +551,15 @@
       "name": "Invalid registered user test case (60)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:36.471Z",
+      "timestamp": "2026-08-09T18:22:58.744Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1061",
       "name": "Leading/trailing whitespace inputs (61)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:36.487Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:22:58.758Z",
       "details": "Success"
     },
     {
@@ -567,7 +567,7 @@
       "name": "Alias email address with incorrect password (62)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:36.502Z",
+      "timestamp": "2026-08-09T18:22:58.774Z",
       "details": "Success"
     },
     {
@@ -575,15 +575,15 @@
       "name": "Varying length generated inputs (63)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:36.517Z",
+      "timestamp": "2026-08-09T18:22:58.790Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1064",
       "name": "Password with special characters: !#$%^&*()~`+=",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:36.533Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:22:58.804Z",
       "details": "Success"
     },
     {
@@ -591,7 +591,7 @@
       "name": "Fuzzing password field with DB query injection (65)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:36.548Z",
+      "timestamp": "2026-08-09T18:22:58.820Z",
       "details": "Success"
     },
     {
@@ -599,15 +599,15 @@
       "name": "Invalid registered user test case (66)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:36.563Z",
+      "timestamp": "2026-08-09T18:22:58.835Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1067",
       "name": "Leading/trailing whitespace inputs (67)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:36.579Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:22:58.851Z",
       "details": "Success"
     },
     {
@@ -615,7 +615,7 @@
       "name": "Alias email address with incorrect password (68)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:36.594Z",
+      "timestamp": "2026-08-09T18:22:58.867Z",
       "details": "Success"
     },
     {
@@ -623,7 +623,7 @@
       "name": "Varying length generated inputs (69)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:36.609Z",
+      "timestamp": "2026-08-09T18:22:58.882Z",
       "details": "Success"
     },
     {
@@ -631,15 +631,15 @@
       "name": "Password with special characters: !#$%^&",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:36.625Z",
+      "timestamp": "2026-08-09T18:22:58.898Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1071",
       "name": "Fuzzing password field with DB query injection (71)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:36.641Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:22:58.913Z",
       "details": "Success"
     },
     {
@@ -647,7 +647,7 @@
       "name": "Invalid registered user test case (72)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:36.656Z",
+      "timestamp": "2026-08-09T18:22:58.929Z",
       "details": "Success"
     },
     {
@@ -655,7 +655,7 @@
       "name": "Leading/trailing whitespace inputs (73)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:36.671Z",
+      "timestamp": "2026-08-09T18:22:58.944Z",
       "details": "Success"
     },
     {
@@ -663,23 +663,23 @@
       "name": "Alias email address with incorrect password (74)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:36.687Z",
+      "timestamp": "2026-08-09T18:22:58.960Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1075",
       "name": "Varying length generated inputs (75)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:36.702Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:22:58.976Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1076",
       "name": "Password with special characters: !#$%^&*()~`+",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:36.717Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:22:58.993Z",
       "details": "Success"
     },
     {
@@ -687,7 +687,7 @@
       "name": "Fuzzing password field with DB query injection (77)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:36.733Z",
+      "timestamp": "2026-08-09T18:22:59.008Z",
       "details": "Success"
     },
     {
@@ -695,31 +695,31 @@
       "name": "Invalid registered user test case (78)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:36.748Z",
+      "timestamp": "2026-08-09T18:22:59.023Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1079",
       "name": "Leading/trailing whitespace inputs (79)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:36.764Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:22:59.038Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1080",
       "name": "Alias email address with incorrect password (80)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:36.778Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:22:59.054Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1081",
       "name": "Varying length generated inputs (81)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:36.794Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:22:59.069Z",
       "details": "Success"
     },
     {
@@ -727,7 +727,7 @@
       "name": "Password with special characters: !#$%^",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:36.809Z",
+      "timestamp": "2026-08-09T18:22:59.085Z",
       "details": "Success"
     },
     {
@@ -735,23 +735,23 @@
       "name": "Fuzzing password field with DB query injection (83)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:36.825Z",
+      "timestamp": "2026-08-09T18:22:59.100Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1084",
       "name": "Invalid registered user test case (84)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:36.840Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:22:59.116Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1085",
       "name": "Leading/trailing whitespace inputs (85)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:36.856Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:22:59.131Z",
       "details": "Success"
     },
     {
@@ -759,39 +759,39 @@
       "name": "Alias email address with incorrect password (86)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:36.872Z",
+      "timestamp": "2026-08-09T18:22:59.147Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1087",
       "name": "Varying length generated inputs (87)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:36.887Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:22:59.163Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1088",
       "name": "Password with special characters: !#$%^&*()~`",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:36.904Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:22:59.178Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1089",
       "name": "Fuzzing password field with DB query injection (89)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:36.919Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:22:59.194Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1090",
       "name": "Invalid registered user test case (90)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:36.934Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:22:59.210Z",
       "details": "Success"
     },
     {
@@ -799,15 +799,15 @@
       "name": "Leading/trailing whitespace inputs (91)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:36.949Z",
+      "timestamp": "2026-08-09T18:22:59.225Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1092",
       "name": "Alias email address with incorrect password (92)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:36.966Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:22:59.240Z",
       "details": "Success"
     },
     {
@@ -815,7 +815,7 @@
       "name": "Varying length generated inputs (93)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:36.979Z",
+      "timestamp": "2026-08-09T18:22:59.255Z",
       "details": "Success"
     },
     {
@@ -823,7 +823,7 @@
       "name": "Password with special characters: !#$%",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:36.995Z",
+      "timestamp": "2026-08-09T18:22:59.271Z",
       "details": "Success"
     },
     {
@@ -831,7 +831,7 @@
       "name": "Fuzzing password field with DB query injection (95)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:37.012Z",
+      "timestamp": "2026-08-09T18:22:59.288Z",
       "details": "Success"
     },
     {
@@ -839,31 +839,31 @@
       "name": "Invalid registered user test case (96)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:37.026Z",
+      "timestamp": "2026-08-09T18:22:59.303Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1097",
       "name": "Leading/trailing whitespace inputs (97)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:37.042Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:22:59.318Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1098",
       "name": "Alias email address with incorrect password (98)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:37.058Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:22:59.333Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1099",
       "name": "Varying length generated inputs (99)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:37.073Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:22:59.349Z",
       "details": "Success"
     },
     {
@@ -871,7 +871,7 @@
       "name": "Password with special characters: !#$%^&*()~",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:37.089Z",
+      "timestamp": "2026-08-09T18:22:59.365Z",
       "details": "Success"
     },
     {
@@ -879,7 +879,7 @@
       "name": "Fuzzing password field with DB query injection (101)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:37.104Z",
+      "timestamp": "2026-08-09T18:22:59.380Z",
       "details": "Success"
     },
     {
@@ -887,23 +887,23 @@
       "name": "Invalid registered user test case (102)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:37.119Z",
+      "timestamp": "2026-08-09T18:22:59.396Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1103",
       "name": "Leading/trailing whitespace inputs (103)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:37.134Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:22:59.412Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1104",
       "name": "Alias email address with incorrect password (104)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:37.149Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:22:59.428Z",
       "details": "Success"
     },
     {
@@ -911,7 +911,7 @@
       "name": "Varying length generated inputs (105)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:37.164Z",
+      "timestamp": "2026-08-09T18:22:59.443Z",
       "details": "Success"
     },
     {
@@ -919,71 +919,71 @@
       "name": "Password with special characters: !#$",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:37.181Z",
+      "timestamp": "2026-08-09T18:22:59.459Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1107",
       "name": "Fuzzing password field with DB query injection (107)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:37.196Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:22:59.475Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1108",
       "name": "Invalid registered user test case (108)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:37.211Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:22:59.491Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1109",
       "name": "Leading/trailing whitespace inputs (109)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:37.227Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:22:59.506Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1110",
       "name": "Alias email address with incorrect password (110)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:37.243Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:22:59.521Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1111",
       "name": "Varying length generated inputs (111)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:37.258Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:22:59.537Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1112",
       "name": "Password with special characters: !#$%^&*()",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:37.275Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:22:59.553Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1113",
       "name": "Fuzzing password field with DB query injection (113)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:37.291Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:22:59.568Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1114",
       "name": "Invalid registered user test case (114)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:37.306Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:22:59.584Z",
       "details": "Success"
     },
     {
@@ -991,23 +991,23 @@
       "name": "Leading/trailing whitespace inputs (115)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:37.321Z",
+      "timestamp": "2026-08-09T18:22:59.599Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1116",
       "name": "Alias email address with incorrect password (116)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:37.336Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:22:59.615Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1117",
       "name": "Varying length generated inputs (117)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:37.351Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:22:59.631Z",
       "details": "Success"
     },
     {
@@ -1015,47 +1015,47 @@
       "name": "Password with special characters: !#",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:37.367Z",
+      "timestamp": "2026-08-09T18:22:59.647Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1119",
       "name": "Fuzzing password field with DB query injection (119)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:37.382Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:22:59.663Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1120",
       "name": "Invalid registered user test case (120)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:37.398Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:22:59.678Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1121",
       "name": "Leading/trailing whitespace inputs (121)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:37.413Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:22:59.694Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1122",
       "name": "Alias email address with incorrect password (122)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:37.428Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:22:59.711Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1123",
       "name": "Varying length generated inputs (123)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:37.444Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:22:59.726Z",
       "details": "Success"
     },
     {
@@ -1063,15 +1063,15 @@
       "name": "Password with special characters: !#$%^&*(",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:37.458Z",
+      "timestamp": "2026-08-09T18:22:59.741Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1125",
       "name": "Fuzzing password field with DB query injection (125)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:37.474Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:22:59.756Z",
       "details": "Success"
     },
     {
@@ -1079,7 +1079,7 @@
       "name": "Invalid registered user test case (126)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:37.491Z",
+      "timestamp": "2026-08-09T18:22:59.772Z",
       "details": "Success"
     },
     {
@@ -1087,23 +1087,23 @@
       "name": "Leading/trailing whitespace inputs (127)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:37.505Z",
+      "timestamp": "2026-08-09T18:22:59.787Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1128",
       "name": "Alias email address with incorrect password (128)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:37.521Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:22:59.802Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1129",
       "name": "Varying length generated inputs (129)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:37.536Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:22:59.818Z",
       "details": "Success"
     },
     {
@@ -1111,47 +1111,47 @@
       "name": "Password with special characters: !",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:37.552Z",
+      "timestamp": "2026-08-09T18:22:59.834Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1131",
       "name": "Fuzzing password field with DB query injection (131)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:37.568Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:22:59.849Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1132",
       "name": "Invalid registered user test case (132)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:37.583Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:22:59.866Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1133",
       "name": "Leading/trailing whitespace inputs (133)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:37.599Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:22:59.881Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1134",
       "name": "Alias email address with incorrect password (134)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:37.614Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:22:59.897Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1135",
       "name": "Varying length generated inputs (135)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:37.629Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:22:59.913Z",
       "details": "Success"
     },
     {
@@ -1159,7 +1159,7 @@
       "name": "Password with special characters: !#$%^&*",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:37.644Z",
+      "timestamp": "2026-08-09T18:22:59.928Z",
       "details": "Success"
     },
     {
@@ -1167,15 +1167,15 @@
       "name": "Fuzzing password field with DB query injection (137)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:37.661Z",
+      "timestamp": "2026-08-09T18:22:59.945Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1138",
       "name": "Invalid registered user test case (138)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:37.676Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:22:59.961Z",
       "details": "Success"
     },
     {
@@ -1183,7 +1183,7 @@
       "name": "Leading/trailing whitespace inputs (139)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:37.692Z",
+      "timestamp": "2026-08-09T18:22:59.977Z",
       "details": "Success"
     },
     {
@@ -1191,31 +1191,31 @@
       "name": "Alias email address with incorrect password (140)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:37.708Z",
+      "timestamp": "2026-08-09T18:22:59.993Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1141",
       "name": "Varying length generated inputs (141)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:37.723Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:00.009Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1142",
       "name": "Password with special characters: !#$%^&*()~`+=",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:37.739Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:00.025Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1143",
       "name": "Fuzzing password field with DB query injection (143)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:37.754Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:00.041Z",
       "details": "Success"
     },
     {
@@ -1223,15 +1223,15 @@
       "name": "Invalid registered user test case (144)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:37.769Z",
+      "timestamp": "2026-08-09T18:23:00.056Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1145",
       "name": "Leading/trailing whitespace inputs (145)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:37.785Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:00.071Z",
       "details": "Success"
     },
     {
@@ -1239,7 +1239,7 @@
       "name": "Alias email address with incorrect password (146)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:37.801Z",
+      "timestamp": "2026-08-09T18:23:00.087Z",
       "details": "Success"
     },
     {
@@ -1247,15 +1247,15 @@
       "name": "Varying length generated inputs (147)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:37.817Z",
+      "timestamp": "2026-08-09T18:23:00.103Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1148",
       "name": "Password with special characters: !#$%^&",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:37.832Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:00.119Z",
       "details": "Success"
     },
     {
@@ -1263,39 +1263,39 @@
       "name": "Fuzzing password field with DB query injection (149)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:37.848Z",
+      "timestamp": "2026-08-09T18:23:00.135Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1150",
       "name": "Invalid registered user test case (150)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:37.863Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:00.151Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1151",
       "name": "Leading/trailing whitespace inputs (151)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:37.879Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:00.166Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1152",
       "name": "Alias email address with incorrect password (152)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:37.896Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:00.180Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1153",
       "name": "Varying length generated inputs (153)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:37.911Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:00.197Z",
       "details": "Success"
     },
     {
@@ -1303,7 +1303,7 @@
       "name": "Password with special characters: !#$%^&*()~`+",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:37.927Z",
+      "timestamp": "2026-08-09T18:23:00.213Z",
       "details": "Success"
     },
     {
@@ -1311,15 +1311,15 @@
       "name": "Fuzzing password field with DB query injection (155)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:37.941Z",
+      "timestamp": "2026-08-09T18:23:00.228Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1156",
       "name": "Invalid registered user test case (156)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:37.957Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:00.243Z",
       "details": "Success"
     },
     {
@@ -1327,15 +1327,15 @@
       "name": "Leading/trailing whitespace inputs (157)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:37.972Z",
+      "timestamp": "2026-08-09T18:23:00.258Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1158",
       "name": "Alias email address with incorrect password (158)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:37.987Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:00.274Z",
       "details": "Success"
     },
     {
@@ -1343,15 +1343,15 @@
       "name": "Varying length generated inputs (159)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:38.002Z",
+      "timestamp": "2026-08-09T18:23:00.289Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1160",
       "name": "Password with special characters: !#$%^",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:38.018Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:00.304Z",
       "details": "Success"
     },
     {
@@ -1359,7 +1359,7 @@
       "name": "Fuzzing password field with DB query injection (161)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:38.034Z",
+      "timestamp": "2026-08-09T18:23:00.320Z",
       "details": "Success"
     },
     {
@@ -1367,7 +1367,7 @@
       "name": "Invalid registered user test case (162)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:38.050Z",
+      "timestamp": "2026-08-09T18:23:00.336Z",
       "details": "Success"
     },
     {
@@ -1375,7 +1375,7 @@
       "name": "Leading/trailing whitespace inputs (163)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:38.066Z",
+      "timestamp": "2026-08-09T18:23:00.352Z",
       "details": "Success"
     },
     {
@@ -1383,7 +1383,7 @@
       "name": "Alias email address with incorrect password (164)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:38.081Z",
+      "timestamp": "2026-08-09T18:23:00.366Z",
       "details": "Success"
     },
     {
@@ -1391,7 +1391,7 @@
       "name": "Varying length generated inputs (165)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:38.097Z",
+      "timestamp": "2026-08-09T18:23:00.383Z",
       "details": "Success"
     },
     {
@@ -1399,15 +1399,15 @@
       "name": "Password with special characters: !#$%^&*()~`",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:38.112Z",
+      "timestamp": "2026-08-09T18:23:00.398Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1167",
       "name": "Fuzzing password field with DB query injection (167)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:38.128Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:00.413Z",
       "details": "Success"
     },
     {
@@ -1415,15 +1415,15 @@
       "name": "Invalid registered user test case (168)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:38.143Z",
+      "timestamp": "2026-08-09T18:23:00.428Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1169",
       "name": "Leading/trailing whitespace inputs (169)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:38.159Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:00.443Z",
       "details": "Success"
     },
     {
@@ -1431,15 +1431,15 @@
       "name": "Alias email address with incorrect password (170)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:38.177Z",
+      "timestamp": "2026-08-09T18:23:00.459Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1171",
       "name": "Varying length generated inputs (171)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:38.190Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:00.475Z",
       "details": "Success"
     },
     {
@@ -1447,7 +1447,7 @@
       "name": "Password with special characters: !#$%",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:38.205Z",
+      "timestamp": "2026-08-09T18:23:00.491Z",
       "details": "Success"
     },
     {
@@ -1455,31 +1455,31 @@
       "name": "Fuzzing password field with DB query injection (173)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:38.221Z",
+      "timestamp": "2026-08-09T18:23:00.507Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1174",
       "name": "Invalid registered user test case (174)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:38.237Z",
+      "executionTime": "0.03 sec",
+      "timestamp": "2026-08-09T18:23:00.537Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1175",
       "name": "Leading/trailing whitespace inputs (175)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:38.252Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:00.556Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1176",
       "name": "Alias email address with incorrect password (176)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:38.267Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:00.572Z",
       "details": "Success"
     },
     {
@@ -1487,23 +1487,23 @@
       "name": "Varying length generated inputs (177)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:38.283Z",
+      "timestamp": "2026-08-09T18:23:00.588Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1178",
       "name": "Password with special characters: !#$%^&*()~",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:38.299Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:00.600Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1179",
       "name": "Fuzzing password field with DB query injection (179)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:38.314Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:00.616Z",
       "details": "Success"
     },
     {
@@ -1511,7 +1511,7 @@
       "name": "Invalid registered user test case (180)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:38.330Z",
+      "timestamp": "2026-08-09T18:23:00.632Z",
       "details": "Success"
     },
     {
@@ -1519,31 +1519,31 @@
       "name": "Leading/trailing whitespace inputs (181)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:38.346Z",
+      "timestamp": "2026-08-09T18:23:00.648Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1182",
       "name": "Alias email address with incorrect password (182)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:38.363Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:00.664Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1183",
       "name": "Varying length generated inputs (183)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:38.377Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:00.680Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1184",
       "name": "Password with special characters: !#$",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:38.395Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:00.696Z",
       "details": "Success"
     },
     {
@@ -1551,7 +1551,7 @@
       "name": "Fuzzing password field with DB query injection (185)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:38.409Z",
+      "timestamp": "2026-08-09T18:23:00.711Z",
       "details": "Success"
     },
     {
@@ -1559,7 +1559,7 @@
       "name": "Invalid registered user test case (186)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:38.423Z",
+      "timestamp": "2026-08-09T18:23:00.726Z",
       "details": "Success"
     },
     {
@@ -1567,23 +1567,23 @@
       "name": "Leading/trailing whitespace inputs (187)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:38.438Z",
+      "timestamp": "2026-08-09T18:23:00.741Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1188",
       "name": "Alias email address with incorrect password (188)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:38.453Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:00.757Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1189",
       "name": "Varying length generated inputs (189)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:38.469Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:00.772Z",
       "details": "Success"
     },
     {
@@ -1591,7 +1591,7 @@
       "name": "Password with special characters: !#$%^&*()",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:38.485Z",
+      "timestamp": "2026-08-09T18:23:00.789Z",
       "details": "Success"
     },
     {
@@ -1599,7 +1599,7 @@
       "name": "Fuzzing password field with DB query injection (191)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:38.500Z",
+      "timestamp": "2026-08-09T18:23:00.804Z",
       "details": "Success"
     },
     {
@@ -1607,7 +1607,7 @@
       "name": "Invalid registered user test case (192)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:38.515Z",
+      "timestamp": "2026-08-09T18:23:00.820Z",
       "details": "Success"
     },
     {
@@ -1615,23 +1615,23 @@
       "name": "Leading/trailing whitespace inputs (193)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:38.531Z",
+      "timestamp": "2026-08-09T18:23:00.836Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1194",
       "name": "Alias email address with incorrect password (194)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:38.547Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:00.851Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1195",
       "name": "Varying length generated inputs (195)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:38.562Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:00.867Z",
       "details": "Success"
     },
     {
@@ -1639,15 +1639,15 @@
       "name": "Password with special characters: !#",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:38.578Z",
+      "timestamp": "2026-08-09T18:23:00.883Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1197",
       "name": "Fuzzing password field with DB query injection (197)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:38.595Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:00.898Z",
       "details": "Success"
     },
     {
@@ -1655,47 +1655,47 @@
       "name": "Invalid registered user test case (198)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:38.609Z",
+      "timestamp": "2026-08-09T18:23:00.913Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1199",
       "name": "Leading/trailing whitespace inputs (199)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:38.624Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:00.929Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1200",
       "name": "Alias email address with incorrect password (200)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:38.639Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:00.945Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1201",
       "name": "Varying length generated inputs (201)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:38.654Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:00.961Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1202",
       "name": "Password with special characters: !#$%^&*(",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:38.669Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:00.978Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1203",
       "name": "Fuzzing password field with DB query injection (203)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:38.685Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:00.993Z",
       "details": "Success"
     },
     {
@@ -1703,15 +1703,15 @@
       "name": "Invalid registered user test case (204)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:38.701Z",
+      "timestamp": "2026-08-09T18:23:01.009Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1205",
       "name": "Leading/trailing whitespace inputs (205)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:38.715Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:01.025Z",
       "details": "Success"
     },
     {
@@ -1719,15 +1719,15 @@
       "name": "Alias email address with incorrect password (206)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:38.731Z",
+      "timestamp": "2026-08-09T18:23:01.041Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1207",
       "name": "Varying length generated inputs (207)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:38.746Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:01.057Z",
       "details": "Success"
     },
     {
@@ -1735,39 +1735,39 @@
       "name": "Password with special characters: !",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:38.762Z",
+      "timestamp": "2026-08-09T18:23:01.073Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1209",
       "name": "Fuzzing password field with DB query injection (209)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:38.777Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:01.089Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1210",
       "name": "Invalid registered user test case (210)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:38.794Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:01.104Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1211",
       "name": "Leading/trailing whitespace inputs (211)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:38.810Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:01.119Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1212",
       "name": "Alias email address with incorrect password (212)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:38.826Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:01.136Z",
       "details": "Success"
     },
     {
@@ -1775,7 +1775,7 @@
       "name": "Varying length generated inputs (213)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:38.841Z",
+      "timestamp": "2026-08-09T18:23:01.151Z",
       "details": "Success"
     },
     {
@@ -1783,7 +1783,7 @@
       "name": "Password with special characters: !#$%^&*",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:38.856Z",
+      "timestamp": "2026-08-09T18:23:01.166Z",
       "details": "Success"
     },
     {
@@ -1791,15 +1791,15 @@
       "name": "Fuzzing password field with DB query injection (215)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:38.872Z",
+      "timestamp": "2026-08-09T18:23:01.182Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1216",
       "name": "Invalid registered user test case (216)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:38.888Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:01.197Z",
       "details": "Success"
     },
     {
@@ -1807,7 +1807,7 @@
       "name": "Leading/trailing whitespace inputs (217)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:38.903Z",
+      "timestamp": "2026-08-09T18:23:01.212Z",
       "details": "Success"
     },
     {
@@ -1815,15 +1815,15 @@
       "name": "Alias email address with incorrect password (218)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:38.919Z",
+      "timestamp": "2026-08-09T18:23:01.228Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1219",
       "name": "Varying length generated inputs (219)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:38.935Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:01.242Z",
       "details": "Success"
     },
     {
@@ -1831,7 +1831,7 @@
       "name": "Password with special characters: !#$%^&*()~`+=",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:38.951Z",
+      "timestamp": "2026-08-09T18:23:01.258Z",
       "details": "Success"
     },
     {
@@ -1839,7 +1839,7 @@
       "name": "Fuzzing password field with DB query injection (221)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:38.965Z",
+      "timestamp": "2026-08-09T18:23:01.273Z",
       "details": "Success"
     },
     {
@@ -1847,23 +1847,23 @@
       "name": "Invalid registered user test case (222)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:38.981Z",
+      "timestamp": "2026-08-09T18:23:01.290Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1223",
       "name": "Leading/trailing whitespace inputs (223)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:38.997Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:01.304Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1224",
       "name": "Alias email address with incorrect password (224)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:39.012Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:01.320Z",
       "details": "Success"
     },
     {
@@ -1871,7 +1871,7 @@
       "name": "Varying length generated inputs (225)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:39.029Z",
+      "timestamp": "2026-08-09T18:23:01.336Z",
       "details": "Success"
     },
     {
@@ -1879,7 +1879,7 @@
       "name": "Password with special characters: !#$%^&",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:39.045Z",
+      "timestamp": "2026-08-09T18:23:01.352Z",
       "details": "Success"
     },
     {
@@ -1887,7 +1887,7 @@
       "name": "Fuzzing password field with DB query injection (227)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:39.059Z",
+      "timestamp": "2026-08-09T18:23:01.366Z",
       "details": "Success"
     },
     {
@@ -1895,7 +1895,7 @@
       "name": "Invalid registered user test case (228)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:39.076Z",
+      "timestamp": "2026-08-09T18:23:01.382Z",
       "details": "Success"
     },
     {
@@ -1903,7 +1903,7 @@
       "name": "Leading/trailing whitespace inputs (229)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:39.091Z",
+      "timestamp": "2026-08-09T18:23:01.397Z",
       "details": "Success"
     },
     {
@@ -1911,7 +1911,7 @@
       "name": "Alias email address with incorrect password (230)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:39.107Z",
+      "timestamp": "2026-08-09T18:23:01.413Z",
       "details": "Success"
     },
     {
@@ -1919,7 +1919,7 @@
       "name": "Varying length generated inputs (231)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:39.122Z",
+      "timestamp": "2026-08-09T18:23:01.428Z",
       "details": "Success"
     },
     {
@@ -1927,15 +1927,15 @@
       "name": "Password with special characters: !#$%^&*()~`+",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:39.137Z",
+      "timestamp": "2026-08-09T18:23:01.444Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1233",
       "name": "Fuzzing password field with DB query injection (233)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:39.153Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:01.459Z",
       "details": "Success"
     },
     {
@@ -1943,7 +1943,7 @@
       "name": "Invalid registered user test case (234)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:39.169Z",
+      "timestamp": "2026-08-09T18:23:01.476Z",
       "details": "Success"
     },
     {
@@ -1951,55 +1951,55 @@
       "name": "Leading/trailing whitespace inputs (235)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:39.184Z",
+      "timestamp": "2026-08-09T18:23:01.490Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1236",
       "name": "Alias email address with incorrect password (236)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:39.199Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:01.507Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1237",
       "name": "Varying length generated inputs (237)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:39.215Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:01.522Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1238",
       "name": "Password with special characters: !#$%^",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:39.231Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:01.537Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1239",
       "name": "Fuzzing password field with DB query injection (239)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:39.247Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:01.552Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1240",
       "name": "Invalid registered user test case (240)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:39.263Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:01.567Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1241",
       "name": "Leading/trailing whitespace inputs (241)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:39.279Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:01.582Z",
       "details": "Success"
     },
     {
@@ -2007,15 +2007,15 @@
       "name": "Alias email address with incorrect password (242)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:39.294Z",
+      "timestamp": "2026-08-09T18:23:01.598Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1243",
       "name": "Varying length generated inputs (243)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:39.309Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:01.614Z",
       "details": "Success"
     },
     {
@@ -2023,7 +2023,7 @@
       "name": "Password with special characters: !#$%^&*()~`",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:39.324Z",
+      "timestamp": "2026-08-09T18:23:01.629Z",
       "details": "Success"
     },
     {
@@ -2031,7 +2031,7 @@
       "name": "Fuzzing password field with DB query injection (245)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:39.339Z",
+      "timestamp": "2026-08-09T18:23:01.644Z",
       "details": "Success"
     },
     {
@@ -2039,15 +2039,15 @@
       "name": "Invalid registered user test case (246)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:39.355Z",
+      "timestamp": "2026-08-09T18:23:01.661Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1247",
       "name": "Leading/trailing whitespace inputs (247)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:39.371Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:01.677Z",
       "details": "Success"
     },
     {
@@ -2055,23 +2055,23 @@
       "name": "Alias email address with incorrect password (248)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:39.385Z",
+      "timestamp": "2026-08-09T18:23:01.692Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1249",
       "name": "Varying length generated inputs (249)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:39.400Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:01.709Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1250",
       "name": "Password with special characters: !#$%",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:39.416Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:01.723Z",
       "details": "Success"
     },
     {
@@ -2079,39 +2079,39 @@
       "name": "Fuzzing password field with DB query injection (251)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:39.432Z",
+      "timestamp": "2026-08-09T18:23:01.740Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1252",
       "name": "Invalid registered user test case (252)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:39.448Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:01.755Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1253",
       "name": "Leading/trailing whitespace inputs (253)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:39.462Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:01.771Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1254",
       "name": "Alias email address with incorrect password (254)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:39.478Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:01.785Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1255",
       "name": "Varying length generated inputs (255)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:39.495Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:01.801Z",
       "details": "Success"
     },
     {
@@ -2119,23 +2119,23 @@
       "name": "Password with special characters: !#$%^&*()~",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:39.510Z",
+      "timestamp": "2026-08-09T18:23:01.816Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1257",
       "name": "Fuzzing password field with DB query injection (257)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:39.525Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:01.832Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1258",
       "name": "Invalid registered user test case (258)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:39.541Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:01.848Z",
       "details": "Success"
     },
     {
@@ -2143,7 +2143,7 @@
       "name": "Leading/trailing whitespace inputs (259)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:39.555Z",
+      "timestamp": "2026-08-09T18:23:01.863Z",
       "details": "Success"
     },
     {
@@ -2151,7 +2151,7 @@
       "name": "Alias email address with incorrect password (260)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:39.570Z",
+      "timestamp": "2026-08-09T18:23:01.878Z",
       "details": "Success"
     },
     {
@@ -2159,47 +2159,47 @@
       "name": "Varying length generated inputs (261)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:39.587Z",
+      "timestamp": "2026-08-09T18:23:01.894Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1262",
       "name": "Password with special characters: !#$",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:39.601Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:01.911Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1263",
       "name": "Fuzzing password field with DB query injection (263)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:39.618Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:01.926Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1264",
       "name": "Invalid registered user test case (264)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:39.633Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:01.942Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1265",
       "name": "Leading/trailing whitespace inputs (265)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:39.649Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:01.957Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1266",
       "name": "Alias email address with incorrect password (266)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:39.665Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:01.972Z",
       "details": "Success"
     },
     {
@@ -2207,39 +2207,39 @@
       "name": "Varying length generated inputs (267)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:39.681Z",
+      "timestamp": "2026-08-09T18:23:01.988Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1268",
       "name": "Password with special characters: !#$%^&*()",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:39.696Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:02.004Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1269",
       "name": "Fuzzing password field with DB query injection (269)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:39.712Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:02.018Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1270",
       "name": "Invalid registered user test case (270)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:39.727Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:02.034Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1271",
       "name": "Leading/trailing whitespace inputs (271)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:39.742Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:02.050Z",
       "details": "Success"
     },
     {
@@ -2247,31 +2247,31 @@
       "name": "Alias email address with incorrect password (272)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:39.757Z",
+      "timestamp": "2026-08-09T18:23:02.065Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1273",
       "name": "Varying length generated inputs (273)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:39.774Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:02.080Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1274",
       "name": "Password with special characters: !#",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:39.788Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:02.096Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1275",
       "name": "Fuzzing password field with DB query injection (275)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:39.803Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:02.112Z",
       "details": "Success"
     },
     {
@@ -2279,15 +2279,15 @@
       "name": "Invalid registered user test case (276)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:39.819Z",
+      "timestamp": "2026-08-09T18:23:02.128Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1277",
       "name": "Leading/trailing whitespace inputs (277)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:39.835Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:02.143Z",
       "details": "Success"
     },
     {
@@ -2295,7 +2295,7 @@
       "name": "Alias email address with incorrect password (278)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:39.850Z",
+      "timestamp": "2026-08-09T18:23:02.158Z",
       "details": "Success"
     },
     {
@@ -2303,63 +2303,63 @@
       "name": "Varying length generated inputs (279)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:39.866Z",
+      "timestamp": "2026-08-09T18:23:02.174Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1280",
       "name": "Password with special characters: !#$%^&*(",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:39.882Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:02.189Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1281",
       "name": "Fuzzing password field with DB query injection (281)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:39.897Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:02.205Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1282",
       "name": "Invalid registered user test case (282)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:39.914Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:02.221Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1283",
       "name": "Leading/trailing whitespace inputs (283)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:39.930Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:02.237Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1284",
       "name": "Alias email address with incorrect password (284)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:39.944Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:02.253Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1285",
       "name": "Varying length generated inputs (285)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:39.960Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:02.268Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1286",
       "name": "Password with special characters: !",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:39.976Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:02.284Z",
       "details": "Success"
     },
     {
@@ -2367,7 +2367,7 @@
       "name": "Fuzzing password field with DB query injection (287)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:39.991Z",
+      "timestamp": "2026-08-09T18:23:02.298Z",
       "details": "Success"
     },
     {
@@ -2375,7 +2375,7 @@
       "name": "Invalid registered user test case (288)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:40.007Z",
+      "timestamp": "2026-08-09T18:23:02.314Z",
       "details": "Success"
     },
     {
@@ -2383,23 +2383,23 @@
       "name": "Leading/trailing whitespace inputs (289)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:40.022Z",
+      "timestamp": "2026-08-09T18:23:02.329Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1290",
       "name": "Alias email address with incorrect password (290)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:40.037Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:02.345Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1291",
       "name": "Varying length generated inputs (291)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:40.053Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:02.360Z",
       "details": "Success"
     },
     {
@@ -2407,23 +2407,23 @@
       "name": "Password with special characters: !#$%^&*",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:40.068Z",
+      "timestamp": "2026-08-09T18:23:02.376Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1293",
       "name": "Fuzzing password field with DB query injection (293)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:40.084Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:02.391Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1294",
       "name": "Invalid registered user test case (294)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:40.099Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:02.407Z",
       "details": "Success"
     },
     {
@@ -2431,7 +2431,7 @@
       "name": "Leading/trailing whitespace inputs (295)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:40.115Z",
+      "timestamp": "2026-08-09T18:23:02.424Z",
       "details": "Success"
     },
     {
@@ -2439,31 +2439,31 @@
       "name": "Alias email address with incorrect password (296)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:40.131Z",
+      "timestamp": "2026-08-09T18:23:02.439Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1297",
       "name": "Varying length generated inputs (297)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:40.147Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:02.454Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1298",
       "name": "Password with special characters: !#$%^&*()~`+=",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:40.162Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:02.470Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1299",
       "name": "Fuzzing password field with DB query injection (299)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:40.178Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:02.485Z",
       "details": "Success"
     },
     {
@@ -2471,15 +2471,15 @@
       "name": "Invalid registered user test case (300)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:40.195Z",
+      "timestamp": "2026-08-09T18:23:02.501Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1301",
       "name": "Leading/trailing whitespace inputs (301)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:40.211Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:02.516Z",
       "details": "Success"
     },
     {
@@ -2487,39 +2487,39 @@
       "name": "Alias email address with incorrect password (302)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:40.226Z",
+      "timestamp": "2026-08-09T18:23:02.531Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1303",
       "name": "Varying length generated inputs (303)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:40.241Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:02.547Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1304",
       "name": "Password with special characters: !#$%^&",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:40.256Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:02.563Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1305",
       "name": "Fuzzing password field with DB query injection (305)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:40.273Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:02.578Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1306",
       "name": "Invalid registered user test case (306)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:40.288Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:02.594Z",
       "details": "Success"
     },
     {
@@ -2527,23 +2527,23 @@
       "name": "Leading/trailing whitespace inputs (307)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:40.303Z",
+      "timestamp": "2026-08-09T18:23:02.609Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1308",
       "name": "Alias email address with incorrect password (308)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:40.319Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:02.624Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1309",
       "name": "Varying length generated inputs (309)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:40.334Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:02.640Z",
       "details": "Success"
     },
     {
@@ -2551,7 +2551,7 @@
       "name": "Password with special characters: !#$%^&*()~`+",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:40.349Z",
+      "timestamp": "2026-08-09T18:23:02.655Z",
       "details": "Success"
     },
     {
@@ -2559,7 +2559,7 @@
       "name": "Fuzzing password field with DB query injection (311)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:40.365Z",
+      "timestamp": "2026-08-09T18:23:02.671Z",
       "details": "Success"
     },
     {
@@ -2567,7 +2567,7 @@
       "name": "Invalid registered user test case (312)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:40.382Z",
+      "timestamp": "2026-08-09T18:23:02.687Z",
       "details": "Success"
     },
     {
@@ -2575,7 +2575,7 @@
       "name": "Leading/trailing whitespace inputs (313)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:40.396Z",
+      "timestamp": "2026-08-09T18:23:02.702Z",
       "details": "Success"
     },
     {
@@ -2583,7 +2583,7 @@
       "name": "Alias email address with incorrect password (314)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:40.412Z",
+      "timestamp": "2026-08-09T18:23:02.718Z",
       "details": "Success"
     },
     {
@@ -2591,7 +2591,7 @@
       "name": "Varying length generated inputs (315)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:40.427Z",
+      "timestamp": "2026-08-09T18:23:02.733Z",
       "details": "Success"
     },
     {
@@ -2599,23 +2599,23 @@
       "name": "Password with special characters: !#$%^",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:40.444Z",
+      "timestamp": "2026-08-09T18:23:02.749Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1317",
       "name": "Fuzzing password field with DB query injection (317)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:40.460Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:02.764Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1318",
       "name": "Invalid registered user test case (318)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:40.476Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:02.779Z",
       "details": "Success"
     },
     {
@@ -2623,15 +2623,15 @@
       "name": "Leading/trailing whitespace inputs (319)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:40.490Z",
+      "timestamp": "2026-08-09T18:23:02.794Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1320",
       "name": "Alias email address with incorrect password (320)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:40.505Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:02.810Z",
       "details": "Success"
     },
     {
@@ -2639,7 +2639,7 @@
       "name": "Varying length generated inputs (321)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:40.520Z",
+      "timestamp": "2026-08-09T18:23:02.825Z",
       "details": "Success"
     },
     {
@@ -2647,7 +2647,7 @@
       "name": "Password with special characters: !#$%^&*()~`",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:40.535Z",
+      "timestamp": "2026-08-09T18:23:02.840Z",
       "details": "Success"
     },
     {
@@ -2655,15 +2655,15 @@
       "name": "Fuzzing password field with DB query injection (323)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:40.551Z",
+      "timestamp": "2026-08-09T18:23:02.856Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1324",
       "name": "Invalid registered user test case (324)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:40.567Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:02.871Z",
       "details": "Success"
     },
     {
@@ -2671,7 +2671,7 @@
       "name": "Leading/trailing whitespace inputs (325)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:40.583Z",
+      "timestamp": "2026-08-09T18:23:02.887Z",
       "details": "Success"
     },
     {
@@ -2679,15 +2679,15 @@
       "name": "Alias email address with incorrect password (326)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:40.598Z",
+      "timestamp": "2026-08-09T18:23:02.902Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1327",
       "name": "Varying length generated inputs (327)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:40.614Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:02.917Z",
       "details": "Success"
     },
     {
@@ -2695,7 +2695,7 @@
       "name": "Password with special characters: !#$%",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:40.629Z",
+      "timestamp": "2026-08-09T18:23:02.932Z",
       "details": "Success"
     },
     {
@@ -2703,15 +2703,15 @@
       "name": "Fuzzing password field with DB query injection (329)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:40.645Z",
+      "timestamp": "2026-08-09T18:23:02.948Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1330",
       "name": "Invalid registered user test case (330)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:40.660Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:02.964Z",
       "details": "Success"
     },
     {
@@ -2719,7 +2719,7 @@
       "name": "Leading/trailing whitespace inputs (331)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:40.676Z",
+      "timestamp": "2026-08-09T18:23:02.980Z",
       "details": "Success"
     },
     {
@@ -2727,39 +2727,39 @@
       "name": "Alias email address with incorrect password (332)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:40.691Z",
+      "timestamp": "2026-08-09T18:23:02.995Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1333",
       "name": "Varying length generated inputs (333)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:40.707Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:03.010Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1334",
       "name": "Password with special characters: !#$%^&*()~",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:40.722Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:03.026Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1335",
       "name": "Fuzzing password field with DB query injection (335)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:40.737Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:03.042Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1336",
       "name": "Invalid registered user test case (336)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:40.753Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:03.057Z",
       "details": "Success"
     },
     {
@@ -2767,7 +2767,7 @@
       "name": "Leading/trailing whitespace inputs (337)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:40.768Z",
+      "timestamp": "2026-08-09T18:23:03.073Z",
       "details": "Success"
     },
     {
@@ -2775,31 +2775,31 @@
       "name": "Alias email address with incorrect password (338)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:40.784Z",
+      "timestamp": "2026-08-09T18:23:03.088Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1339",
       "name": "Varying length generated inputs (339)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:40.799Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:03.104Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1340",
       "name": "Password with special characters: !#$",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:40.815Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:03.119Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1341",
       "name": "Fuzzing password field with DB query injection (341)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:40.830Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:03.135Z",
       "details": "Success"
     },
     {
@@ -2807,39 +2807,39 @@
       "name": "Invalid registered user test case (342)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:40.846Z",
+      "timestamp": "2026-08-09T18:23:03.151Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1343",
       "name": "Leading/trailing whitespace inputs (343)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:40.862Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:03.166Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1344",
       "name": "Alias email address with incorrect password (344)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:40.877Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:03.184Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1345",
       "name": "Varying length generated inputs (345)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:40.893Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:03.198Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1346",
       "name": "Password with special characters: !#$%^&*()",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:40.908Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:03.214Z",
       "details": "Success"
     },
     {
@@ -2847,15 +2847,15 @@
       "name": "Fuzzing password field with DB query injection (347)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:40.923Z",
+      "timestamp": "2026-08-09T18:23:03.228Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1348",
       "name": "Invalid registered user test case (348)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:40.938Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:03.244Z",
       "details": "Success"
     },
     {
@@ -2863,23 +2863,23 @@
       "name": "Leading/trailing whitespace inputs (349)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:40.954Z",
+      "timestamp": "2026-08-09T18:23:03.260Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1350",
       "name": "Alias email address with incorrect password (350)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:40.970Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:03.275Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1351",
       "name": "Varying length generated inputs (351)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:40.984Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:03.292Z",
       "details": "Success"
     },
     {
@@ -2887,15 +2887,15 @@
       "name": "Password with special characters: !#",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:41.000Z",
+      "timestamp": "2026-08-09T18:23:03.306Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1353",
       "name": "Fuzzing password field with DB query injection (353)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:41.015Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:03.322Z",
       "details": "Success"
     },
     {
@@ -2903,15 +2903,15 @@
       "name": "Invalid registered user test case (354)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:41.031Z",
+      "timestamp": "2026-08-09T18:23:03.338Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1355",
       "name": "Leading/trailing whitespace inputs (355)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:41.047Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:03.352Z",
       "details": "Success"
     },
     {
@@ -2919,7 +2919,7 @@
       "name": "Alias email address with incorrect password (356)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:41.063Z",
+      "timestamp": "2026-08-09T18:23:03.368Z",
       "details": "Success"
     },
     {
@@ -2927,7 +2927,7 @@
       "name": "Varying length generated inputs (357)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:41.079Z",
+      "timestamp": "2026-08-09T18:23:03.384Z",
       "details": "Success"
     },
     {
@@ -2935,15 +2935,15 @@
       "name": "Password with special characters: !#$%^&*(",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:41.094Z",
+      "timestamp": "2026-08-09T18:23:03.399Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1359",
       "name": "Fuzzing password field with DB query injection (359)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:41.110Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:03.413Z",
       "details": "Success"
     },
     {
@@ -2951,31 +2951,31 @@
       "name": "Invalid registered user test case (360)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:41.125Z",
+      "timestamp": "2026-08-09T18:23:03.429Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1361",
       "name": "Leading/trailing whitespace inputs (361)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:41.140Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:03.445Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1362",
       "name": "Alias email address with incorrect password (362)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:41.156Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:03.461Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1363",
       "name": "Varying length generated inputs (363)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:41.172Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:03.476Z",
       "details": "Success"
     },
     {
@@ -2983,7 +2983,7 @@
       "name": "Password with special characters: !",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:41.188Z",
+      "timestamp": "2026-08-09T18:23:03.492Z",
       "details": "Success"
     },
     {
@@ -2991,7 +2991,7 @@
       "name": "Fuzzing password field with DB query injection (365)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:41.204Z",
+      "timestamp": "2026-08-09T18:23:03.508Z",
       "details": "Success"
     },
     {
@@ -2999,7 +2999,7 @@
       "name": "Invalid registered user test case (366)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:41.219Z",
+      "timestamp": "2026-08-09T18:23:03.524Z",
       "details": "Success"
     },
     {
@@ -3007,7 +3007,7 @@
       "name": "Leading/trailing whitespace inputs (367)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:41.234Z",
+      "timestamp": "2026-08-09T18:23:03.539Z",
       "details": "Success"
     },
     {
@@ -3015,15 +3015,15 @@
       "name": "Alias email address with incorrect password (368)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:41.250Z",
+      "timestamp": "2026-08-09T18:23:03.555Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1369",
       "name": "Varying length generated inputs (369)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:41.266Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:03.570Z",
       "details": "Success"
     },
     {
@@ -3031,7 +3031,7 @@
       "name": "Password with special characters: !#$%^&*",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:41.282Z",
+      "timestamp": "2026-08-09T18:23:03.586Z",
       "details": "Success"
     },
     {
@@ -3039,15 +3039,15 @@
       "name": "Fuzzing password field with DB query injection (371)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:41.298Z",
+      "timestamp": "2026-08-09T18:23:03.601Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1372",
       "name": "Invalid registered user test case (372)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:41.314Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:03.617Z",
       "details": "Success"
     },
     {
@@ -3055,7 +3055,7 @@
       "name": "Leading/trailing whitespace inputs (373)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:41.329Z",
+      "timestamp": "2026-08-09T18:23:03.633Z",
       "details": "Success"
     },
     {
@@ -3063,15 +3063,15 @@
       "name": "Alias email address with incorrect password (374)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:41.344Z",
+      "timestamp": "2026-08-09T18:23:03.648Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1375",
       "name": "Varying length generated inputs (375)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:41.359Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:03.664Z",
       "details": "Success"
     },
     {
@@ -3079,7 +3079,7 @@
       "name": "Password with special characters: !#$%^&*()~`+=",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:41.374Z",
+      "timestamp": "2026-08-09T18:23:03.678Z",
       "details": "Success"
     },
     {
@@ -3087,15 +3087,15 @@
       "name": "Fuzzing password field with DB query injection (377)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:41.390Z",
+      "timestamp": "2026-08-09T18:23:03.694Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1378",
       "name": "Invalid registered user test case (378)",
       "status": "PASS",
-      "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:41.406Z",
+      "executionTime": "0.01 sec",
+      "timestamp": "2026-08-09T18:23:03.709Z",
       "details": "Success"
     },
     {
@@ -3103,7 +3103,7 @@
       "name": "Leading/trailing whitespace inputs (379)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:41.421Z",
+      "timestamp": "2026-08-09T18:23:03.724Z",
       "details": "Success"
     },
     {
@@ -3111,15 +3111,15 @@
       "name": "Alias email address with incorrect password (380)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:41.437Z",
+      "timestamp": "2026-08-09T18:23:03.740Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1381",
       "name": "Varying length generated inputs (381)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:41.452Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:03.756Z",
       "details": "Success"
     },
     {
@@ -3127,7 +3127,7 @@
       "name": "Password with special characters: !#$%^&",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:41.467Z",
+      "timestamp": "2026-08-09T18:23:03.771Z",
       "details": "Success"
     },
     {
@@ -3135,7 +3135,7 @@
       "name": "Fuzzing password field with DB query injection (383)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:41.483Z",
+      "timestamp": "2026-08-09T18:23:03.787Z",
       "details": "Success"
     },
     {
@@ -3143,15 +3143,15 @@
       "name": "Invalid registered user test case (384)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:41.500Z",
+      "timestamp": "2026-08-09T18:23:03.803Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1385",
       "name": "Leading/trailing whitespace inputs (385)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:41.515Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:03.819Z",
       "details": "Success"
     },
     {
@@ -3159,7 +3159,7 @@
       "name": "Alias email address with incorrect password (386)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:41.531Z",
+      "timestamp": "2026-08-09T18:23:03.835Z",
       "details": "Success"
     },
     {
@@ -3167,7 +3167,7 @@
       "name": "Varying length generated inputs (387)",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:41.546Z",
+      "timestamp": "2026-08-09T18:23:03.850Z",
       "details": "Success"
     },
     {
@@ -3175,7 +3175,7 @@
       "name": "Password with special characters: !#$%^&*()~`+",
       "status": "PASS",
       "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:41.561Z",
+      "timestamp": "2026-08-09T18:23:03.864Z",
       "details": "Success"
     },
     {
@@ -3183,7 +3183,7 @@
       "name": "Fuzzing password field with DB query injection (389)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:41.577Z",
+      "timestamp": "2026-08-09T18:23:03.880Z",
       "details": "Success"
     },
     {
@@ -3191,15 +3191,15 @@
       "name": "Invalid registered user test case (390)",
       "status": "PASS",
       "executionTime": "0.02 sec",
-      "timestamp": "2026-08-09T18:19:41.593Z",
+      "timestamp": "2026-08-09T18:23:03.896Z",
       "details": "Success"
     },
     {
       "id": "TC-GEN-1391",
       "name": "Leading/trailing whitespace inputs (391)",
       "status": "PASS",
-      "executionTime": "0.01 sec",
-      "timestamp": "2026-08-09T18:19:41.608Z",
+      "executionTime": "0.02 sec",
+      "timestamp": "2026-08-09T18:23:03.912Z",
       "details": "Success"
     }
   ]

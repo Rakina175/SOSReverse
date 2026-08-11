@@ -8,7 +8,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 // Load environment variables
-dotenv.config();
+dotenv.config({ override: true });
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -33,6 +33,9 @@ app.use(helmet({
 const allowedOrigins = [
   'http://localhost:5173',
   'http://127.0.0.1:5173',
+  'http://localhost',
+  'https://localhost',
+  'capacitor://localhost',
   process.env.FRONTEND_URL
 ].filter(Boolean);
 
@@ -52,12 +55,12 @@ app.use(cors({
 app.use(express.json());
 app.use(cookieParser());
 
-const isTest = process.env.PORT === '5050';
+const isDev = process.env.NODE_ENV !== 'production' || process.env.PORT === '5050';
 
 // General Rate Limiting to prevent DOS
 const generalLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: isTest ? 10000 : 200, // Limit each IP to 200 requests per window
+  max: isDev ? 10000 : 200, // Limit each IP to 200 requests per window
   message: { message: 'Too many requests from this IP, please try again later.' },
   standardHeaders: true,
   legacyHeaders: false,
@@ -67,7 +70,7 @@ app.use('/api/', generalLimiter);
 // Strict Rate Limiting for sensitive auth routes
 const authLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: isTest ? 10000 : 15, // Limit each IP to 15 login/register requests per window
+  max: isDev ? 10000 : 15, // Limit each IP to 15 login/register requests per window
   message: { message: 'Too many authentication attempts. Please try again after 15 minutes.' },
   standardHeaders: true,
   legacyHeaders: false,
@@ -75,7 +78,7 @@ const authLimiter = rateLimit({
 
 const mailLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: isTest ? 10000 : 5, // Limit reset-password/resend requests to 5 per window to prevent email flooding
+  max: isDev ? 10000 : 5, // Limit reset-password/resend requests to 5 per window to prevent email flooding
   message: { message: 'Too many email requests. Please try again after 15 minutes.' },
   standardHeaders: true,
   legacyHeaders: false,

@@ -306,10 +306,16 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
         const data = await safeParseJson(response, 'Unable to connect to the registration service. Please try again.');
 
-        // Clean register does not auto login since they need to verify email
-        setUser(null);
-        localStorage.removeItem('sos_current_user');
-        globalAccessToken = null;
+        if (!response.ok) {
+          throw new Error(data.message || 'Unable to register account.');
+        }
+
+        // Auto sign in on successful registration
+        if (data.success && data.user && data.accessToken) {
+          setUser(data.user);
+          localStorage.setItem('sos_current_user', JSON.stringify(data.user));
+          globalAccessToken = data.accessToken;
+        }
 
         return data;
       }

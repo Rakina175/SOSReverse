@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T18:19:43.055Z",
+  "generatedAt": "2026-08-09T18:23:05.633Z",
   "target": "http://127.0.0.1:5173/",
   "users": 100,
   "durationSec": 60,
@@ -9,7 +9,7 @@
   "throughput": 200,
   "responseStats": {
     "count": 12000,
-    "avg": 12.01,
+    "avg": 11.98,
     "min": 5,
     "max": 19,
     "p50": 12,

@@ -2,7 +2,8 @@ import express from 'express';
 import crypto from 'crypto';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import { db } from '../db.js';
+import { createClient } from '@supabase/supabase-js';
+import { db, supabase } from '../db.js';
 import { sendMail } from '../services/mail.js';
 import { authenticateToken } from '../middleware/auth.js';
 import { validateAndNormalizeEmail, validateAndNormalizePhone } from '../utils/validation.js';
@@ -96,14 +97,47 @@ router.post('/register', async (req, res) => {
     const emailVerificationTokenHash = hashToken(rawVerificationToken);
     const emailVerificationExpires = new Date(Date.now() + 30 * 60 * 1000).toISOString(); // 30 minutes
 
-    // 5. Save user profile
-    const uid = 'user_' + crypto.randomUUID();
+    // 5. Register user in Supabase Authentication first (if active)
+    let authUid = null;
+    if (supabase) {
+      try {
+        const { data: authData, error: authError } = await supabase.auth.admin.createUser({
+          email: emailNorm,
+          password: password,
+          email_confirm: true, // auto confirm email since we verify separately
+          user_metadata: {
+            fullName: trimmedName,
+            role: role
+          }
+        });
+
+        if (authError) {
+          console.error('[Supabase Auth] Failed to create user:', {
+            message: authError.message,
+            details: authError.details,
+            hint: authError.hint,
+            code: authError.code
+          });
+          return res.status(400).json({ success: false, message: `Authentication signup failed: ${authError.message}` });
+        }
+
+        authUid = authData.user.id;
+        console.log(`[Supabase Auth] User registered in authentication successfully: ${emailNorm} (ID: ${authUid})`);
+      } catch (err) {
+        console.error('[Supabase Auth] Exception during user creation:', err.message || err);
+        return res.status(500).json({ success: false, message: 'Authentication signup process failed.' });
+      }
+    } else {
+      authUid = 'user_' + crypto.randomUUID();
+    }
+
+    // 6. Save user profile into database
     const avatarUrl = `https://api.dicebear.com/7.x/bottts/svg?seed=${encodeURIComponent(trimmedName)}`;
     const lat = role === 'volunteer' ? 40.7128 + (Math.random() - 0.5) * 0.05 : 40.7128;
     const lon = role === 'volunteer' ? -74.0060 + (Math.random() - 0.5) * 0.05 : -74.0060;
 
     const newUser = {
-      uid,
+      uid: authUid, // The REAL Supabase Auth UUID!
       fullName: trimmedName,
       email: emailNorm,
       phoneNumber: phoneNorm,
@@ -112,9 +146,9 @@ router.post('/register', async (req, res) => {
       createdAt: new Date().toISOString(),
       lastActive: new Date().toISOString(),
       passwordHash,
-      isEmailVerified: false,
-      emailVerificationTokenHash,
-      emailVerificationExpires,
+      isEmailVerified: true, // Auto-verified immediately
+      emailVerificationTokenHash: null,
+      emailVerificationExpires: null,
       passwordResetTokenHash: null,
       passwordResetExpires: null,
       refreshTokens: [],
@@ -135,40 +169,66 @@ router.post('/register', async (req, res) => {
       isAvailable: true
     };
 
-    await db.users.save(newUser);
-
-    // 6. Send verification email
-    const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:5173';
-    const verifyLink = `${frontendUrl}/verify-email?token=${rawVerificationToken}`;
-    
     try {
-      await sendMail({
-        to: emailNorm,
-        subject: 'Reverse SOS - Verify Your Email',
-        html: `
-          <h3>Welcome to Reverse SOS, ${trimmedName}!</h3>
-          <p>Please verify your email address to activate your account.</p>
-          <p><a href="${verifyLink}" style="padding: 10px 20px; background-color: #e11d48; color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">VERIFY EMAIL</a></p>
-          <p>If the link does not work, copy and paste this URL into your browser:</p>
-          <p>${verifyLink}</p>
-          <p>This verification link will expire in 30 minutes.</p>
-        `
+      await db.users.save(newUser);
+      console.log(`[Database] Inserted profile into public.users: ${emailNorm} (UID: ${authUid})`);
+    } catch (dbError) {
+      console.error('[Database] Failed to insert profile into public.users:', {
+        message: dbError.message,
+        details: dbError.details,
+        hint: dbError.hint,
+        code: dbError.code || dbError.status
       });
-    } catch (emailError) {
-      console.error('[Security] Failed to send verification email, rolling back registration:', emailError);
-      await db.users.delete(uid);
-      return res.status(500).json({ success: false, message: 'Failed to send verification email. Registration rolled back.' });
+
+      // Rollback Supabase Auth user if database profile insertion failed
+      if (supabase && authUid) {
+        try {
+          await supabase.auth.admin.deleteUser(authUid);
+          console.log(`[Supabase Auth] Rolled back user auth record ${authUid} due to database profile insertion failure.`);
+        } catch (rollbackErr) {
+          console.error('[Supabase Auth] Failed to rollback user:', rollbackErr.message);
+        }
+      }
+
+      return res.status(500).json({ 
+        success: false, 
+        message: `Profile database persistence failed: ${dbError.message || 'Database error'}` 
+      });
     }
 
-    console.log(`[Security] User registered successfully: ${emailNorm} (UID: ${uid})`);
+    // 7. Auto-login: Generate JWT access & refresh tokens
+    const accessToken = jwt.sign(
+      { uid: newUser.uid, role: newUser.role, email: newUser.email },
+      JWT_SECRET,
+      { expiresIn: '15m' }
+    );
 
+    const refreshToken = jwt.sign(
+      { uid: newUser.uid },
+      JWT_SECRET,
+      { expiresIn: '7d' }
+    );
+
+    // Save refresh token to user's active session list
+    const activeTokens = newUser.refreshTokens || [];
+    activeTokens.push(refreshToken);
+    await db.users.update(newUser.uid, { refreshTokens: activeTokens });
+
+    // Set refresh token in HttpOnly cookie
+    res.cookie('refreshToken', refreshToken, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'lax',
+      maxAge: 7 * 24 * 60 * 60 * 1000
+    });
+
+    console.log(`[Security] User registered and logged in successfully: ${emailNorm} (UID: ${authUid})`);
+
+    const { passwordHash: _, emailVerificationTokenHash: __, emailVerificationExpires: ___, refreshTokens: ____, passwordResetTokenHash: _____, passwordResetExpires: ______, ...profile } = newUser;
     res.status(201).json({
       success: true,
-      requiresEmailVerification: true,
-      message: 'Registration successful. Please verify your email before signing in.',
-      isEmailVerified: false,
-      email: emailNorm,
-      uid
+      user: profile,
+      accessToken
     });
   } catch (error) {
     console.error('Registration error:', error);
@@ -193,48 +253,90 @@ router.post('/login', async (req, res) => {
     }
 
     let user = null;
+
+    // 1. First lookup the profile locally by email or phone
     if (emailCheck.isValid) {
       user = await db.users.find({ email: emailCheck.normalized });
-      if (!user) {
-        await bcrypt.compare('dummy_password', '$2b$10$dummyhashplaceholderfordummypassword');
-        return res.status(401).json({ message: 'Email address does not exist.' });
-      }
     } else if (phoneCheck.isValid) {
       user = await db.users.find({ phoneNumber: phoneCheck.normalized });
-      if (!user) {
-        await bcrypt.compare('dummy_password', '$2b$10$dummyhashplaceholderfordummypassword');
-        return res.status(401).json({ message: 'Mobile number does not exist.' });
-      }
     }
 
-    // Check brute-force lock
-    if (user.lockUntil && new Date(user.lockUntil) > new Date()) {
-      // Allow automated test runs to continue for seeded demo accounts (mock_*) by clearing the lock.
-      // This prevents mass automated negative tests from permanently locking seeded demo accounts.
-      if (user.email && user.email.startsWith('mock_')) {
-        await db.users.update(user.uid, { failedLoginAttempts: 0, lockUntil: null });
-      } else {
-        const waitTime = Math.ceil((new Date(user.lockUntil) - new Date()) / 1000 / 60);
-        return res.status(423).json({ message: `Account is temporarily locked. Try again in ${waitTime} minutes.` });
-      }
+    if (!user) {
+      return res.status(401).json({ message: 'User profile does not exist.' });
     }
 
-    // Compare passwords
-    const match = await bcrypt.compare(password, user.passwordHash);
-    if (!match) {
-      const attempts = (user.failedLoginAttempts || 0) + 1;
-      let updates = { failedLoginAttempts: attempts };
+    // 2. Identify if this is one of the seeded mock profiles (starts with mock_)
+    const isMock = user.email && user.email.startsWith('mock_');
 
-      if (attempts >= 5) {
-        updates.lockUntil = new Date(Date.now() + 15 * 60 * 1000).toISOString(); // 15 mins lock
-        updates.failedLoginAttempts = 0; // reset attempts
-        console.log(`[Security] Brute-force lock activated for user: ${user.email}`);
+    if (supabase && !isMock) {
+      // Create a temporary client to prevent session mutation on the global admin client instance.
+      // This avoids stripping admin credentials and failing subsequent database/RLS updates.
+      const tempClient = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY, {
+        auth: {
+          persistSession: false,
+          autoRefreshToken: false
+        }
+      });
+
+      console.log(`[Supabase Auth] Verifying sign-in for real user: ${user.email}`);
+      const { data: authData, error: authError } = await tempClient.auth.signInWithPassword({
+        email: user.email,
+        password: password
+      });
+
+      if (authError) {
+        console.error('[Supabase Auth] Login failed:', {
+          message: authError.message,
+          details: authError.details,
+          hint: authError.hint,
+          code: authError.code
+        });
+        return res.status(401).json({ message: `Authentication failed: ${authError.message}` });
+      }
+
+      const authUid = authData.user.id;
+      console.log(`[Supabase Auth] Login successful: ${user.email} (ID: ${authUid})`);
+
+      // Sync user profile UID in public.users to match Supabase UUID if mismatched
+      if (user.uid !== authUid) {
+        console.log(`[Database] Repairing UID for ${user.email} from ${user.uid} to ${authUid}`);
+        try {
+          await db.users.update(user.uid, { uid: authUid });
+          user = await db.users.find({ uid: authUid });
+        } catch (updateErr) {
+          console.error('[Database] Failed to sync UID:', updateErr.message);
+        }
+      }
+    } else {
+      // Mock user (mock_*) or local testing: verify locally with bcrypt.compare
+      console.log(`[Local Auth] Verifying credentials locally for user: ${user.email}`);
+
+      // Check brute-force lock
+      if (user.lockUntil && new Date(user.lockUntil) > new Date()) {
+        if (isMock) {
+          await db.users.update(user.uid, { failedLoginAttempts: 0, lockUntil: null });
+        } else {
+          const waitTime = Math.ceil((new Date(user.lockUntil) - new Date()) / 1000 / 60);
+          return res.status(423).json({ message: `Account is temporarily locked. Try again in ${waitTime} minutes.` });
+        }
+      }
+
+      // Compare passwords
+      const match = await bcrypt.compare(password, user.passwordHash);
+      if (!match) {
+        const attempts = (user.failedLoginAttempts || 0) + 1;
+        let updates = { failedLoginAttempts: attempts };
+
+        if (attempts >= 5) {
+          updates.lockUntil = new Date(Date.now() + 15 * 60 * 1000).toISOString();
+          updates.failedLoginAttempts = 0;
+          await db.users.update(user.uid, updates);
+          return res.status(423).json({ message: 'Account is temporarily locked. Try again in 15 minutes.' });
+        }
+
         await db.users.update(user.uid, updates);
-        return res.status(423).json({ message: 'Account is temporarily locked due to too many failed attempts. Try again in 15 minutes.' });
+        return res.status(401).json({ message: `Incorrect password. ${5 - attempts} attempts remaining.` });
       }
-
-      await db.users.update(user.uid, updates);
-      return res.status(401).json({ message: `Incorrect password. ${5 - attempts} attempts remaining before account lockout.` });
     }
 
     // Ensure email is verified
@@ -246,7 +348,7 @@ router.post('/login', async (req, res) => {
       });
     }
 
-    // Successful login: Reset login failures
+    // Successful login: Reset login failures & update lastActive
     await db.users.update(user.uid, { failedLoginAttempts: 0, lockUntil: null, lastActive: new Date().toISOString() });
 
     // Generate JWT access & refresh tokens
@@ -272,7 +374,7 @@ router.post('/login', async (req, res) => {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'lax',
-      maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
+      maxAge: 7 * 24 * 60 * 60 * 1000
     });
 
     console.log(`[Security] Successful login for: ${user.email} (UID: ${user.uid})`);
@@ -540,6 +642,35 @@ router.post('/reset-password', async (req, res) => {
       passwordResetExpires: null,
       refreshTokens: [] // Revoke existing sessions/tokens
     });
+
+    // Update password in Supabase Auth using service role
+    if (supabase) {
+      try {
+        const { data: listData } = await supabase.auth.admin.listUsers();
+        const existing = listData?.users?.find(u => u.email === user.email);
+        if (existing) {
+          await supabase.auth.admin.updateUserById(existing.id, {
+            password: newPassword,
+            email_confirm: true
+          });
+          console.log(`[Supabase Auth] Password reset synced to Supabase Auth for: ${user.email}`);
+        } else {
+          // If they didn't exist in Supabase Auth, create them with new password
+          await supabase.auth.admin.createUser({
+            email: user.email,
+            password: newPassword,
+            email_confirm: true,
+            user_metadata: {
+              fullName: user.fullName,
+              role: user.role
+            }
+          });
+          console.log(`[Supabase Auth] Created missing auth user during password reset: ${user.email}`);
+        }
+      } catch (err) {
+        console.error('[Supabase Auth] Failed to sync password reset:', err);
+      }
+    }
 
     console.log(`[Security] Successful password reset for user UID: ${user.uid}. Invalidated all sessions.`);
     res.json({ message: 'Password reset successful. Please log in with your new password.' });

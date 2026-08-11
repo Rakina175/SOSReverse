@@ -2,14 +2,14 @@ import { createClient } from '@supabase/supabase-js';
 import bcrypt from 'bcryptjs';
 import dotenv from 'dotenv';
 
-dotenv.config();
+dotenv.config({ override: true });
 
 const SUPABASE_URL = process.env.SUPABASE_URL || 'https://placeholder-url.supabase.co';
 const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || 'placeholder-key';
 
 const isTest = process.env.NODE_ENV === 'test';
 
-let supabase = null;
+export let supabase = null;
 if (!isTest) {
   supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
 }
@@ -259,6 +259,28 @@ export async function seedMockUsers() {
         lastActive: new Date().toISOString()
       });
       console.log(`[Database] Seeded mock user: ${du.email}`);
+
+      // Seed into Supabase Auth too if supabase is initialized
+      if (supabase) {
+        try {
+          const { error: authErr } = await supabase.auth.admin.createUser({
+            email: du.email,
+            password: 'password123',
+            email_confirm: true,
+            user_metadata: {
+              fullName: du.fullName,
+              role: du.role
+            }
+          });
+          if (authErr && !authErr.message.includes('already registered') && !authErr.message.includes('already exists')) {
+            console.warn(`[Supabase Auth] Warning seeding mock user ${du.email}:`, authErr.message);
+          } else {
+            console.log(`[Supabase Auth] Seeded mock user successfully: ${du.email}`);
+          }
+        } catch (authErr) {
+          console.warn(`[Supabase Auth] Failed to seed mock user ${du.email}:`, authErr.message);
+        }
+      }
     }
   }
 }

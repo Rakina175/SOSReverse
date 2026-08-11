@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { ShieldAlert, User, HeartHandshake, AlertCircle, ArrowRight, Phone, Mail, Lock, Check, Eye, EyeOff, CheckCircle2, X } from 'lucide-react';
+import { ShieldAlert, User, HeartHandshake, AlertCircle, ArrowRight, Phone, Mail, Lock, Check, Eye, EyeOff, X } from 'lucide-react';
 import { validateAndNormalizeEmail, validateAndNormalizePhone } from '../utils/validation';
 
 const Requirement: React.FC<{ label: string; met: boolean }> = ({ label, met }) => (
@@ -14,6 +14,7 @@ const Requirement: React.FC<{ label: string; met: boolean }> = ({ label, met }) 
 export const Registration: React.FC = () => {
   const { registerUser } = useAuth();
   const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
 
   // Selected role tab ('citizen' | 'volunteer')
   const [role, setRole] = useState<'citizen' | 'volunteer'>('citizen');
@@ -40,7 +41,6 @@ export const Registration: React.FC = () => {
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const [success, setSuccess] = useState(false);
 
   // Password requirements checklist
   const lengthValid = password.length >= 12;
@@ -151,7 +151,7 @@ export const Registration: React.FC = () => {
 
     try {
       await registerUser(email, password, fullName, phoneNumber, role);
-      setSuccess(true);
+      navigate('/');
     } catch (err: any) {
       setError(err.message || 'Failed to register account. Please check credentials.');
     } finally {
@@ -173,23 +173,6 @@ export const Registration: React.FC = () => {
       </div>
 
       <div className="glass-card max-w-lg w-full rounded-3xl border border-slate-800 shadow-2xl p-6 sm:p-8">
-        {success ? (
-          <div className="text-center py-6">
-            <div className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center mx-auto mb-4 text-emerald-500 animate-bounce">
-              <CheckCircle2 size={32} />
-            </div>
-            <h3 className="text-xl font-bold text-white mb-2">Registration Successful!</h3>
-            <p className="text-xs text-slate-350 leading-relaxed px-4 mb-6">
-              Registration successful. Please check your email and verify your account before signing in.
-            </p>
-            <Link
-              to="/login"
-              className="inline-flex items-center gap-2 bg-rose-600 hover:bg-rose-500 text-white rounded-xl py-3 px-8 text-sm font-bold shadow-lg shadow-rose-600/20 active:scale-[0.98] transition duration-200 cursor-pointer"
-            >
-              Sign In to Account
-            </Link>
-          </div>
-        ) : (
           <>
             <div className="text-center mb-6">
               <h2 className="text-2xl font-extrabold text-white tracking-tight">Create Safety Identity</h2>
@@ -405,7 +388,6 @@ export const Registration: React.FC = () => {
               </Link>
             </div>
           </>
-        )}
       </div>
     </div>
   );
