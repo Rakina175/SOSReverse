@@ -17,7 +17,9 @@
     "appium:test:dry": "node appium-tests/tests/appium-login-tests.js android --dry-run",
     "appium:report": "node appium-tests/generate-report.cjs",
     "security:report": "node .github/scripts/generate-security-report.cjs",
-    "test:all": "npm run selenium:test && npm run selenium:report && npm run appium:test:dry && npm run appium:report && npm run load:test:baseline && npm run security:report && node scripts/copy-reports.cjs"
+    "test:all": "npm run selenium:test && npm run selenium:report && npm run appium:test:dry && npm run appium:report && npm run load:test:baseline && npm run security:report && node scripts/copy-reports.cjs",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@capacitor/core": "^8.4.2",
@@ -51,6 +53,7 @@
     "eslint": "^10.3.0",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.2",
+    "gh-pages": "^6.3.0",
     "globals": "^17.6.0",
     "selenium-webdriver": "^4.46.0",
     "tailwindcss": "^4.3.0",

@@ -1,5 +1,5 @@
 // React import not required in modern JSX runtimes
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { SOSProvider } from './context/SOSContext';
 
@@ -29,7 +29,7 @@ import { ProtectedRoute } from './components/ProtectedRoute';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <AuthProvider>
         <SOSProvider>
           <Layout>
@@ -142,7 +142,7 @@ function App() {
           {/* <RoleSwitcher /> */}
         </SOSProvider>
       </AuthProvider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
